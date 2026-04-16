@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.SplashActivity">
+    android:background="#1B1B1B">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- LOGO: Screen ke bilkul centre mein rahega -->
+    <!-- Animation: Upar se aayega, yahan centre par ruk kar rotate karega -->
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/logo"
+        android:scaleType="fitCenter"
+
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="20dp" />
+
+    <!-- APP NAME: Logo ke thoda neeche, horizontally centre -->
+    <!-- Pehle invisible rahega, rotate ke baad fade in hoga -->
+    <TextView
+        android:id="@+id/tv_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skynie"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.05"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/iv_logo"
+        android:layout_marginTop="2dp" />
+
+</RelativeLayout>

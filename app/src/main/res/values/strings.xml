@@ -2,4 +2,9 @@
     <string name="app_name">Skynie</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="skynie">Skynie</string>
+    <string name="from_blockbusters_to_indie_films_discover_and_book_cinema_tickets_with_ease">From blockbusters to indie films, discover and book cinema tickets with ease.</string>
+    <string name="to_experience_the_benefits">to experience the benefits</string>
+    <string name="explore_now">Explore now</string>
+    <string name="get_started">Get Started</string>
 </resources>
