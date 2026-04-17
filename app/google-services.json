@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "485259442726",
+    "project_id": "skynie-26",
+    "storage_bucket": "skynie-26.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485259442726:android:fba0eb8abd2031dbd404e7",
+        "android_client_info": {
+          "package_name": "com.example.skynie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdNP72cLcPvUUmJlW3TD_VeyZrHXeIpgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

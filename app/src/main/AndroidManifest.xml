@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Skynie">
         <activity
+            android:name=".views.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.AccountActivity"
             android:exported="false" />
         <activity
