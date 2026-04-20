@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <color name="skynie_bg">#121212</color>
+    <color name="skynie_surface">#1A1A1A</color>
+    <color name="skynie_card">#2A2A2A</color>
+    <color name="skynie_red">#E50914</color>
+    <color name="skynie_white">#FFFFFF</color>
+    <color name="skynie_grey">#888888</color>
+    <color name="dark_gray">#2A2A2A</color>
+    <color name="skynie_gold">#FFD700</color>
 </resources>
