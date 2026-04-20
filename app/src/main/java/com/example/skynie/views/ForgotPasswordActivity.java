@@ -1,6 +1,9 @@
 package com.example.skynie.views;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +14,9 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.skynie.R;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
+    EditText emailInput;
+    Button confirmButton;
+    ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +28,12 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        init();
+    }
+    private void init(){
+        emailInput = findViewById(R.id.emailInput);
+        confirmButton = findViewById(R.id.confirmButton);
+        backButton = findViewById(R.id.backButton);
     }
 }

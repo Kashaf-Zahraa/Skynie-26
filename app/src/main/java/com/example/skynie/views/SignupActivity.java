@@ -1,6 +1,9 @@
 package com.example.skynie.views;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +14,14 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.skynie.R;
 
 public class SignupActivity extends AppCompatActivity {
+    EditText emailInput;
+    EditText passwordInput;
+    EditText confirmPasswordInput;
+    Button signupButton;
+    Button googleButton;
+    Button facebookButton;
+    ImageButton backButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +33,16 @@ public class SignupActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        init();
+    }
+    private void init(){
+        emailInput = findViewById(R.id.emailInput);
+        passwordInput = findViewById(R.id.passwordInput);
+        confirmPasswordInput = findViewById(R.id.confirmPasswordInput);
+        signupButton = findViewById(R.id.signupButton);
+        googleButton = findViewById(R.id.googleButton);
+        facebookButton = findViewById(R.id.facebookButton);
+        backButton = findViewById(R.id.backButton);
     }
 }

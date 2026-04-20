@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Skynie</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="skynie">Skynie</string>
     <string name="from_blockbusters_to_indie_films_discover_and_book_cinema_tickets_with_ease">From blockbusters to indie films, discover and book cinema tickets with ease.</string>
@@ -42,4 +41,28 @@
     <string name="pk">PK</string>
     <string name="new23">New</string>
     <string name="arrival">Arrival</string>
+    <string name="back">Back</string>
+    <string name="log_in">Log In</string>
+    <string name="email">Email</string>
+    <string name="test_your_email">Test your email</string>
+    <string name="password">Password</string>
+    <string name="test_your_password">Test your password</string>
+    <string name="forget_password">Forget password?</string>
+    <string name="or">Or</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="register">Register</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="email_otp">Enter the email associated with your account and we\'ll send an email with code to reset your password</string>
+    <string name="confirm">Confirm</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="fp_otp_msg">Enter your OTP which has been sent to your email and completely verify your account</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="code_msg">A code has been sent to your phone</string>
 </resources>
