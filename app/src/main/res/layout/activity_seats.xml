@@ -91,6 +91,8 @@
 
 
     <LinearLayout
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -101,6 +103,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="start"
             android:orientation="vertical">
 
             <LinearLayout
@@ -114,14 +117,13 @@
                     android:layout_height="16dp"
                     android:layout_marginEnd="4dp"
                     android:contentDescription="@string/theater"
-                    android:src="@drawable/ic_location"
-                    android:tint="@color/text_secondary" />
+                    android:src="@drawable/ic_location"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/theater"
-                    android:textColor="@color/text_secondary"
+                    android:textColor="@color/light_gary"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -129,7 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="Stars (90°Mall)"
+                android:text="Cue Cinemas"
                 android:textColor="@color/text_primary"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -139,6 +141,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="start"
             android:orientation="vertical">
 
             <LinearLayout
@@ -152,14 +155,13 @@
                     android:layout_height="16dp"
                     android:layout_marginEnd="4dp"
                     android:contentDescription="@string/hall"
-                    android:src="@drawable/ic_hall"
-                    android:tint="@color/text_secondary" />
+                    android:src="@drawable/ic_hall" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/hall"
-                    android:textColor="@color/text_secondary"
+                    android:textColor="@color/light_gary"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -172,7 +174,6 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Date -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -190,14 +191,13 @@
                     android:layout_height="16dp"
                     android:layout_marginEnd="4dp"
                     android:contentDescription="@string/date"
-                    android:src="@drawable/ic_calendar"
-                    android:tint="@color/text_secondary" />
+                    android:src="@drawable/ic_date"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/date"
-                    android:textColor="@color/text_secondary"
+                    android:textColor="@color/light_gary"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -215,7 +215,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="start">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -228,14 +229,13 @@
                     android:layout_height="16dp"
                     android:layout_marginEnd="4dp"
                     android:contentDescription="@string/time"
-                    android:src="@drawable/ic_time"
-                    android:tint="@color/text_secondary" />
+                    android:src="@drawable/ic_clock"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/time"
-                    android:textColor="@color/text_secondary"
+                    android:textColor="@color/light_gary"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -375,4 +375,5 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />
+
 </LinearLayout>

@@ -28,7 +28,7 @@
         android:textColor="#FFFFFF"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:letterSpacing="0.05"
+        android:fontFamily="@font/poppins_semibold"
         android:visibility="invisible"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/iv_logo"

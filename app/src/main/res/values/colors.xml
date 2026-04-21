@@ -39,4 +39,5 @@
     <color name="seat_available">#444444</color>
     <color name="seat_booked">#FF1744</color>
     <color name="seat_selected">#1DB883</color>
+    <color name="light_gary">#727886</color>
 </resources>

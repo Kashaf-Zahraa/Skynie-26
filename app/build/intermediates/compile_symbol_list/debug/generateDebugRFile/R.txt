@@ -15,9 +15,13 @@ int color dark_gray 0x0
 int color day_item_bg 0x0
 int color divider_dark 0x0
 int color format_item_bg 0x0
+int color light_grey 0x0
 int color link_color 0x0
 int color movie_card_bg 0x0
 int color placeholder 0x0
+int color seat_available 0x0
+int color seat_booked 0x0
+int color seat_selected 0x0
 int color selected_day_red 0x0
 int color selected_format_red 0x0
 int color showtime_card_bg 0x0
@@ -45,6 +49,7 @@ int drawable button_outline_background 0x0
 int drawable button_red_background 0x0
 int drawable button_red_outline 0x0
 int drawable button_trailer_bg 0x0
+int drawable button_transparent_bg 0x0
 int drawable card_rounded_bg 0x0
 int drawable circle_button_bg 0x0
 int drawable circle_button_dark_bg 0x0
@@ -77,6 +82,7 @@ int drawable imdb_logo 0x0
 int drawable logo 0x0
 int drawable otp_field_background 0x0
 int drawable pill_white_bg 0x0
+int drawable screen_shape 0x0
 int font poppins_bold 0x0
 int font poppins_regular 0x0
 int font poppins_semibold 0x0
@@ -137,6 +143,7 @@ int id rv_recommendations 0x0
 int id rv_show_times 0x0
 int id rv_stars 0x0
 int id rv_videos 0x0
+int id seat_container 0x0
 int id signupButton 0x0
 int id signupLink 0x0
 int id tvAllGenres 0x0
@@ -188,6 +195,7 @@ int layout item_day_selector 0x0
 int layout item_movie_reccomendation 0x0
 int layout item_screen_details 0x0
 int layout item_screen_type 0x0
+int layout item_seat 0x0
 int layout item_video 0x0
 int menu bottom_nav_menu 0x0
 int mipmap ic_launcher 0x0
@@ -212,8 +220,10 @@ int string adventure 0x0
 int string all 0x0
 int string app_name 0x0
 int string arrival 0x0
+int string available 0x0
 int string back 0x0
 int string biography 0x0
+int string booked 0x0
 int string buy_ticket 0x0
 int string cast_photo 0x0
 int string character_name 0x0
@@ -226,6 +236,7 @@ int string comming_soon1 0x0
 int string confirm 0x0
 int string confirm_password 0x0
 int string cornpass 0x0
+int string date 0x0
 int string director 0x0
 int string director_name 0x0
 int string dolby_atmos 0x0
@@ -237,6 +248,7 @@ int string email_otp 0x0
 int string en 0x0
 int string explore_now 0x0
 int string facebook 0x0
+int string favorite 0x0
 int string featured_movie_banner 0x0
 int string film_description 0x0
 int string film_fav 0x0
@@ -252,10 +264,12 @@ int string google_api_key 0x0
 int string google_app_id 0x0
 int string google_crash_reporting_api_key 0x0
 int string google_storage_bucket 0x0
+int string hall 0x0
 int string hall_1 0x0
 int string hello_blank_fragment 0x0
 int string imax 0x0
 int string imdb 0x0
+int string imdb_logo 0x0
 int string loca 0x0
 int string location_arrow 0x0
 int string log_in 0x0
@@ -274,6 +288,7 @@ int string new22222 0x0
 int string new23 0x0
 int string new_animation_sci_film 0x0
 int string new_mystery_pg_13_1h_56m 0x0
+int string no_seat_selected 0x0
 int string now_showing 0x0
 int string oppenheimer 0x0
 int string or 0x0
@@ -283,6 +298,7 @@ int string pg 0x0
 int string pk 0x0
 int string play 0x0
 int string play_trailer 0x0
+int string proceed_to_cash_out 0x0
 int string project_id 0x0
 int string rating_13 0x0
 int string rating_count 0x0
@@ -290,6 +306,8 @@ int string register 0x0
 int string romance 0x0
 int string romance_emoji 0x0
 int string rotten_tomatoes 0x0
+int string screen 0x0
+int string screen_x 0x0
 int string screenx 0x0
 int string see_more 0x0
 int string share 0x0
@@ -301,10 +319,13 @@ int string stars_90_mall 0x0
 int string sub_en_fr 0x0
 int string test_your_email 0x0
 int string test_your_password 0x0
+int string theater 0x0
 int string theater_location 0x0
 int string tickets 0x0
 int string time 0x0
+int string time_random 0x0
 int string to_experience_the_benefits 0x0
+int string total_price_zero 0x0
 int string trailer 0x0
 int string verify_otp 0x0
 int string video_item 0x0
@@ -312,6 +333,7 @@ int string videos 0x0
 int string writer 0x0
 int string writer_list 0x0
 int string you_may_also_like 0x0
+int string yours 0x0
 int style AppTheme 0x0
 int style Base_Theme_Skynie 0x0
 int style Button_Primary 0x0

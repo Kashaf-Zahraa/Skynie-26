@@ -127,4 +127,14 @@
     <string name="date">Date</string>
     <string name="time">Time</string>
     <string name="favorite">Favorite</string>
+    <string name="account">Account</string>
+    <string name="personal_information">Personal information</string>
+    <string name="language">Language</string>
+    <string name="english_us">English (US)</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="notifications">Notifications</string>
+    <string name="push_notifications">Push Notifications</string>
+    <string name="promotional_notifications">Promotional Notifications</string>
+    <string name="log_out">Log Out</string>
+    <string name="more_heading">More</string>
 </resources>

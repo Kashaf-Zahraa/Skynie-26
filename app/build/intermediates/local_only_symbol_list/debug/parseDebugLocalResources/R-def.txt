@@ -17,9 +17,13 @@ color dark_gray
 color day_item_bg
 color divider_dark
 color format_item_bg
+color light_grey
 color link_color
 color movie_card_bg
 color placeholder
+color seat_available
+color seat_booked
+color seat_selected
 color selected_day_red
 color selected_format_red
 color showtime_card_bg
@@ -47,6 +51,7 @@ drawable button_outline_background
 drawable button_red_background
 drawable button_red_outline
 drawable button_trailer_bg
+drawable button_transparent_bg
 drawable card_rounded_bg
 drawable circle_button_bg
 drawable circle_button_dark_bg
@@ -79,6 +84,7 @@ drawable imdb_logo
 drawable logo
 drawable otp_field_background
 drawable pill_white_bg
+drawable screen_shape
 font poppins_bold
 font poppins_regular
 font poppins_semibold
@@ -139,6 +145,7 @@ id rv_recommendations
 id rv_show_times
 id rv_stars
 id rv_videos
+id seat_container
 id signupButton
 id signupLink
 id tvAllGenres
@@ -190,6 +197,7 @@ layout item_day_selector
 layout item_movie_reccomendation
 layout item_screen_details
 layout item_screen_type
+layout item_seat
 layout item_video
 menu bottom_nav_menu
 mipmap ic_launcher
@@ -214,8 +222,10 @@ string adventure
 string all
 string app_name
 string arrival
+string available
 string back
 string biography
+string booked
 string buy_ticket
 string cast_photo
 string character_name
@@ -228,6 +238,7 @@ string comming_soon1
 string confirm
 string confirm_password
 string cornpass
+string date
 string director
 string director_name
 string dolby_atmos
@@ -239,6 +250,7 @@ string email_otp
 string en
 string explore_now
 string facebook
+string favorite
 string featured_movie_banner
 string film_description
 string film_fav
@@ -254,10 +266,12 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string hall
 string hall_1
 string hello_blank_fragment
 string imax
 string imdb
+string imdb_logo
 string loca
 string location_arrow
 string log_in
@@ -276,6 +290,7 @@ string new22222
 string new23
 string new_animation_sci_film
 string new_mystery_pg_13_1h_56m
+string no_seat_selected
 string now_showing
 string oppenheimer
 string or
@@ -285,6 +300,7 @@ string pg
 string pk
 string play
 string play_trailer
+string proceed_to_cash_out
 string project_id
 string rating_13
 string rating_count
@@ -292,6 +308,8 @@ string register
 string romance
 string romance_emoji
 string rotten_tomatoes
+string screen
+string screen_x
 string screenx
 string see_more
 string share
@@ -303,10 +321,13 @@ string stars_90_mall
 string sub_en_fr
 string test_your_email
 string test_your_password
+string theater
 string theater_location
 string tickets
 string time
+string time_random
 string to_experience_the_benefits
+string total_price_zero
 string trailer
 string verify_otp
 string video_item
@@ -314,6 +335,7 @@ string videos
 string writer
 string writer_list
 string you_may_also_like
+string yours
 style AppTheme
 style Base.Theme.Skynie
 style Button.Primary

@@ -16,6 +16,10 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\layout\\activity_login.xml"
     },
     {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\drawable_screen_shape.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\drawable\\screen_shape.xml"
+    },
+    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\mipmap-hdpi\\ic_launcher.webp"
     },
@@ -92,10 +96,6 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\drawable\\badge_dark_outline_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-43:/layout_activity_film_details.xml.flat",
-        "source": "com.example.skynie.app-main-45:/layout/activity_film_details.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\layout_activity_signup.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\layout\\activity_signup.xml"
     },
@@ -120,12 +120,12 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\layout\\item_movie_reccomendation.xml"
     },
     {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\layout_activity_order_details.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\layout\\activity_order_details.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\drawable_imdb_logo.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\drawable\\imdb_logo.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-43:/drawable_imdb_logo.xml.flat",
-        "source": "com.example.skynie.app-main-45:/drawable/imdb_logo.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\layout_activity_order_details.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\layout\\activity_order_details.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\xml_backup_rules.xml.flat",
@@ -180,10 +180,6 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\drawable\\ic_info.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-43:/layout_activity_booking.xml.flat",
-        "source": "com.example.skynie.app-main-45:/layout/activity_booking.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\drawable_ic_home.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\drawable\\ic_home.xml"
     },
@@ -192,12 +188,12 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\drawable_ic_facebook.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\drawable\\ic_facebook.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\drawable_card_rounded_bg.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\drawable\\card_rounded_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\drawable_ic_facebook.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\drawable\\ic_facebook.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\layout_item_screen_type.xml.flat",
@@ -220,12 +216,12 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\layout\\item_cast_member.xml"
     },
     {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\layout_activity_booking.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\layout\\activity_booking.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\layout_activity_booking.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\layout\\activity_booking.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\drawable_ic_heart.xml.flat",
@@ -296,8 +292,20 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\drawable\\ic_search.xml"
     },
     {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\drawable_button_transparent_bg.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\drawable\\button_transparent_bg.xml"
+    },
+    {
+        "merged": "com.example.skynie.app-debug-43:/layout_activity_seats.xml.flat",
+        "source": "com.example.skynie.app-main-45:/layout/activity_seats.xml"
+    },
+    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\layout_activity_onboarding.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\layout\\activity_onboarding.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\layout_item_seat.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\layout\\item_seat.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\mipmap-xhdpi_ic_launcher.webp.flat",
@@ -332,12 +340,12 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\layout_activity_auth.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\layout\\activity_auth.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\layout_activity_ticket_details.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\layout\\activity_ticket_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\layout_activity_auth.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-45:\\layout\\activity_auth.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-43:\\drawable_dot_active.xml.flat",

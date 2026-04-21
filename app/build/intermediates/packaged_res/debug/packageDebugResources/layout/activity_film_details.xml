@@ -105,6 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/oppenheimer"
+                android:fontFamily="@font/poppins_semibold"
                 android:textColor="@color/text_primary"
                 android:textSize="26sp"
                 android:layout_marginStart="16dp"
@@ -167,6 +168,7 @@
                         android:layout_marginEnd="10dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/imdb_logo"
+                        android:contentDescription="@string/imdb_logo"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -294,7 +296,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    >
 
                     <LinearLayout
                         android:layout_width="0dp"
