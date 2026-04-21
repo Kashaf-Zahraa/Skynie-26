@@ -28,11 +28,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        // Firebase Realtime Database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("Hello, Mk!");
-
     }
 }

@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.skynie.R;
+import com.example.skynie.models.User;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -24,6 +25,8 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class AuthActivity extends AppCompatActivity {
 
@@ -60,7 +63,6 @@ public class AuthActivity extends AppCompatActivity {
         });
 
         mAuth = FirebaseAuth.getInstance();
-
         init();
         configureGoogleSignIn();
     }
@@ -93,10 +95,22 @@ public class AuthActivity extends AppCompatActivity {
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        updateUI(mAuth.getCurrentUser());
+                        FirebaseUser user=mAuth.getCurrentUser();
+                        saveUserToDatabase(user);
                     } else {
                         Toast.makeText(this, "Auth Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
+                });
+    }
+
+    private void saveUserToDatabase(FirebaseUser user) {
+        DatabaseReference db= FirebaseDatabase.getInstance().getReference();
+        User new_user=new User(user.getUid(),user.getDisplayName(),user.getEmail(),"",
+                user.getPhotoUrl() != null ? user.getPhotoUrl().toString() : "");
+
+        db.child("users").child(user.getUid()).setValue(new_user)
+                .addOnCompleteListener(task -> {
+                    updateUI(user);
                 });
     }
 
