@@ -137,4 +137,7 @@
     <string name="promotional_notifications">Promotional Notifications</string>
     <string name="log_out">Log Out</string>
     <string name="more_heading">More</string>
+    <string name="default_web_client_id">YOUR_WEB_CLIENT_ID_HERE</string>
+    <string name="facebook_app_id">1488885262815213</string>
+    <string name="fb_login_protocol_scheme">fb1488885262815213</string>
 </resources>

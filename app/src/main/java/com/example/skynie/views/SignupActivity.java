@@ -1,5 +1,6 @@
 package com.example.skynie.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,5 +46,21 @@ public class SignupActivity extends AppCompatActivity {
         googleButton = findViewById(R.id.googleButton);
         facebookButton = findViewById(R.id.facebookButton);
         backButton = findViewById(R.id.backButton);
+
+        backButton.setOnClickListener((v)->{
+            startActivity(new Intent(SignupActivity.this, AuthActivity.class));
+            finish();
+        });
+        signupButton.setOnClickListener((v)->{
+            if(validateInputs()){
+                startActivity(new Intent(SignupActivity.this, MainActivity.class));
+                finish();
+            }
+        });
+    }
+
+    private boolean validateInputs() {
+        //email,password,confirm pass
+        return true;
     }
 }

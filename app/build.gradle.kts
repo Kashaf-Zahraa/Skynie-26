@@ -40,8 +40,16 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation(libs.firebase.database)
+    implementation(libs.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    // Firebase
+    implementation("com.google.firebase:firebase-auth:23.0.1")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+// Facebook SDK
+    implementation("com.facebook.android:facebook-login:16.3.0")
+// Glide for image loading (optional)
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
 }

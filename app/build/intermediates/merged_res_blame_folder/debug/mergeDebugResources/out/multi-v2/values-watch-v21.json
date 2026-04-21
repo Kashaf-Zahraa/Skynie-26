@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.skynie.app-mergeDebugResources-41:/values-watch-v21/values-watch-v21.xml",
+            "outputFile": "com.example.skynie.app-mergeDebugResources-50:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\9.1.0\\transforms\\0460dd1c1974e1b6e40c8c481a1123a0\\workspace\\transformed\\appcompat-1.7.1\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\USER\\.gradle\\caches\\9.1.0\\transforms\\ea5b11a79aa5738f5f35da5912f95fba\\workspace\\transformed\\appcompat-1.7.1\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "485259442726",
+    "firebase_url": "https://skynie-26-default-rtdb.firebaseio.com",
     "project_id": "skynie-26",
     "storage_bucket": "skynie-26.firebasestorage.app"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.example.skynie"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "485259442726-gnunvm2vajfhujmdphbuhi8tmhekfue0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.skynie",
+            "certificate_hash": "6c4c50694e0d8a2fabde83cb73e76b15e5f8d173"
+          }
+        },
+        {
+          "client_id": "485259442726-55lc2na6948lmmaj9vhjkpdficsdmfs9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAdNP72cLcPvUUmJlW3TD_VeyZrHXeIpgk"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485259442726-0iherlv9c12ip1u75evlkrlclqqsq6sb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

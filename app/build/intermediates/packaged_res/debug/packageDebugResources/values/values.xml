@@ -14,6 +14,7 @@
     <color name="day_item_bg">#333333</color>
     <color name="divider_dark">#333333</color>
     <color name="format_item_bg">#333333</color>
+    <color name="light_gary">#727886</color>
     <color name="light_grey">#C4C4C4</color>
     <color name="link_color">#BB86FC</color>
     <color name="movie_card_bg">#333333</color>
@@ -48,6 +49,7 @@
     <string name="_80">80%</string>
     <string name="_8_9_10_imdb">8.9/10 IMDB</string>
     <string name="_96">96%</string>
+    <string name="account">Account</string>
     <string name="action">Action</string>
     <string name="action_emoji">💥</string>
     <string name="actor_name">Cillian Murphy</string>
@@ -74,6 +76,7 @@
     <string name="confirm_password">Confirm password</string>
     <string name="cornpass">CornPass</string>
     <string name="date">Date</string>
+    <string name="default_web_client_id" translatable="false">485259442726-55lc2na6948lmmaj9vhjkpdficsdmfs9.apps.googleusercontent.com</string>
     <string name="director">Director</string>
     <string name="director_name">Cillian Murphy, Emily Blunt</string>
     <string name="dolby_atmos">Dolby Atmos</string>
@@ -83,12 +86,16 @@
     <string name="email">Email</string>
     <string name="email_otp">Enter the email associated with your account and we\'ll send an email with code to reset your password</string>
     <string name="en">EN</string>
+    <string name="english_us">English (US)</string>
     <string name="explore_now">Explore now</string>
     <string name="facebook">Facebook</string>
+    <string name="facebook_app_id">1488885262815213</string>
     <string name="favorite">Favorite</string>
+    <string name="fb_login_protocol_scheme">fb1488885262815213</string>
     <string name="featured_movie_banner">Featured Movie Banner</string>
     <string name="film_description">During World War II, an American intelligence officer is assigned to work on the Manhattan Project, a top-secret research and development effort that designed and produced the first nuclear weapons during World War II. The film stars Cillian Murphy as J. Robert Oppenheimer, the theoretical physicist who was the director of the Los Alamos Laboratory, and therefore the scientist most directly responsible for the design and production of the atomic bomb.</string>
     <string name="film_fav">film_fav</string>
+    <string name="firebase_database_url" translatable="false">https://skynie-26-default-rtdb.firebaseio.com</string>
     <string name="forget_password">Forget password?</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="fp_otp_msg">Enter your OTP which has been sent to your email and completely verify your account</string>
@@ -107,13 +114,16 @@
     <string name="imax">IMAX</string>
     <string name="imdb">IMDB</string>
     <string name="imdb_logo">imdb_logo</string>
+    <string name="language">Language</string>
     <string name="loca">Loca</string>
     <string name="location_arrow">Location arrow</string>
     <string name="log_in">Log In</string>
+    <string name="log_out">Log Out</string>
     <string name="menu">Menu</string>
     <string name="month">TUE</string>
     <string name="more">More ›</string>
     <string name="more1">More ›</string>
+    <string name="more_heading">More</string>
     <string name="more_info">More Info</string>
     <string name="movie_poster">Movie Poster</string>
     <string name="movie_poster2">Movie Poster</string>
@@ -126,17 +136,22 @@
     <string name="new_animation_sci_film">NEW · Animation · Sci-film</string>
     <string name="new_mystery_pg_13_1h_56m">NEW · Mystery · PG-13 · 1h 56m</string>
     <string name="no_seat_selected">No seats selected</string>
+    <string name="notifications">Notifications</string>
     <string name="now_showing">Now Showing</string>
     <string name="oppenheimer">Oppenheimer</string>
     <string name="or">Or</string>
     <string name="our_pick">Our Pick</string>
     <string name="password">Password</string>
+    <string name="personal_information">Personal information</string>
     <string name="pg">PG-13</string>
     <string name="pk">PK</string>
     <string name="play">Play</string>
     <string name="play_trailer">▶ Trailer</string>
+    <string name="privacy_policy">Privacy Policy</string>
     <string name="proceed_to_cash_out">Proceed to Cash Out</string>
     <string name="project_id" translatable="false">skynie-26</string>
+    <string name="promotional_notifications">Promotional Notifications</string>
+    <string name="push_notifications">Push Notifications</string>
     <string name="rating_13">+13</string>
     <string name="rating_count">4.5 (250K Reviews)</string>
     <string name="register">Register</string>

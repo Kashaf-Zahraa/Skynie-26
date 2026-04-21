@@ -1,5 +1,6 @@
 package com.example.skynie.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,13 +40,18 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void init(){
-            emailInput = findViewById(R.id.emailInput);
-            passwordInput = findViewById(R.id.passwordInput);
-            loginButton = findViewById(R.id.loginButton);
-            googleButton = findViewById(R.id.googleButton);
-            facebookButton = findViewById(R.id.facebookButton);
-            forgotPasswordLink = findViewById(R.id.forgotPasswordLink);
-            signupLink = findViewById(R.id.signupLink);
-            backButton = findViewById(R.id.backButton);
+        emailInput = findViewById(R.id.emailInput);
+        passwordInput = findViewById(R.id.passwordInput);
+        loginButton = findViewById(R.id.loginButton);
+        googleButton = findViewById(R.id.googleButton);
+        facebookButton = findViewById(R.id.facebookButton);
+        forgotPasswordLink = findViewById(R.id.forgotPasswordLink);
+        signupLink = findViewById(R.id.signupLink);
+        backButton = findViewById(R.id.backButton);
+
+        backButton.setOnClickListener((v)->{
+            startActivity(new Intent(LoginActivity.this, AuthActivity.class));
+            finish();
+        });
         }
 }
