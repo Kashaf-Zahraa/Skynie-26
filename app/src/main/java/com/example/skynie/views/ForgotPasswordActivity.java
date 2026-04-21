@@ -7,6 +7,7 @@ import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -15,7 +16,7 @@ import com.example.skynie.R;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
     EditText emailInput;
-    Button confirmButton;
+    AppCompatButton confirmButton;
     ImageButton backButton;
 
     @Override

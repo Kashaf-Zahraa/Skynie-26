@@ -7,6 +7,7 @@ import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -17,9 +18,9 @@ public class SignupActivity extends AppCompatActivity {
     EditText emailInput;
     EditText passwordInput;
     EditText confirmPasswordInput;
-    Button signupButton;
-    Button googleButton;
-    Button facebookButton;
+    AppCompatButton signupButton;
+    AppCompatButton googleButton;
+    AppCompatButton facebookButton;
     ImageButton backButton;
 
 
