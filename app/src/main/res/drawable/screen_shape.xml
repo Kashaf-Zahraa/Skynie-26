@@ -1,0 +1,30 @@
+<!-- res/drawable/bottom_nav_arc.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="360dp"
+    android:height="80dp"
+    android:viewportWidth="360"
+    android:viewportHeight="80">
+
+    <path
+        android:pathData="M0,40 Q180,-30 360,40 L360,80 L0,80 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="180"
+                android:startY="0"
+                android:endX="180"
+                android:endY="80">
+                <item android:offset="0" android:color="#33FFFFFF" />
+                <item android:offset="1" android:color="#00FFFFFF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <path
+        android:pathData="M0,40 Q180,-30 360,40"
+        android:strokeColor="#00E676"
+        android:strokeWidth="5"
+        android:fillColor="@android:color/transparent" />
+
+</vector>

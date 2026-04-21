@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="140dp"
+    android:layout_height="180dp"
+    android:layout_marginEnd="12dp"
+    android:orientation="vertical"
+    android:background="@color/movie_card_bg">
+
+    <ImageView
+        android:id="@+id/iv_movie_poster"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/movie_poster"
+        android:background="@color/placeholder"
+        android:scaleType="centerCrop" />
+
+</LinearLayout>

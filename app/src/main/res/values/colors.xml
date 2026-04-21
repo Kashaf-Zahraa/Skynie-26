@@ -8,6 +8,7 @@
     <color name="skynie_red">#E50914</color>
     <color name="skynie_white">#FFFFFF</color>
     <color name="skynie_grey">#888888</color>
+    <color name="light_grey">#C4C4C4</color>
     <color name="dark_gray">#2A2A2A</color>
     <color name="skynie_gold">#FFD700</color>
     <color name="background_dark">#1a1a1a</color>
@@ -19,5 +20,23 @@
     <color name="border_dark">#404040</color>
     <color name="divider_dark">#333333</color>
     <color name="transparent">#000000</color>
-
+    <color name="dark_bg">#1a1a1a</color>
+    <color name="card_bg">#2a2a2a</color>
+    <color name="white">#FFFFFF</color>
+    <color name="link_color">#BB86FC</color>
+    <color name="chip_green">#1DB883</color>
+    <color name="chip_dark">#404040</color>
+    <color name="btn_buy_ticket_red">#FF1744</color>
+    <color name="btn_trailer_bg">#333333</color>
+    <color name="availability_color">#FFD700</color>
+    <color name="selected_day_red">#FF1744</color>
+    <color name="selected_format_red">#FF1744</color>
+    <color name="placeholder">#404040</color>
+    <color name="movie_card_bg">#333333</color>
+    <color name="showtime_card_bg">#2a2a2a</color>
+    <color name="day_item_bg">#333333</color>
+    <color name="format_item_bg">#333333</color>
+    <color name="seat_available">#444444</color>
+    <color name="seat_booked">#FF1744</color>
+    <color name="seat_selected">#1DB883</color>
 </resources>
