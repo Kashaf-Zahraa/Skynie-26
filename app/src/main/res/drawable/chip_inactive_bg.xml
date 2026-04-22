@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/chip_inactive_bg.xml
+     Dark rounded pill for inactive filter chips               -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#2A2A2A" />
+    <corners android:radius="20dp" />
+</shape>

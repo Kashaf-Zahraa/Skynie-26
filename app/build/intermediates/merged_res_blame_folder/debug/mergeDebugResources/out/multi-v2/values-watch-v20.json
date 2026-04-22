@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.skynie.app-mergeDebugResources-50:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.example.skynie.app-mergeDebugResources-51:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\9.1.0\\transforms\\803b7d6bf7498142390683a78824252c\\workspace\\transformed\\play-services-auth-20.7.0\\res\\values-watch-v20\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11",
-                        "startColumns": "0,0,0,0,0,0,0,0",
-                        "startOffsets": "173,248,324,399,474,561,638,725",
-                        "endColumns": "74,75,74,74,86,76,86,75",
-                        "endOffsets": "247,323,398,473,560,637,724,800"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,134,214,293,372,463,544,635",
-                        "endColumns": "78,79,78,78,90,80,90,79",
-                        "endOffsets": "129,209,288,367,458,539,630,710"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\9.1.0\\transforms\\ea5b11a79aa5738f5f35da5912f95fba\\workspace\\transformed\\appcompat-1.7.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\5A_Traders\\.gradle\\caches\\9.1.0\\transforms\\cfd4ca233762afa40bd5d0035524f33b\\workspace\\transformed\\appcompat-1.7.1\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
@@ -37,6 +20,23 @@
                         "endLines": "12,15,18",
                         "endColumns": "12,12,12",
                         "endOffsets": "869,1040,1213"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\5A_Traders\\.gradle\\caches\\9.1.0\\transforms\\950f07fca2da49b8378a382db839e5c7\\workspace\\transformed\\play-services-auth-20.7.0\\res\\values-watch-v20\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11",
+                        "startColumns": "0,0,0,0,0,0,0,0",
+                        "startOffsets": "173,248,324,399,474,561,638,725",
+                        "endColumns": "74,75,74,74,86,76,86,75",
+                        "endOffsets": "247,323,398,473,560,637,724,800"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,134,214,293,372,463,544,635",
+                        "endColumns": "78,79,78,78,90,80,90,79",
+                        "endOffsets": "129,209,288,367,458,539,630,710"
                     }
                 }
             ]

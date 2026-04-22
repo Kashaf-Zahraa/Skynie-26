@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.skynie.app-mergeDebugResources-50:/values-w400dp-port-v13/values-w400dp-port-v13.xml",
+            "outputFile": "com.example.skynie.app-mergeDebugResources-51:/values-w400dp-port-v13/values-w400dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\9.1.0\\transforms\\3f4d2527eeec2780deda3b094abaa1b9\\workspace\\transformed\\material-1.13.0\\res\\values-w400dp-port-v13\\values-w400dp-port-v13.xml",
+                    "source": "C:\\Users\\5A_Traders\\.gradle\\caches\\9.1.0\\transforms\\fc68a65d37ff46d15fb2a4e0d992200c\\workspace\\transformed\\material-1.13.0\\res\\values-w400dp-port-v13\\values-w400dp-port-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

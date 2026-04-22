@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     android:background="#121212">
 
-    <!-- maheen ye nested scroll view iss liye kiay hay ta kay poori ki poori screen scrollable ho, wo jo hmay quiz mein ay atha na nestingye wo hay -->
-
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
@@ -21,27 +19,20 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--  FEATURED MOVIE  -->
-            <!-- ye ooper wlaay icons hein menu or search left or right ogf screen pay -->
+            <!-- FEATURED MOVIE -->
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="420dp">
 
-                <!-- featured movie Poster-->
-                <ImageView
-                    android:id="@+id/imgFeaturedBanner"
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vpFeaturedBanner"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@color/dark_gray"
-                    android:contentDescription="@string/featured_movie_banner" />
+                    android:layout_height="match_parent" />
 
-                <!-- gradient overlay ta kay txt readble ho-->
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/gradient_banner_overlay" />
-
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -57,8 +48,7 @@
                         android:layout_alignParentStart="true"
                         android:background="@drawable/circle_button_bg"
                         android:padding="8dp"
-                        android:src="@drawable/ic_menu"
-                         />
+                        android:src="@drawable/ic_menu" />
 
                     <ImageButton
                         android:id="@+id/btnSearch"
@@ -67,11 +57,9 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/circle_button_bg"
                         android:padding="8dp"
-                        android:src="@drawable/ic_search"
-                         />
+                        android:src="@drawable/ic_search" />
                 </RelativeLayout>
 
-                <!-- movie name, tags, dots, buttons -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -79,7 +67,6 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- new badge or mive title hay ye  -->
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -112,7 +99,6 @@
                             android:fontFamily="@font/poppins_bold" />
                     </LinearLayout>
 
-
                     <TextView
                         android:id="@+id/tvFeaturedMeta"
                         android:layout_width="wrap_content"
@@ -123,7 +109,6 @@
                         android:textSize="12sp"
                         android:fontFamily="@font/poppins_regular" />
 
-                    <!-- ye dot sview pager ka indicator dein gay-->
                     <LinearLayout
                         android:id="@+id/dotsContainer"
                         android:layout_width="wrap_content"
@@ -131,8 +116,6 @@
                         android:layout_marginTop="8dp"
                         android:orientation="horizontal"
                         android:gravity="center">
-
-
 
                         <View
                             android:layout_width="6dp"
@@ -167,7 +150,6 @@
                         android:gravity="center"
                         android:orientation="horizontal">
 
-                        <!-- Add / Wishlist Button -->
                         <ImageButton
                             android:id="@+id/btnAddWishlist"
                             android:layout_width="44dp"
@@ -177,7 +159,6 @@
                             android:src="@drawable/ic_add"
                             android:contentDescription="@string/add_to_wishlist" />
 
-                        <!-- trauler buttpn -->
                         <LinearLayout
                             android:id="@+id/btnTrailer"
                             android:layout_width="wrap_content"
@@ -207,7 +188,6 @@
                                 android:fontFamily="@font/poppins_semibold" />
                         </LinearLayout>
 
-
                         <ImageButton
                             android:id="@+id/btnInfo"
                             android:layout_width="44dp"
@@ -221,14 +201,13 @@
                 </LinearLayout>
             </FrameLayout>
 
-            <!--  NOW SHOWING  -->
+            <!-- NOW SHOWING -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingTop="16dp">
 
-                <!-- pehle ye header ay ega us ka-->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -257,7 +236,6 @@
                         android:fontFamily="@font/poppins_regular" />
                 </RelativeLayout>
 
-                <!-- horizontal scrolbable moviw cxards jo hein -->
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -270,63 +248,17 @@
                         android:id="@+id/llNowShowingCards"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal" />
 
-                        <!-- Movie Card 1 -->
-                        <FrameLayout
-                            android:layout_width="130dp"
-                            android:layout_height="190dp"
-                            android:layout_marginEnd="12dp"
-                            android:background="@drawable/card_rounded_bg">
-<!--ye movie ka poster hay yahan pay-->
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:scaleType="centerCrop"
-                                android:background="@color/dark_gray"
-                                 />
-                        </FrameLayout>
-
-                        <!-- Movie Card 2 -->
-                        <FrameLayout
-                            android:layout_width="130dp"
-                            android:layout_height="190dp"
-                            android:layout_marginEnd="12dp"
-                            android:background="@drawable/card_rounded_bg">
-                            <!--ye movie ka poster hay yahan pay-->
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:scaleType="centerCrop"
-                                android:background="@color/dark_gray"
-                                 />
-                        </FrameLayout>
-
-                        <!-- movie card3  jo partially visible hay to hint scroll-->
-                        <FrameLayout
-                            android:layout_width="130dp"
-                            android:layout_height="190dp"
-                            android:layout_marginEnd="12dp"
-                            android:background="@drawable/card_rounded_bg">
-                            <!--ye movie ka poster hay yahan pay-->
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:scaleType="centerCrop"
-                                android:background="@color/dark_gray"
-                                />
-                        </FrameLayout>
-                    </LinearLayout>
                 </HorizontalScrollView>
             </LinearLayout>
 
-            <!-- COMING SOON  -->
+            <!-- COMING SOON -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingTop="20dp">
-
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -356,7 +288,6 @@
                         android:fontFamily="@font/poppins_regular" />
                 </RelativeLayout>
 
-
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -369,140 +300,18 @@
                         android:id="@+id/llComingSoonCards"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal" />
 
-                        <!-- coming soon card#1 -->
-                        <FrameLayout
-                            android:layout_width="100dp"
-                            android:layout_height="140dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="@drawable/card_rounded_bg">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:scaleType="centerCrop"
-                                android:background="@color/dark_gray"
-                                 />
-
-                            <!-- new Badge -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom|start"
-                                android:layout_margin="6dp"
-                                android:background="@drawable/badge_red_bg"
-                                android:paddingStart="5dp"
-                                android:paddingEnd="5dp"
-                                android:paddingTop="2dp"
-                                android:paddingBottom="2dp"
-                                android:text="@string/new22"
-                                android:textColor="#FFFFFF"
-                                android:textSize="9sp"
-                                android:textStyle="bold" />
-                        </FrameLayout>
-
-                        <!-- coming soon card#2 -->
-                        <FrameLayout
-                            android:layout_width="100dp"
-                            android:layout_height="140dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="@drawable/card_rounded_bg">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:scaleType="centerCrop"
-                                android:background="@color/dark_gray"
-                                />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom|start"
-                                android:layout_margin="6dp"
-                                android:background="@drawable/badge_red_bg"
-                                android:paddingStart="5dp"
-                                android:paddingEnd="5dp"
-                                android:paddingTop="2dp"
-                                android:paddingBottom="2dp"
-                                android:text="@string/new222"
-                                android:textColor="#FFFFFF"
-                                android:textSize="9sp"
-                                android:textStyle="bold" />
-                        </FrameLayout>
-
-                        <!-- coming soon card#3 -->
-                        <FrameLayout
-                            android:layout_width="100dp"
-                            android:layout_height="140dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="@drawable/card_rounded_bg">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:scaleType="centerCrop"
-                                android:background="@color/dark_gray"
-                                 />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom|start"
-                                android:layout_margin="6dp"
-                                android:background="@drawable/badge_red_bg"
-                                android:paddingStart="5dp"
-                                android:paddingEnd="5dp"
-                                android:paddingTop="2dp"
-                                android:paddingBottom="2dp"
-                                android:text="@string/new2222"
-                                android:textColor="#FFFFFF"
-                                android:textSize="9sp"
-                                android:textStyle="bold" />
-                        </FrameLayout>
-
-                        <!-- coming soon card#4 -->
-                        <FrameLayout
-                            android:layout_width="100dp"
-                            android:layout_height="140dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="@drawable/card_rounded_bg">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:scaleType="centerCrop"
-                                android:background="@color/dark_gray"
-                                />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom|start"
-                                android:layout_margin="6dp"
-                                android:background="@drawable/badge_red_bg"
-                                android:paddingStart="5dp"
-                                android:paddingEnd="5dp"
-                                android:paddingTop="2dp"
-                                android:paddingBottom="2dp"
-                                android:text="@string/new22222"
-                                android:textColor="#FFFFFF"
-                                android:textSize="9sp"
-                                android:textStyle="bold" />
-                        </FrameLayout>
-                    </LinearLayout>
                 </HorizontalScrollView>
             </LinearLayout>
 
-            <!-- genres  -->
+            <!-- GENRES -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingTop="20dp">
 
-                <!-- Genres ka Header -->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -531,7 +340,6 @@
                         android:fontFamily="@font/poppins_regular" />
                 </RelativeLayout>
 
-                <!-- genre k chips  -->
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -546,7 +354,6 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical">
-
 
                         <LinearLayout
                             android:id="@+id/chipAdventure"
@@ -575,7 +382,6 @@
                                 android:fontFamily="@font/poppins_regular" />
                         </LinearLayout>
 
-                        <!-- Comedy chip -->
                         <LinearLayout
                             android:id="@+id/chipComedy"
                             android:layout_width="wrap_content"
@@ -603,7 +409,6 @@
                                 android:fontFamily="@font/poppins_regular" />
                         </LinearLayout>
 
-                        <!-- Romance chip -->
                         <LinearLayout
                             android:id="@+id/chipRomance"
                             android:layout_width="wrap_content"
@@ -631,7 +436,6 @@
                                 android:fontFamily="@font/poppins_regular" />
                         </LinearLayout>
 
-                        <!-- Action chip -->
                         <LinearLayout
                             android:id="@+id/chipAction"
                             android:layout_width="wrap_content"
@@ -658,12 +462,12 @@
                                 android:textSize="13sp"
                                 android:fontFamily="@font/poppins_regular" />
                         </LinearLayout>
+
                     </LinearLayout>
                 </HorizontalScrollView>
             </LinearLayout>
 
-            <!--  FEATURED / OUR PICK CARD  -->
-            <!-- bottom pe rating k satah large card hay or genre tags and title loca -->
+            <!-- OUR PICK / FEATURED CARD -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -676,28 +480,23 @@
                     android:layout_height="180dp"
                     android:background="@drawable/card_rounded_bg">
 
-                    <!-- Background Image -->
                     <ImageView
                         android:id="@+id/imgOurPickBanner"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:background="@color/dark_gray"
-                        />
+                        android:background="@color/dark_gray" />
 
-                    <!-- gradient overlay -->
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/gradient_card_overlay" />
 
-                    <!-- bottom info inside the card -->
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
                         android:padding="12dp">
-
 
                         <TextView
                             android:id="@+id/tvOurPickGenreTags"
@@ -709,17 +508,17 @@
                             android:textSize="10sp"
                             android:fontFamily="@font/poppins_regular" />
 
-
                         <TextView
                             android:id="@+id/tvOurPickRating"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+
                             android:layout_alignParentEnd="true"
                             android:text="@string/_8_9_10_imdb"
-                            android:textColor="#FFD700"
-                            android:textSize="10sp"
-                            android:fontFamily="@font/poppins_regular" />
-
+                            android:textColor="#F5F5F5"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/poppins_bold" />
 
                         <LinearLayout
                             android:id="@+id/llOurPickBottom"
@@ -741,7 +540,6 @@
                                 android:textStyle="bold"
                                 android:fontFamily="@font/poppins_bold" />
 
-                            <!--red wala hay pick badge -->
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -755,7 +553,6 @@
                                 android:textSize="10sp"
                                 android:layout_marginEnd="8dp" />
 
-                            <!-- +13) -->
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -769,7 +566,6 @@
                                 android:textSize="10sp"
                                 android:layout_marginEnd="6dp" />
 
-                            <!-- Format badge-->
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -786,7 +582,6 @@
                 </FrameLayout>
             </LinearLayout>
 
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="16dp" />
@@ -795,13 +590,21 @@
     </androidx.core.widget.NestedScrollView>
 
 
+    <!-- Fragment container: Search, Tickets, Account fragments yahan load honge -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigationView"
+        android:visibility="gone" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="#1A1A1A"
-       android:layout_marginTop="40dp"
+        android:layout_marginTop="40dp"
         app:itemIconTint="@drawable/bottom_nav_icon_selector"
         app:itemTextColor="@drawable/bottom_nav_icon_selector"
         app:labelVisibilityMode="unlabeled"

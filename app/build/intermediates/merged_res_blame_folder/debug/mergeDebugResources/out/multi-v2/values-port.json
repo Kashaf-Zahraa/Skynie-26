@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.skynie.app-mergeDebugResources-50:/values-port/values-port.xml",
+            "outputFile": "com.example.skynie.app-mergeDebugResources-51:/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\9.1.0\\transforms\\ea5b11a79aa5738f5f35da5912f95fba\\workspace\\transformed\\appcompat-1.7.1\\res\\values-port\\values-port.xml",
+                    "source": "C:\\Users\\5A_Traders\\.gradle\\caches\\9.1.0\\transforms\\cfd4ca233762afa40bd5d0035524f33b\\workspace\\transformed\\appcompat-1.7.1\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
