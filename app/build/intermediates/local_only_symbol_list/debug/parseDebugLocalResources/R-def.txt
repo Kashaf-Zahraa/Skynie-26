@@ -89,6 +89,7 @@ drawable ic_filter
 drawable ic_google
 drawable ic_hall
 drawable ic_heart
+drawable ic_heart_filled
 drawable ic_help
 drawable ic_home
 drawable ic_info
@@ -99,6 +100,7 @@ drawable ic_location
 drawable ic_location_pin
 drawable ic_logout
 drawable ic_menu
+drawable ic_movie_placeholder
 drawable ic_notifications
 drawable ic_play
 drawable ic_privacy
@@ -136,6 +138,7 @@ id btnSendTicket
 id btnTrailer
 id btn_back
 id btn_buy_ticket
+id btn_close
 id btn_fav
 id btn_format
 id btn_get_started
@@ -185,6 +188,7 @@ id llRightBlock
 id ll_bottom_content
 id loginButton
 id main
+id movie_bg
 id nav_account
 id nav_home
 id nav_search
@@ -205,12 +209,12 @@ id rvAllMovies
 id rvCinemas
 id rvTickets
 id rv_days
+id rv_dialog_actors
 id rv_formats
 id rv_recommendations
 id rv_seats
 id rv_show_times
 id rv_stars
-id rv_videos
 id searchBar
 id seat_container
 id signupButton
@@ -245,6 +249,8 @@ id tvSectionTitle
 id tvShowDateTime
 id tvTicketCount
 id tvTime
+id tv_actor_name
+id tv_actors
 id tv_app_name
 id tv_audio_format
 id tv_cast_character
@@ -252,6 +258,9 @@ id tv_cast_name
 id tv_day_name
 id tv_day_number
 id tv_description
+id tv_dialog_title
+id tv_director
+id tv_duration
 id tv_film_title
 id tv_format_type
 id tv_hall_number
@@ -259,9 +268,9 @@ id tv_heading_1
 id tv_heading_2
 id tv_movie_title
 id tv_seats_available
-id tv_see_more
 id tv_showtime
 id tv_total_seats
+id tv_writer
 id vpFeaturedBanner
 layout activity_all_movies
 layout activity_auth
@@ -278,10 +287,12 @@ layout activity_splash
 layout activity_ticket_details
 layout activity_trailer
 layout activity_verify_otp
+layout dialog_actors
 layout fragment_account
 layout fragment_home
 layout fragment_my_tickets
 layout fragment_search
+layout item_actor
 layout item_cast_member
 layout item_cinema_row
 layout item_coming_soon_card
@@ -373,6 +384,7 @@ string hello_blank_fragment
 string imax
 string imdb
 string imdb_logo
+string josephine_clark
 string language
 string loca
 string location_arrow

@@ -27,6 +27,7 @@ import com.example.skynie.R;
 import com.example.skynie.fragments.AccountFragment;
 import com.example.skynie.fragments.MyTicketsFragment;
 import com.example.skynie.fragments.SearchFragment;
+import com.example.skynie.models.Cast;
 import com.example.skynie.models.Movie;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -469,6 +470,8 @@ public class MainActivity extends AppCompatActivity {
     // Film details screen par jao
     private void navigateToFilmDetails(Movie movie) {
         Intent intent = new Intent(this, FilmDetailsActivity.class);
+
+
         intent.putExtra("movie_id", movie.id);
         intent.putExtra("movie_title", movie.title);
         intent.putExtra("movie_poster", movie.poster_drawable);
@@ -485,4 +488,6 @@ public class MainActivity extends AppCompatActivity {
         if (autoSwipeRunnable != null)
             autoSwipeHandler.removeCallbacks(autoSwipeRunnable);
     }
+
+
 }

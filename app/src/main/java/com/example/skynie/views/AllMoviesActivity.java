@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.skynie.R;
+import com.example.skynie.models.Cast;
 import com.example.skynie.models.Movie;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class AllMoviesActivity extends AppCompatActivity {
@@ -146,5 +148,6 @@ public class AllMoviesActivity extends AppCompatActivity {
         int resId = getResources().getIdentifier(name, "drawable", getPackageName());
         return resId != 0 ? resId : R.color.dark_gray;
     }
+
 
 }

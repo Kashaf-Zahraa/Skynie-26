@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Skynie">
         <activity
-            android:name=".views.MainActivity"
+            android:name=".views.SplashActivity"
             android:exported="false" />
         <activity
             android:name=".views.TrailerActivity"
@@ -54,7 +54,7 @@
             android:name=".views.OnboardingActivity"
             android:exported="false" />
         <activity
-            android:name=".views.SplashActivity"
+            android:name=".views.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

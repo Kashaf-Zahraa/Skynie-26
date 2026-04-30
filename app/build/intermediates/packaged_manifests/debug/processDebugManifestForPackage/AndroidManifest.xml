@@ -38,7 +38,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.Skynie" >
         <activity
-            android:name="com.example.skynie.views.MainActivity"
+            android:name="com.example.skynie.views.SplashActivity"
             android:exported="false" />
         <activity
             android:name="com.example.skynie.views.TrailerActivity"
@@ -78,7 +78,7 @@
             android:name="com.example.skynie.views.OnboardingActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.skynie.views.SplashActivity"
+            android:name="com.example.skynie.views.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

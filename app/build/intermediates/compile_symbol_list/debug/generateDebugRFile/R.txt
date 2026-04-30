@@ -87,6 +87,7 @@ int drawable ic_filter 0x0
 int drawable ic_google 0x0
 int drawable ic_hall 0x0
 int drawable ic_heart 0x0
+int drawable ic_heart_filled 0x0
 int drawable ic_help 0x0
 int drawable ic_home 0x0
 int drawable ic_info 0x0
@@ -97,6 +98,7 @@ int drawable ic_location 0x0
 int drawable ic_location_pin 0x0
 int drawable ic_logout 0x0
 int drawable ic_menu 0x0
+int drawable ic_movie_placeholder 0x0
 int drawable ic_notifications 0x0
 int drawable ic_play 0x0
 int drawable ic_privacy 0x0
@@ -134,6 +136,7 @@ int id btnSendTicket 0x0
 int id btnTrailer 0x0
 int id btn_back 0x0
 int id btn_buy_ticket 0x0
+int id btn_close 0x0
 int id btn_fav 0x0
 int id btn_format 0x0
 int id btn_get_started 0x0
@@ -183,6 +186,7 @@ int id llRightBlock 0x0
 int id ll_bottom_content 0x0
 int id loginButton 0x0
 int id main 0x0
+int id movie_bg 0x0
 int id nav_account 0x0
 int id nav_home 0x0
 int id nav_search 0x0
@@ -203,12 +207,12 @@ int id rvAllMovies 0x0
 int id rvCinemas 0x0
 int id rvTickets 0x0
 int id rv_days 0x0
+int id rv_dialog_actors 0x0
 int id rv_formats 0x0
 int id rv_recommendations 0x0
 int id rv_seats 0x0
 int id rv_show_times 0x0
 int id rv_stars 0x0
-int id rv_videos 0x0
 int id searchBar 0x0
 int id seat_container 0x0
 int id signupButton 0x0
@@ -243,6 +247,8 @@ int id tvSectionTitle 0x0
 int id tvShowDateTime 0x0
 int id tvTicketCount 0x0
 int id tvTime 0x0
+int id tv_actor_name 0x0
+int id tv_actors 0x0
 int id tv_app_name 0x0
 int id tv_audio_format 0x0
 int id tv_cast_character 0x0
@@ -250,6 +256,9 @@ int id tv_cast_name 0x0
 int id tv_day_name 0x0
 int id tv_day_number 0x0
 int id tv_description 0x0
+int id tv_dialog_title 0x0
+int id tv_director 0x0
+int id tv_duration 0x0
 int id tv_film_title 0x0
 int id tv_format_type 0x0
 int id tv_hall_number 0x0
@@ -257,9 +266,9 @@ int id tv_heading_1 0x0
 int id tv_heading_2 0x0
 int id tv_movie_title 0x0
 int id tv_seats_available 0x0
-int id tv_see_more 0x0
 int id tv_showtime 0x0
 int id tv_total_seats 0x0
+int id tv_writer 0x0
 int id vpFeaturedBanner 0x0
 int layout activity_all_movies 0x0
 int layout activity_auth 0x0
@@ -276,10 +285,12 @@ int layout activity_splash 0x0
 int layout activity_ticket_details 0x0
 int layout activity_trailer 0x0
 int layout activity_verify_otp 0x0
+int layout dialog_actors 0x0
 int layout fragment_account 0x0
 int layout fragment_home 0x0
 int layout fragment_my_tickets 0x0
 int layout fragment_search 0x0
+int layout item_actor 0x0
 int layout item_cast_member 0x0
 int layout item_cinema_row 0x0
 int layout item_coming_soon_card 0x0
@@ -371,6 +382,7 @@ int string hello_blank_fragment 0x0
 int string imax 0x0
 int string imdb 0x0
 int string imdb_logo 0x0
+int string josephine_clark 0x0
 int string language 0x0
 int string loca 0x0
 int string location_arrow 0x0
