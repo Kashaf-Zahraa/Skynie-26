@@ -43,7 +43,7 @@
 25-->[com.android.installreferrer:installreferrer:1.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\d1b41cd764fc621fe206ba61e84d08bf\workspace\transformed\installreferrer-1.0\AndroidManifest.xml:9:22-107
 26
 27    <application
-27-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:6:5-100:19
+27-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:6:5-99:19
 28        android:allowBackup="true"
 28-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:7:9-35
 29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -59,189 +59,189 @@
 35        android:label="@string/app_name"
 35-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:11:9-41
 36        android:roundIcon="@mipmap/ic_launcher_round"
-36-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:13:9-54
+36-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:12:9-54
 37        android:supportsRtl="true"
-37-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:14:9-35
+37-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:13:9-35
 38        android:testOnly="true"
 39        android:theme="@style/Theme.Skynie" >
-39-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:15:9-44
+39-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:14:9-44
 40        <activity
-40-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:16:9-18:40
+40-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:15:9-17:40
 41            android:name="com.example.skynie.views.SplashActivity"
-41-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:17:13-49
+41-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:16:13-49
 42            android:exported="false" />
-42-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:18:13-37
+42-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:17:13-37
 43        <activity
-43-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:19:9-21:40
+43-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:18:9-20:40
 44            android:name="com.example.skynie.views.TrailerActivity"
-44-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:20:13-50
+44-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:19:13-50
 45            android:exported="false" />
-45-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:21:13-37
+45-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:20:13-37
 46        <activity android:name="com.example.skynie.views.AllMoviesActivity" />
-46-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:22:9-61
-46-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:22:19-58
+46-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:21:9-61
+46-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:21:19-58
 47        <activity
-47-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:23:9-25:40
+47-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:22:9-24:40
 48            android:name="com.example.skynie.views.TicketDetailsActivity"
-48-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:24:13-56
+48-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:23:13-56
 49            android:exported="false" />
-49-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:25:13-37
+49-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:24:13-37
 50        <activity
-50-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:26:9-28:40
+50-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:25:9-27:40
 51            android:name="com.example.skynie.views.OrderDetailsActivity"
-51-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:27:13-55
+51-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:26:13-55
 52            android:exported="false" />
-52-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:28:13-37
+52-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:27:13-37
 53        <activity
-53-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:29:9-31:40
+53-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:28:9-30:40
 54            android:name="com.example.skynie.views.SeatsActivity"
-54-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:30:13-48
+54-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:29:13-48
 55            android:exported="false" />
-55-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:31:13-37
+55-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:30:13-37
 56        <activity
-56-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:32:9-34:40
+56-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:31:9-33:40
 57            android:name="com.example.skynie.views.BookingActivity"
-57-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:33:13-50
+57-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:32:13-50
 58            android:exported="false" />
-58-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:34:13-37
+58-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:33:13-37
 59        <activity
-59-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:35:9-37:40
+59-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:34:9-36:40
 60            android:name="com.example.skynie.views.FilmDetailsActivity"
-60-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:36:13-54
+60-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:35:13-54
 61            android:exported="false" />
-61-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:37:13-37
+61-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:36:13-37
 62        <activity
-62-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:38:9-40:40
+62-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:37:9-39:40
 63            android:name="com.example.skynie.views.VerifyOTP_Activity"
-63-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:39:13-53
+63-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:38:13-53
 64            android:exported="false" />
-64-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:40:13-37
+64-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:39:13-37
 65        <activity
-65-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:41:9-43:40
+65-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:40:9-42:40
 66            android:name="com.example.skynie.views.ForgotPasswordActivity"
-66-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:42:13-57
+66-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:41:13-57
 67            android:exported="false" />
-67-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:43:13-37
+67-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:42:13-37
 68        <activity
-68-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:44:9-46:40
+68-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:43:9-45:40
 69            android:name="com.example.skynie.views.SignupActivity"
-69-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:45:13-49
+69-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:44:13-49
 70            android:exported="false" />
-70-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:46:13-37
+70-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:45:13-37
 71        <activity
-71-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:47:9-49:40
+71-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:46:9-48:40
 72            android:name="com.example.skynie.views.LoginActivity"
-72-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:48:13-48
+72-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:47:13-48
 73            android:exported="false" />
-73-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:49:13-37
+73-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:48:13-37
 74        <activity
-74-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:50:9-52:40
+74-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:49:9-51:40
 75            android:name="com.example.skynie.views.AuthActivity"
-75-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:51:13-47
+75-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:50:13-47
 76            android:exported="false" />
-76-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:52:13-37
+76-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:51:13-37
 77        <activity
-77-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:53:9-55:40
+77-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:52:9-54:40
 78            android:name="com.example.skynie.views.OnboardingActivity"
-78-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:54:13-53
+78-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:53:13-53
 79            android:exported="false" />
-79-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:55:13-37
+79-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:54:13-37
 80        <activity
-80-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:56:9-64:20
+80-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:55:9-63:20
 81            android:name="com.example.skynie.views.MainActivity"
-81-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:57:13-47
+81-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:56:13-47
 82            android:exported="true" >
-82-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:58:13-36
+82-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:57:13-36
 83            <intent-filter>
-83-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:59:13-63:29
+83-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:58:13-62:29
 84                <action android:name="android.intent.action.MAIN" />
-84-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:60:17-69
-84-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:60:25-66
+84-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:59:17-69
+84-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:59:25-66
 85
 86                <category android:name="android.intent.category.LAUNCHER" />
-86-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:62:17-77
-86-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:62:27-74
+86-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:61:17-77
+86-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:61:27-74
 87            </intent-filter>
 88        </activity>
 89
 90        <!-- Facebook App ID -->
 91        <meta-data
-91-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:67:9-69:54
+91-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:66:9-68:54
 92            android:name="com.facebook.sdk.ApplicationId"
-92-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:68:13-58
+92-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:67:13-58
 93            android:value="@string/facebook_app_id" />
-93-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:69:13-52
+93-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:68:13-52
 94
 95        <!-- Facebook Client Token -->
 96        <meta-data
-96-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:72:9-74:63
+96-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:71:9-73:63
 97            android:name="com.facebook.sdk.ClientToken"
-97-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:73:13-56
+97-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:72:13-56
 98            android:value="2d2634232a19691f7c1014e851e5b1f0" />
-98-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:74:13-61
+98-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:73:13-61
 99
 100        <!-- Facebook Login Activity -->
 101        <activity
-101-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:77:9-80:47
+101-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:76:9-79:47
 102            android:name="com.facebook.FacebookActivity"
-102-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:78:13-57
+102-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:77:13-57
 103            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-103-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:79:13-96
+103-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:78:13-96
 104            android:label="@string/app_name"
-104-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:80:13-45
+104-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:79:13-45
 105            android:theme="@style/com_facebook_activity_theme" />
 105-->[com.facebook.android:facebook-common:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:25:13-63
 106        <activity
-106-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:82:9-91:20
+106-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:81:9-90:20
 107            android:name="com.facebook.CustomTabActivity"
-107-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:83:13-58
+107-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:82:13-58
 108            android:exported="true" >
-108-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:84:13-36
+108-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:83:13-36
 109            <intent-filter>
-109-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:13-90:29
+109-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:84:13-89:29
 110                <action android:name="android.intent.action.VIEW" />
-110-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-69
-110-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:25-66
+110-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:17-69
+110-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:25-66
 111
 112                <category android:name="android.intent.category.DEFAULT" />
-112-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-76
-112-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-73
+112-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-76
+112-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:27-73
 113                <category android:name="android.intent.category.BROWSABLE" />
-113-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-78
-113-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:27-75
+113-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-78
+113-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-75
 114
 115                <data android:scheme="@string/fb_login_protocol_scheme" />
-115-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:89:17-75
-115-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:89:23-72
+115-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-75
+115-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:23-72
 116            </intent-filter>
 117            <intent-filter>
 117-->[com.facebook.android:facebook-common:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:31:13-40:29
 118                <action android:name="android.intent.action.VIEW" />
-118-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-69
-118-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:25-66
+118-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:17-69
+118-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:25-66
 119
 120                <category android:name="android.intent.category.DEFAULT" />
-120-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-76
-120-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-73
+120-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-76
+120-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:27-73
 121                <category android:name="android.intent.category.BROWSABLE" />
-121-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-78
-121-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:27-75
+121-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-78
+121-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-75
 122
 123                <data
-123-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:89:17-75
+123-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-75
 124                    android:host="cct.com.example.skynie"
 125                    android:scheme="fbconnect" />
-125-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:89:23-72
+125-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:23-72
 126            </intent-filter>
 127        </activity>
 128
 129        <!-- Google Services -->
 130        <meta-data
-130-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:94:9-96:68
+130-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:93:9-95:68
 131            android:name="com.google.android.gms.version"
-131-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:95:13-58
+131-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:94:13-58
 132            android:value="@integer/google_play_services_version" />
-132-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:96:13-66
+132-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:95:13-66
 133
 134        <activity android:name="com.facebook.CustomTabMainActivity" />
 134-->[com.facebook.android:facebook-common:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:26:9-71
@@ -261,22 +261,22 @@
 141            <intent-filter>
 141-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:35:13-45:29
 142                <action android:name="android.intent.action.VIEW" />
-142-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-69
-142-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:25-66
+142-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:17-69
+142-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:25-66
 143
 144                <category android:name="android.intent.category.DEFAULT" />
-144-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-76
-144-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-73
+144-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-76
+144-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:27-73
 145                <category android:name="android.intent.category.BROWSABLE" />
-145-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-78
-145-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:27-75
+145-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-78
+145-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-75
 146
 147                <data
-147-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:89:17-75
+147-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-75
 148                    android:host="firebase.auth"
 149                    android:path="/"
 150                    android:scheme="genericidp" />
-150-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:89:23-72
+150-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:23-72
 151            </intent-filter>
 152        </activity>
 153        <activity
@@ -294,22 +294,22 @@
 159            <intent-filter>
 159-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:53:13-63:29
 160                <action android:name="android.intent.action.VIEW" />
-160-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-69
-160-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:25-66
+160-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:17-69
+160-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:25-66
 161
 162                <category android:name="android.intent.category.DEFAULT" />
-162-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-76
-162-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-73
+162-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-76
+162-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:27-73
 163                <category android:name="android.intent.category.BROWSABLE" />
-163-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-78
-163-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:27-75
+163-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-78
+163-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-75
 164
 165                <data
-165-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:89:17-75
+165-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-75
 166                    android:host="firebase.auth"
 167                    android:path="/"
 168                    android:scheme="recaptcha" />
-168-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:89:23-72
+168-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:23-72
 169            </intent-filter>
 170        </activity>
 171

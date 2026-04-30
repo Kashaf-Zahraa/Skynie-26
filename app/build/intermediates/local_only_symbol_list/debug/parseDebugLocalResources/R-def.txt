@@ -307,6 +307,7 @@ layout item_ticket_card
 layout item_video
 menu bottom_nav_menu
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string _1
 string _12

@@ -305,6 +305,7 @@ int layout item_ticket_card 0x0
 int layout item_video 0x0
 int menu bottom_nav_menu 0x0
 int mipmap ic_launcher 0x0
+int mipmap ic_launcher_foreground 0x0
 int mipmap ic_launcher_round 0x0
 int string _1 0x0
 int string _12 0x0
