@@ -1,23 +1,70 @@
+// Hall.java
 package com.example.skynie.models;
 
 public class Hall {
-
     public String id;
-    public String cinema_id;
-    public String name;
-    public String hall_type;
-    public int total_rows;
-    public int total_cols;
+    public String cinemaId;          // Reference to parent cinema "c1"
+    public String hallNumber;        // "Hall 1", "Hall 7", etc.
+    public String screenType;        // "IMAX", "GOLD", "ScreenX", "4DMAX" - one hall -> one screen type
+    public int totalSeats;
+    public boolean is_active;
 
     public Hall() {}
 
-    public Hall(String id, String cinema_id, String name,
-                String hall_type, int total_rows, int total_cols) {
+    public Hall(String id, String cinemaId, String hallNumber, String screenType, int totalSeats, boolean isActive) {
         this.id = id;
-        this.cinema_id = cinema_id;
-        this.name = name;
-        this.hall_type = hall_type;
-        this.total_rows = total_rows;
-        this.total_cols = total_cols;
+        this.cinemaId = cinemaId;
+        this.hallNumber = hallNumber;
+        this.screenType = screenType;
+        this.totalSeats = totalSeats;
+        this.is_active = isActive;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public boolean isActive() {
+        return is_active;
+    }
+
+    public void setActive(boolean active) {
+        is_active = active;
+    }
+
+    public String getCinemaId() {
+        return cinemaId;
+    }
+
+    public void setCinemaId(String cinemaId) {
+        this.cinemaId = cinemaId;
+    }
+
+    public String getHallNumber() {
+        return hallNumber;
+    }
+
+    public void setHallNumber(String hallNumber) {
+        this.hallNumber = hallNumber;
+    }
+
+    public String getScreenType() {
+        return screenType;
+    }
+
+    public void setScreenType(String screenType) {
+        this.screenType = screenType;
+    }
+
+    public int getTotalSeats() {
+        return totalSeats;
+    }
+
+    public void setTotalSeats(int totalSeats) {
+        this.totalSeats = totalSeats;
     }
 }
