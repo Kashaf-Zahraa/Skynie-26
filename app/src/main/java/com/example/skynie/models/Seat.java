@@ -33,6 +33,7 @@ public class Seat implements Serializable {
         return row + seatNumber;  // Returns "A1", "B5", etc.
     }
 
+
     public String getId() {
         return id;
     }

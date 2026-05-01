@@ -2,6 +2,7 @@ package com.example.skynie.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.skynie.R;
 import com.example.skynie.adapters.SeatAdapter;
 import com.example.skynie.models.Seat;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -140,10 +142,22 @@ public class SeatsActivity extends AppCompatActivity {
                 Toast.makeText(this, "Please select at least one seat", Toast.LENGTH_SHORT).show();
                 return;
             }
-            // Calculate total price
+
             double totalPrice = selectedSeats.size() * price; //price
 
             //WRITE TO FIREBASE
+            DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference();
+            for (Seat seat:selectedSeats){
+                seat.status="Booked";
+                seat.userId= FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+                String fullSeat=seat.getHallShowtimeId()+"_"+seat.getFullSeatNumber();
+
+                databaseReference.child("seats")
+                        .child(fullSeat)
+                        .setValue(seat);
+            }
+            adapter.notifyDataSetChanged();
 
             // Pass to next activity
             Intent intent = new Intent(this, OrderDetailsActivity.class);
