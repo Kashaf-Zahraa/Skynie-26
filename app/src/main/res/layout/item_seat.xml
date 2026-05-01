@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="56dp"
-    android:layout_height="56dp"
-    android:layout_margin="4dp">
+    android:layout_width="35dp"
+    android:layout_height="35dp"
+    android:layout_margin="3dp">
 
     <TextView
-        android:id="@+id/seat_container"
+        android:id="@+id/seat_number"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/button_transparent_bg"
         android:clickable="true"
-        android:focusable="true">
+        android:focusable="true"
+        android:text="@string/a1"
+        android:textColor="@color/white"
+        android:gravity="center">
 
     </TextView>
 

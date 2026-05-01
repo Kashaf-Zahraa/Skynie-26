@@ -7,17 +7,19 @@ public class Seat {
     public String seatNumber;            // "1", "5", "7"
     public String userId="";                // User who booked (for authentication), default empty
     public int price;                    // Price at time of booking
+    public String status="Available"; //available, booked
 
     public Seat() {}
 
     public Seat(String id, String hallShowtimeId, String row, String seatNumber,
-                   String userId, int price) {
+                   String userId, int price,String status) {
         this.id = id;
         this.hallShowtimeId = hallShowtimeId;
         this.row = row;
         this.seatNumber = seatNumber;
         this.userId = userId;
         this.price = price;
+        this.status=status;
     }
     public boolean isAvailable(){
         return userId == null || userId.isEmpty();

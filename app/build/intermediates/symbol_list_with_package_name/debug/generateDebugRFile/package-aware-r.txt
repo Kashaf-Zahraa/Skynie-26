@@ -214,8 +214,10 @@ id rv_recommendations
 id rv_seats
 id rv_show_times
 id rv_stars
+id screenType
 id searchBar
-id seat_container
+id seat_card
+id seat_number
 id signupButton
 id signupLink
 id switchPromo
@@ -254,6 +256,8 @@ id tv_app_name
 id tv_audio_format
 id tv_cast_character
 id tv_cast_name
+id tv_cinema
+id tv_date
 id tv_day_name
 id tv_day_number
 id tv_description
@@ -268,6 +272,7 @@ id tv_heading_2
 id tv_movie_title
 id tv_seats_available
 id tv_showtime
+id tv_time
 id tv_total_seats
 id tv_writer
 id vpFeaturedBanner
@@ -319,6 +324,7 @@ string _70
 string _80
 string _8_9_10_imdb
 string _96
+string a1
 string account
 string action
 string action_emoji

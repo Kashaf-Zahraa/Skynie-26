@@ -124,6 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/theater"
+                    android:id="@+id/tv_cinema"
                     android:textColor="@color/light_gary"
                     android:textSize="10sp" />
             </LinearLayout>
@@ -161,6 +162,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/tv_hall_number"
                     android:text="@string/hall"
                     android:textColor="@color/light_gary"
                     android:textSize="10sp" />
@@ -198,6 +200,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/date"
+                    android:id="@+id/tv_date"
                     android:textColor="@color/light_gary"
                     android:textSize="10sp" />
             </LinearLayout>
@@ -236,6 +239,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/time"
+                    android:id="@+id/tv_time"
                     android:textColor="@color/light_gary"
                     android:textSize="10sp" />
             </LinearLayout>

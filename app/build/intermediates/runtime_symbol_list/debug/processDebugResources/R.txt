@@ -4403,6 +4403,7 @@ int id save_overlay_view 0x7f0901ff
 int id sawtooth 0x7f090200
 int id scale 0x7f090201
 int id screen 0x7f090202
+int id screenType 0x7f0902c8
 int id scroll 0x7f090203
 int id scrollIndicatorDown 0x7f090204
 int id scrollIndicatorUp 0x7f090205
@@ -4419,7 +4420,8 @@ int id search_mag_icon 0x7f09020f
 int id search_plate 0x7f090210
 int id search_src_text 0x7f090211
 int id search_voice_btn 0x7f090212
-int id seat_container 0x7f090213
+int id seat_card 0x7f0902cd
+int id seat_number 0x7f0902c9
 int id select_dialog_listview 0x7f090214
 int id selected 0x7f090215
 int id selection_type 0x7f090216
@@ -4554,6 +4556,8 @@ int id tv_app_name 0x7f090295
 int id tv_audio_format 0x7f090296
 int id tv_cast_character 0x7f090297
 int id tv_cast_name 0x7f090298
+int id tv_cinema 0x7f0902ca
+int id tv_date 0x7f0902cb
 int id tv_day_name 0x7f090299
 int id tv_day_number 0x7f09029a
 int id tv_description 0x7f09029b
@@ -4568,6 +4572,7 @@ int id tv_heading_2 0x7f0902a3
 int id tv_movie_title 0x7f0902a4
 int id tv_seats_available 0x7f0902a5
 int id tv_showtime 0x7f0902a6
+int id tv_time 0x7f0902cc
 int id tv_total_seats 0x7f0902a7
 int id tv_writer 0x7f0902a8
 int id unchecked 0x7f0902a9
@@ -4864,6 +4869,7 @@ int string _70 0x7f120007
 int string _80 0x7f120008
 int string _8_9_10_imdb 0x7f120009
 int string _96 0x7f12000a
+int string a1 0x7f120170
 int string abc_action_bar_home_description 0x7f12000b
 int string abc_action_bar_up_description 0x7f12000c
 int string abc_action_menu_overflow_description 0x7f12000d

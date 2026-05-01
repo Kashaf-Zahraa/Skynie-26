@@ -213,8 +213,10 @@ int id rv_recommendations 0x0
 int id rv_seats 0x0
 int id rv_show_times 0x0
 int id rv_stars 0x0
+int id screenType 0x0
 int id searchBar 0x0
-int id seat_container 0x0
+int id seat_card 0x0
+int id seat_number 0x0
 int id signupButton 0x0
 int id signupLink 0x0
 int id switchPromo 0x0
@@ -253,6 +255,8 @@ int id tv_app_name 0x0
 int id tv_audio_format 0x0
 int id tv_cast_character 0x0
 int id tv_cast_name 0x0
+int id tv_cinema 0x0
+int id tv_date 0x0
 int id tv_day_name 0x0
 int id tv_day_number 0x0
 int id tv_description 0x0
@@ -267,6 +271,7 @@ int id tv_heading_2 0x0
 int id tv_movie_title 0x0
 int id tv_seats_available 0x0
 int id tv_showtime 0x0
+int id tv_time 0x0
 int id tv_total_seats 0x0
 int id tv_writer 0x0
 int id vpFeaturedBanner 0x0
@@ -318,6 +323,7 @@ int string _70 0x0
 int string _80 0x0
 int string _8_9_10_imdb 0x0
 int string _96 0x0
+int string a1 0x0
 int string account 0x0
 int string action 0x0
 int string action_emoji 0x0

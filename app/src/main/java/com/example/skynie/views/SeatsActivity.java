@@ -4,23 +4,37 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.skynie.R;
+import com.example.skynie.adapters.SeatAdapter;
+import com.example.skynie.models.Seat;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class SeatsActivity extends AppCompatActivity {
     ImageButton btnBack, btnFav;
-    TextView tvFilmTitle, screenType, tvCinemaName, tvHallName, tvDate, tvTime;
+    TextView tvFilmTitle, screenType, tvCinema, tvHall, tvDate, tvTime;
     RecyclerView rvSeats;
+    SeatAdapter adapter;
+    ArrayList<Seat> seats=new ArrayList<>();
     AppCompatButton btnProceedCheckout;
+    String hallShowTimeId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +46,9 @@ public class SeatsActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        init();
         getIntentValues();
+        getSeatsFromFirebase(hallShowTimeId);
+        init();
         setOnClickListeners();
     }
 
@@ -43,27 +58,67 @@ public class SeatsActivity extends AppCompatActivity {
         tvFilmTitle = findViewById(R.id.tv_film_title);
         screenType = findViewById(R.id.screenType);
 
-//        tvCinemaName = findViewById(R.id.tv_cinema_name); // You need to add this ID in XML
-//        tvHallName = findViewById(R.id.tv_hall_name); // You need to add this ID in XML
-//        tvDate = findViewById(R.id.tv_date);
-//        tvTime = findViewById(R.id.tv_time);
+        tvCinema = findViewById(R.id.tv_cinema); // You need to add this ID in XML
+        tvHall = findViewById(R.id.tv_hall_number); // You need to add this ID in XML
+        tvDate = findViewById(R.id.tv_date);
+        tvTime = findViewById(R.id.tv_time);
+
         rvSeats = findViewById(R.id.rv_seats);
+        rvSeats.setHasFixedSize(true);
+        rvSeats.setLayoutManager(new GridLayoutManager(this,8));
+        adapter=new SeatAdapter(this,seats);
+        rvSeats.setAdapter(adapter);
+
         btnProceedCheckout = findViewById(R.id.btn_proceed_checkout);
     }
+
+    private void getSeatsFromFirebase(String hallShowTimeId) {
+        //hst given get seats
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("seats");
+
+        databaseReference.orderByChild("hallShowtimeId").equalTo(hallShowTimeId)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                seats.clear();
+                if(snapshot.exists()){
+                    for (DataSnapshot seatSnapshot:snapshot.getChildren()){
+                        Seat seat=seatSnapshot.getValue(Seat.class);
+                        if(seat != null) {
+                            seats.add(seat);
+                        }
+                    }
+                    adapter.notifyDataSetChanged();
+                }else {
+                    Toast.makeText(SeatsActivity.this, "Seat not found", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(SeatsActivity.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+
+
+        });
+        //seats list wil get populated
+
+    }
+
     private void getIntentValues() {
         Intent intent = getIntent();
+
+        hallShowTimeId=intent.getStringExtra("hallShowTime_id");
         intent.getStringExtra("showtime_id");
         intent.getStringExtra("showtime_time");
         intent.getIntExtra("available_seats", 0);
         intent.getDoubleExtra("price", 0.0);
         intent.getStringExtra("movie_id");
         intent.getStringExtra("cinema_id");
-
         intent.getStringExtra("hall_id");
         intent.getStringExtra("hall_number");
         intent.getStringExtra("screen_type");
         intent.getIntExtra("total_seats", 0);
-
         intent.getStringExtra("audio_format");
     }
     private void setOnClickListeners() {
