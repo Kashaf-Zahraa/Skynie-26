@@ -29,10 +29,14 @@ import java.util.ArrayList;
 
 public class SeatsActivity extends AppCompatActivity {
     ImageButton btnBack, btnFav;
-    TextView tvFilmTitle, screenType, tvCinema, tvHall, tvDate, tvTime;
+    TextView tvFilmTitle, tvscreenType, tvCinema, tvHall, tvDate, tvTime;
     RecyclerView rvSeats;
     SeatAdapter adapter;
+    String showtimeId, showtimeTime, movieId, cinemaId, hallId, hallNumber, screenType, audioFormat;
+    int availableSeats, totalSeats;
+    double price;
     ArrayList<Seat> seats=new ArrayList<>();
+    ArrayList<Seat> selectedSeats = new ArrayList<>();
     AppCompatButton btnProceedCheckout;
     String hallShowTimeId;
 
@@ -56,7 +60,7 @@ public class SeatsActivity extends AppCompatActivity {
         btnBack = findViewById(R.id.btn_back);
         btnFav = findViewById(R.id.btn_fav);
         tvFilmTitle = findViewById(R.id.tv_film_title);
-        screenType = findViewById(R.id.screenType);
+        tvscreenType = findViewById(R.id.screenType);
 
         tvCinema = findViewById(R.id.tv_cinema); // You need to add this ID in XML
         tvHall = findViewById(R.id.tv_hall_number); // You need to add this ID in XML
@@ -108,18 +112,18 @@ public class SeatsActivity extends AppCompatActivity {
     private void getIntentValues() {
         Intent intent = getIntent();
 
-        hallShowTimeId=intent.getStringExtra("hallShowTime_id");
-        intent.getStringExtra("showtime_id");
-        intent.getStringExtra("showtime_time");
-        intent.getIntExtra("available_seats", 0);
-        intent.getDoubleExtra("price", 0.0);
-        intent.getStringExtra("movie_id");
-        intent.getStringExtra("cinema_id");
-        intent.getStringExtra("hall_id");
-        intent.getStringExtra("hall_number");
-        intent.getStringExtra("screen_type");
-        intent.getIntExtra("total_seats", 0);
-        intent.getStringExtra("audio_format");
+        hallShowTimeId = intent.getStringExtra("hallShowTime_id");
+        showtimeId = intent.getStringExtra("showtime_id");
+        showtimeTime = intent.getStringExtra("showtime_time");
+        availableSeats = intent.getIntExtra("available_seats", 0);
+        price = intent.getDoubleExtra("price", 0.0);
+        movieId = intent.getStringExtra("movie_id");
+        cinemaId = intent.getStringExtra("cinema_id");
+        hallId = intent.getStringExtra("hall_id");
+        hallNumber = intent.getStringExtra("hall_number");
+        screenType = intent.getStringExtra("screen_type");
+        totalSeats = intent.getIntExtra("total_seats", 0);
+        audioFormat = intent.getStringExtra("audio_format");
     }
     private void setOnClickListeners() {
         btnBack.setOnClickListener((v) -> {
@@ -131,8 +135,35 @@ public class SeatsActivity extends AppCompatActivity {
             //for now
         });
         btnProceedCheckout.setOnClickListener((v) -> {
-            startActivity(new Intent(this, OrderDetailsActivity.class));
-            finish();
+            selectedSeats=adapter.getSelectedSeats();
+            if (selectedSeats.isEmpty()) {
+                Toast.makeText(this, "Please select at least one seat", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            // Calculate total price
+            double totalPrice = selectedSeats.size() * price; //price
+
+            // Pass to next activity
+            Intent intent = new Intent(this, OrderDetailsActivity.class);
+
+            intent.putExtra("selected_seats", selectedSeats); // ArrayList of seats
+            intent.putExtra("total_price", totalPrice);
+            intent.putExtra("hallShowtime_id", hallShowTimeId);
+            intent.putExtra("showtime_id", showtimeId);
+            intent.putExtra("showtime_time", showtimeTime);
+            intent.putExtra("available_seats", availableSeats);
+            intent.putExtra("price", price);
+            intent.putExtra("movie_id", movieId);
+            intent.putExtra("cinema_id", cinemaId);
+            intent.putExtra("hall_id", hallId);
+            intent.putExtra("hall_number", hallNumber);
+            intent.putExtra("screen_type", screenType);
+            intent.putExtra("total_seats", totalSeats);
+            intent.putExtra("audio_format", audioFormat);
+            intent.putExtra("date", tvDate.toString().trim());
+            intent.putExtra("time", tvTime.toString().trim());
+
+            startActivity(intent);
         });
     }
 

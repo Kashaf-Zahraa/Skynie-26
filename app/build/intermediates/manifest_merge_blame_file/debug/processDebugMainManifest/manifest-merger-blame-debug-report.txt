@@ -67,8 +67,8 @@
 39-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:14:9-44
 40        <activity
 40-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:15:9-17:40
-41            android:name="com.example.skynie.views.SplashActivity"
-41-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:16:13-49
+41            android:name="com.example.skynie.views.MainActivity"
+41-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:16:13-47
 42            android:exported="false" />
 42-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:17:13-37
 43        <activity
@@ -148,8 +148,8 @@
 79-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:54:13-37
 80        <activity
 80-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:55:9-63:20
-81            android:name="com.example.skynie.views.MainActivity"
-81-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:56:13-47
+81            android:name="com.example.skynie.views.SplashActivity"
+81-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:56:13-49
 82            android:exported="true" >
 82-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:57:13-36
 83            <intent-filter>

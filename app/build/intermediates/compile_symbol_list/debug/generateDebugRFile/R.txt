@@ -215,7 +215,6 @@ int id rv_show_times 0x0
 int id rv_stars 0x0
 int id screenType 0x0
 int id searchBar 0x0
-int id seat_card 0x0
 int id seat_number 0x0
 int id signupButton 0x0
 int id signupLink 0x0

@@ -4420,7 +4420,6 @@ int id search_mag_icon 0x7f09020f
 int id search_plate 0x7f090210
 int id search_src_text 0x7f090211
 int id search_voice_btn 0x7f090212
-int id seat_card 0x7f0902cd
 int id seat_number 0x7f0902c9
 int id select_dialog_listview 0x7f090214
 int id selected 0x7f090215

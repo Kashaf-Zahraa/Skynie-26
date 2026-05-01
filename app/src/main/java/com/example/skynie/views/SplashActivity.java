@@ -60,7 +60,6 @@ public class SplashActivity extends AppCompatActivity {
                         tvAppName.setVisibility(View.VISIBLE);
                         tvAppName.startAnimation(fadeAnim);
 
-                        //ofcourse yahan oboaeding khu lr hi hay screen kuch seconds baad
                         new Handler(Looper.getMainLooper()).postDelayed(() -> {
                             startActivity(new Intent(
                                     SplashActivity.this, OnboardingActivity.class));

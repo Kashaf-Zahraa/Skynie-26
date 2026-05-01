@@ -216,7 +216,6 @@ id rv_show_times
 id rv_stars
 id screenType
 id searchBar
-id seat_card
 id seat_number
 id signupButton
 id signupLink
