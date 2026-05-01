@@ -2,6 +2,7 @@ package com.example.skynie.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,8 @@ public class OrderDetailsActivity extends AppCompatActivity {
             return insets;
         });
 
+        // ADD THIS TOAST TO CONFIRM ACTIVITY OPENS
+        Toast.makeText(this, "OrderDetailsActivity opened!", Toast.LENGTH_SHORT).show();
         getIntentValues();
     }
 

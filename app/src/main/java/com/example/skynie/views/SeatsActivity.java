@@ -143,6 +143,8 @@ public class SeatsActivity extends AppCompatActivity {
             // Calculate total price
             double totalPrice = selectedSeats.size() * price; //price
 
+            //WRITE TO FIREBASE
+
             // Pass to next activity
             Intent intent = new Intent(this, OrderDetailsActivity.class);
 
@@ -160,8 +162,8 @@ public class SeatsActivity extends AppCompatActivity {
             intent.putExtra("screen_type", screenType);
             intent.putExtra("total_seats", totalSeats);
             intent.putExtra("audio_format", audioFormat);
-            intent.putExtra("date", tvDate.toString().trim());
-            intent.putExtra("time", tvTime.toString().trim());
+//            intent.putExtra("date", tvDate.toString().trim());
+//            intent.putExtra("time", tvTime.toString().trim());
 
             startActivity(intent);
         });

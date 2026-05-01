@@ -1,6 +1,8 @@
 package com.example.skynie.models;
 
-public class Seat {
+import java.io.Serializable;
+
+public class Seat implements Serializable {
     public String id;                    // Unique booking ID "b1"
     public String hallShowtimeId;        // Reference to HallShowTime "hst1"
     public String row;                   // "A", "B", "C"

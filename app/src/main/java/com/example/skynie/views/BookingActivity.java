@@ -302,9 +302,7 @@ public class BookingActivity extends AppCompatActivity {
             if (filteredHallShowtimes.isEmpty()) {
                 Toast.makeText(BookingActivity.this, "No showtimes available for this movie", Toast.LENGTH_SHORT).show();
             } else {
-                adapter.updateItems(filteredHallShowtimes, hallsList, showtimesList);
-                Toast.makeText(BookingActivity.this, "Found " + filteredHallShowtimes.size() + " showtimes", Toast.LENGTH_SHORT).show();
-            }
+                adapter.updateItems(filteredHallShowtimes, hallsList, showtimesList);}
         });
     }
     private void setupClickListeners() {
