@@ -207,8 +207,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/rotten_tomatoes"
+                        android:layout_gravity="center"
                         android:textColor="#FFFFFF"
-                        android:textSize="12sp" />
+                        android:textSize="10sp" />
 
                 </LinearLayout>
                 <TextView
@@ -233,7 +234,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/cornpass"
                         android:textColor="#FFFFFF"
-                        android:textSize="12sp"/>
+                        android:textSize="10sp"/>
                 </LinearLayout>
             </LinearLayout>
 

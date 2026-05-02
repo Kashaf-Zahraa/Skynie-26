@@ -34,7 +34,7 @@ public class SeatsActivity extends AppCompatActivity {
     TextView tvFilmTitle, tvscreenType, tvCinema, tvHall, tvDate, tvTime;
     RecyclerView rvSeats;
     SeatAdapter adapter;
-    String showtimeId, showtimeTime, movieId, cinemaId, hallId, hallNumber, screenType, audioFormat;
+    String showtimeId, showtimeTime, movieId, cinemaId, hallId, hallNumber, screenType, audioFormat,movieTitle,cinemaName;
     int availableSeats, totalSeats;
     double price;
     ArrayList<Seat> seats=new ArrayList<>();
@@ -53,9 +53,9 @@ public class SeatsActivity extends AppCompatActivity {
             return insets;
         });
         getIntentValues();
+        init();
         setMovieInfo();
         getSeatsFromFirebase(hallShowTimeId);
-        init();
         setOnClickListeners();
     }
 
@@ -125,12 +125,16 @@ public class SeatsActivity extends AppCompatActivity {
         hallNumber = intent.getStringExtra("hall_number");
         screenType = intent.getStringExtra("screen_type");
         totalSeats = intent.getIntExtra("total_seats", 0);
+        movieTitle = intent.getStringExtra("movie_title");
+        cinemaName = intent.getStringExtra("cinema_name");
 
     }
     private void setMovieInfo(){
         tvscreenType.setText(screenType);
         tvHall.setText(hallNumber);
         tvTime.setText(showtimeTime);
+        tvFilmTitle.setText(movieTitle);
+        tvCinema.setText(cinemaName);
     }
     private void setOnClickListeners() {
         btnBack.setOnClickListener((v) -> {
@@ -181,8 +185,10 @@ public class SeatsActivity extends AppCompatActivity {
             intent.putExtra("screen_type", screenType);
             intent.putExtra("total_seats", totalSeats);
             intent.putExtra("audio_format", audioFormat);
-//            intent.putExtra("date", tvDate.toString().trim());
-//            intent.putExtra("time", tvTime.toString().trim());
+            intent.putExtra("movie_title", movieTitle);
+            intent.putExtra("cinema_name", cinemaName);
+//            intent.putExtra("date", dat);
+            intent.putExtra("time", tvTime.getText().toString().trim());
 
             startActivity(intent);
         });
