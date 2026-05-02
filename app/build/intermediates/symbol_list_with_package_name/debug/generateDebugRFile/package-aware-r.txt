@@ -223,7 +223,6 @@ id rvAllMovies
 id rvCinemas
 id rvTickets
 id rv_days
-id rv_dialog_actors
 id rv_formats
 id rv_recommendations
 id rv_seats
@@ -279,6 +278,7 @@ id tvTotal
 id tvTotalTime
 id tv_actor_name
 id tv_actors
+id tv_actors_list
 id tv_app_name
 id tv_cast_character
 id tv_cast_name

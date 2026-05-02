@@ -23,7 +23,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
         ivLogo    = findViewById(R.id.iv_logo);
         tvAppName = findViewById(R.id.tv_app_name);
 

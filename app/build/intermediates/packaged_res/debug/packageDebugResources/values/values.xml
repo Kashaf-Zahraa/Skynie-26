@@ -195,10 +195,6 @@
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:statusBarColor">@color/background_dark</item>
     </style>
-    <style name="Base.Theme.Skynie" parent="Theme.Material3.DayNight.NoActionBar">
-        
-        
-    </style>
     <style name="Button.Primary" parent="Widget.AppCompat.Button.Colored">
         <item name="android:textColor">@color/text_primary</item>
         <item name="android:textSize">16sp</item>
@@ -231,5 +227,10 @@
         <item name="android:textColor">@color/text_primary</item>
         <item name="android:textStyle">bold</item>
     </style>
-    <style name="Theme.Skynie" parent="Base.Theme.Skynie"/>
+    <style name="Theme.Skynie" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="android:statusBarColor">@color/dark_bg</item>
+        
+        <item name="android:navigationBarColor">@color/dark_bg</item>
+    </style>
 </resources>

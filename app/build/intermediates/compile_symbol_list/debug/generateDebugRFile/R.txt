@@ -222,7 +222,6 @@ int id rvAllMovies 0x0
 int id rvCinemas 0x0
 int id rvTickets 0x0
 int id rv_days 0x0
-int id rv_dialog_actors 0x0
 int id rv_formats 0x0
 int id rv_recommendations 0x0
 int id rv_seats 0x0
@@ -278,6 +277,7 @@ int id tvTotal 0x0
 int id tvTotalTime 0x0
 int id tv_actor_name 0x0
 int id tv_actors 0x0
+int id tv_actors_list 0x0
 int id tv_app_name 0x0
 int id tv_cast_character 0x0
 int id tv_cast_name 0x0

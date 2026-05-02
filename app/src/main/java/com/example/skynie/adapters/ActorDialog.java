@@ -1,18 +1,17 @@
-// ActorDialog.java
 package com.example.skynie.adapters;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.skynie.R;
-import com.example.skynie.adapters.ActorAdapter;
+
 import java.util.List;
 
 public class ActorDialog extends Dialog {
@@ -31,15 +30,20 @@ public class ActorDialog extends Dialog {
         setContentView(R.layout.dialog_actors);
 
         TextView tvTitle = findViewById(R.id.tv_dialog_title);
-        RecyclerView rvActors = findViewById(R.id.rv_dialog_actors);
+        TextView tvActorsList = findViewById(R.id.tv_actors_list);
         AppCompatButton btnClose = findViewById(R.id.btn_close);
 
         tvTitle.setText(title);
 
-        // Show ALL actors in dialog
-        ActorAdapter adapter = new ActorAdapter(actors, null);
-        rvActors.setLayoutManager(new LinearLayoutManager(getContext()));
-        rvActors.setAdapter(adapter);
+        StringBuilder actorsText = new StringBuilder();
+        for (int i = 0; i < actors.size(); i++) {
+            actorsText.append(actors.get(i));
+            if (i < actors.size() - 1) {
+                actorsText.append("\n\n"); // Double line break between names
+                // Or use "\n" for single line break
+            }
+        }
+        tvActorsList.setText(actorsText.toString());
 
         btnClose.setOnClickListener(v -> dismiss());
     }

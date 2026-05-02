@@ -1,35 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
-    android:layout_height="400dp"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@color/skynie_grey">
+android:layout_width="300dp"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="16dp"
+android:background="@color/skynie_grey">
+
+<TextView
+    android:id="@+id/tv_dialog_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="CAST"
+    android:textColor="@color/skynie_red"
+    android:gravity="center"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    android:paddingBottom="16dp" />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:layout_marginBottom="16dp">
 
     <TextView
-        android:id="@+id/tv_dialog_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Full Cast"
         android:gravity="center"
-        android:textColor="@color/text_primary"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:paddingBottom="16dp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_dialog_actors"
+        android:id="@+id/tv_actors_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:nestedScrollingEnabled="false" />
+        android:textSize="16sp"
+        android:lineSpacingExtra="8dp"
+        android:padding="8dp" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_close"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:text="Close"
-        android:textColor="@color/white"
-        android:background="@drawable/button_red_background" />
+</ScrollView>
+
+<androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/btn_close"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_marginTop="16dp"
+    android:text="Close"
+    android:textColor="@color/white"
+    android:background="@drawable/button_red_background" />
+
 
 </LinearLayout>
+
+

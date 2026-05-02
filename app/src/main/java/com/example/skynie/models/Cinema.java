@@ -1,6 +1,7 @@
 // Cinema.java
 package com.example.skynie.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cinema {
@@ -28,7 +29,17 @@ public class Cinema {
         this.hallShowtimeIds = hallShowtimeIds;
         this.is_active = isActive;
     }
-
+    public Cinema(String id, String name, String address, double latitude, double longitude, List<String> screenTypes, boolean isActive) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.screenTypes = screenTypes;
+        this.is_active = isActive;
+        this.hallIds = new ArrayList<>();
+        this.hallShowtimeIds = new ArrayList<>();
+    }
     public String getId() {
         return id;
     }

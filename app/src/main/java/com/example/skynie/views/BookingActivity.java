@@ -49,8 +49,7 @@ public class BookingActivity extends AppCompatActivity {
     TextView tvMovieTitle, tvDuration;
     AppCompatButton btnTrailer;
 
-    String movieId, movieTitle, moviePoster, movieBackdrop,
-            movieRating, movieDuration, movieDescription;
+    String movieId, movieTitle, moviePoster, movieBackdrop,movieRating, movieDuration, movieDescription;
     String cinemaName = "";
 
     List<HallShowTime> hallShowTimes = new ArrayList<>();
