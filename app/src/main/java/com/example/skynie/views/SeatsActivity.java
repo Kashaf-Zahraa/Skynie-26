@@ -137,7 +137,6 @@ public class SeatsActivity extends AppCompatActivity {
 
     private void setOnClickListeners() {
 
-        // ✅ FIX: Back button — sirf finish(), koi naya Intent nahi
         btnBack.setOnClickListener(v -> finish());
 
         btnFav.setOnClickListener(v ->
@@ -154,21 +153,21 @@ public class SeatsActivity extends AppCompatActivity {
 
             double totalPrice = selectedSeats.size() * price;
 
-            // Write booked seats to Firebase
-            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference();
-            String userId = "";
-            if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-                userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-            }
-            final String finalUserId = userId;
-
-            for (Seat seat : selectedSeats) {
-                seat.status = "Booked";
-                seat.userId = finalUserId;
-                String key = seat.getHallShowtimeId() + "_" + seat.getFullSeatNumber();
-                dbRef.child("seats").child(key).setValue(seat);
-            }
-            adapter.notifyDataSetChanged();
+//            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference();
+//            String userId = "";
+//            if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+//                userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//            }
+//            final String finalUserId = userId;
+//
+//            for (Seat seat : selectedSeats) {
+//                seat.status = "Booked";
+//                seat.userId = finalUserId;
+//                String key = seat.getHallShowtimeId() + "_" + seat.getFullSeatNumber();
+//                dbRef.child("seats").child(key).setValue(seat);
+//            }
+//            dbRef.child("showtimes").child(showtimeId).child("availableSeats").setValue(availableSeats - selectedSeats.size());
+//            adapter.notifyDataSetChanged();
 
             // Build seats label: "A5, A6, B3"
             StringBuilder sb = new StringBuilder();

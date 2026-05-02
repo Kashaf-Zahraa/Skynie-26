@@ -323,8 +323,11 @@ public class BookingActivity extends AppCompatActivity {
     }
 
     private void setupClickListeners() {
-        // ✅ FIX: Back button — sirf finish(), koi naya Intent nahi
-        btnBack.setOnClickListener(v -> finish());
+        btnBack.setOnClickListener(v ->{
+            startActivity(new Intent(BookingActivity.this, FilmDetailsActivity.class));
+            finish();
+        });
+
 
         btnTrailer.setOnClickListener(v -> {
             Intent intent = new Intent(this, TrailerActivity.class);
