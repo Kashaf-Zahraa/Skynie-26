@@ -2,7 +2,6 @@ package com.example.skynie.views;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,14 +29,17 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class SeatsActivity extends AppCompatActivity {
+
     ImageButton btnBack, btnFav;
     TextView tvFilmTitle, tvscreenType, tvCinema, tvHall, tvDate, tvTime;
     RecyclerView rvSeats;
     SeatAdapter adapter;
-    String showtimeId, showtimeTime, movieId, cinemaId, hallId, hallNumber, screenType, audioFormat,movieTitle,cinemaName;
+
+    String showtimeId, showtimeTime, movieId, cinemaId, hallId, hallNumber,
+            screenType, audioFormat, movieTitle, cinemaName;
     int availableSeats, totalSeats;
     double price;
-    ArrayList<Seat> seats=new ArrayList<>();
+    ArrayList<Seat> seats = new ArrayList<>();
     ArrayList<Seat> selectedSeats = new ArrayList<>();
     AppCompatButton btnProceedCheckout;
     String hallShowTimeId;
@@ -52,6 +54,7 @@ public class SeatsActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         getIntentValues();
         init();
         setMovieInfo();
@@ -60,138 +63,140 @@ public class SeatsActivity extends AppCompatActivity {
     }
 
     private void init() {
-        btnBack = findViewById(R.id.btn_back);
-        btnFav = findViewById(R.id.btn_fav);
-        tvFilmTitle = findViewById(R.id.tv_film_title);
-        tvscreenType = findViewById(R.id.screenType);
+        btnBack             = findViewById(R.id.btn_back);
+        btnFav              = findViewById(R.id.btn_fav);
+        tvFilmTitle         = findViewById(R.id.tv_film_title);
+        tvscreenType        = findViewById(R.id.screenType);
+        tvCinema            = findViewById(R.id.tv_cinema);
+        tvHall              = findViewById(R.id.tv_hall_number);
+        tvDate              = findViewById(R.id.tv_date);
+        tvTime              = findViewById(R.id.tv_time);
+        rvSeats             = findViewById(R.id.rv_seats);
+        btnProceedCheckout  = findViewById(R.id.btn_proceed_checkout);
 
-        tvCinema = findViewById(R.id.tv_cinema); // You need to add this ID in XML
-        tvHall = findViewById(R.id.tv_hall_number); // You need to add this ID in XML
-        tvDate = findViewById(R.id.tv_date);
-        tvTime = findViewById(R.id.tv_time);
-
-        rvSeats = findViewById(R.id.rv_seats);
         rvSeats.setHasFixedSize(true);
-        rvSeats.setLayoutManager(new GridLayoutManager(this,8));
-        adapter=new SeatAdapter(this,seats);
+        rvSeats.setLayoutManager(new GridLayoutManager(this, 8));
+        adapter = new SeatAdapter(this, seats);
         rvSeats.setAdapter(adapter);
+    }
 
-        btnProceedCheckout = findViewById(R.id.btn_proceed_checkout);
+    private void getIntentValues() {
+        Intent intent = getIntent();
+        hallShowTimeId = intent.getStringExtra("hallShowTime_id");
+        showtimeId     = intent.getStringExtra("showtime_id");
+        showtimeTime   = intent.getStringExtra("showtime_time");
+        availableSeats = intent.getIntExtra("available_seats", 0);
+        price          = intent.getDoubleExtra("price", 0.0);
+        movieId        = intent.getStringExtra("movie_id");
+        cinemaId       = intent.getStringExtra("cinema_id");
+        hallId         = intent.getStringExtra("hall_id");
+        hallNumber     = intent.getStringExtra("hall_number");
+        screenType     = intent.getStringExtra("screen_type");
+        totalSeats     = intent.getIntExtra("total_seats", 0);
+        movieTitle     = intent.getStringExtra("movie_title");
+        cinemaName     = intent.getStringExtra("cinema_name");
+        audioFormat    = intent.getStringExtra("audio_format");
+    }
+
+    private void setMovieInfo() {
+        if (tvscreenType != null && screenType != null) tvscreenType.setText(screenType);
+        if (tvHall       != null && hallNumber != null) tvHall.setText(hallNumber);
+        if (tvTime       != null && showtimeTime != null) tvTime.setText(showtimeTime);
+        if (tvFilmTitle  != null && movieTitle != null)  tvFilmTitle.setText(movieTitle);
+        if (tvCinema     != null && cinemaName != null)  tvCinema.setText(cinemaName);
     }
 
     private void getSeatsFromFirebase(String hallShowTimeId) {
-        //hst given get seats
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("seats");
+        DatabaseReference databaseReference =
+                FirebaseDatabase.getInstance().getReference("seats");
 
         databaseReference.orderByChild("hallShowtimeId").equalTo(hallShowTimeId)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                seats.clear();
-                if(snapshot.exists()){
-                    for (DataSnapshot seatSnapshot:snapshot.getChildren()){
-                        Seat seat=seatSnapshot.getValue(Seat.class);
-                        if(seat != null) {
-                            seats.add(seat);
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        seats.clear();
+                        if (snapshot.exists()) {
+                            for (DataSnapshot seatSnapshot : snapshot.getChildren()) {
+                                Seat seat = seatSnapshot.getValue(Seat.class);
+                                if (seat != null) seats.add(seat);
+                            }
+                            adapter.notifyDataSetChanged();
+                        } else {
+                            Toast.makeText(SeatsActivity.this,
+                                    "No seats found", Toast.LENGTH_SHORT).show();
                         }
                     }
-                    adapter.notifyDataSetChanged();
-                }else {
-                    Toast.makeText(SeatsActivity.this, "Seat not found", Toast.LENGTH_SHORT).show();
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(SeatsActivity.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-
-
-        });
-        //seats list wil get populated
-
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(SeatsActivity.this,
+                                "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
-    private void getIntentValues() {
-        Intent intent = getIntent();
 
-        hallShowTimeId = intent.getStringExtra("hallShowTime_id");
-        showtimeId = intent.getStringExtra("showtime_id");
-        showtimeTime = intent.getStringExtra("showtime_time");
-        availableSeats = intent.getIntExtra("available_seats", 0);
-        price = intent.getDoubleExtra("price", 0.0);
-        movieId = intent.getStringExtra("movie_id");
-        cinemaId = intent.getStringExtra("cinema_id");
-        hallId = intent.getStringExtra("hall_id");
-        hallNumber = intent.getStringExtra("hall_number");
-        screenType = intent.getStringExtra("screen_type");
-        totalSeats = intent.getIntExtra("total_seats", 0);
-        movieTitle = intent.getStringExtra("movie_title");
-        cinemaName = intent.getStringExtra("cinema_name");
-
-    }
-    private void setMovieInfo(){
-        tvscreenType.setText(screenType);
-        tvHall.setText(hallNumber);
-        tvTime.setText(showtimeTime);
-        tvFilmTitle.setText(movieTitle);
-        tvCinema.setText(cinemaName);
-    }
     private void setOnClickListeners() {
-        btnBack.setOnClickListener((v) -> {
-            startActivity(new Intent(this, BookingActivity.class));
-            finish();
-        });
-        btnFav.setOnClickListener((v) -> {
-            btnFav.setImageResource(R.drawable.ic_heart_filled);
-            //for now
-        });
-        btnProceedCheckout.setOnClickListener((v) -> {
-            selectedSeats=adapter.getSelectedSeats();
+
+        // ✅ FIX: Back button — sirf finish(), koi naya Intent nahi
+        btnBack.setOnClickListener(v -> finish());
+
+        btnFav.setOnClickListener(v ->
+                btnFav.setImageResource(R.drawable.ic_heart_filled));
+
+        btnProceedCheckout.setOnClickListener(v -> {
+            selectedSeats = adapter.getSelectedSeats();
+
             if (selectedSeats.isEmpty()) {
-                Toast.makeText(this, "Please select at least one seat", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please select at least one seat",
+                        Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            double totalPrice = selectedSeats.size() * price; //price
+            double totalPrice = selectedSeats.size() * price;
 
-            //WRITE TO FIREBASE
-            DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference();
-            for (Seat seat:selectedSeats){
-                seat.status="Booked";
-                seat.userId= FirebaseAuth.getInstance().getCurrentUser().getUid();
+            // Write booked seats to Firebase
+            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference();
+            String userId = "";
+            if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+                userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            }
+            final String finalUserId = userId;
 
-                String fullSeat=seat.getHallShowtimeId()+"_"+seat.getFullSeatNumber();
-
-                databaseReference.child("seats")
-                        .child(fullSeat)
-                        .setValue(seat);
+            for (Seat seat : selectedSeats) {
+                seat.status = "Booked";
+                seat.userId = finalUserId;
+                String key = seat.getHallShowtimeId() + "_" + seat.getFullSeatNumber();
+                dbRef.child("seats").child(key).setValue(seat);
             }
             adapter.notifyDataSetChanged();
 
-            // Pass to next activity
+            // Build seats label: "A5, A6, B3"
+            StringBuilder sb = new StringBuilder();
+            for (int idx = 0; idx < selectedSeats.size(); idx++) {
+                if (idx > 0) sb.append(", ");
+                sb.append(selectedSeats.get(idx).getFullSeatNumber());
+            }
+
             Intent intent = new Intent(this, OrderDetailsActivity.class);
-
-            intent.putExtra("selected_seats", selectedSeats); // ArrayList of seats
-            intent.putExtra("total_price", totalPrice);
-            intent.putExtra("hallShowtime_id", hallShowTimeId);
-            intent.putExtra("showtime_id", showtimeId);
-            intent.putExtra("showtime_time", showtimeTime);
-            intent.putExtra("available_seats", availableSeats);
-            intent.putExtra("price", price);
-            intent.putExtra("movie_id", movieId);
-            intent.putExtra("cinema_id", cinemaId);
-            intent.putExtra("hall_id", hallId);
-            intent.putExtra("hall_number", hallNumber);
-            intent.putExtra("screen_type", screenType);
-            intent.putExtra("total_seats", totalSeats);
-            intent.putExtra("audio_format", audioFormat);
-            intent.putExtra("movie_title", movieTitle);
-            intent.putExtra("cinema_name", cinemaName);
-//            intent.putExtra("date", dat);
-            intent.putExtra("time", tvTime.getText().toString().trim());
-
+            intent.putExtra("selected_seats",   selectedSeats);
+            intent.putExtra("total_price",       totalPrice);
+            intent.putExtra("hallShowtime_id",   hallShowTimeId);
+            intent.putExtra("showtime_id",       showtimeId);
+            intent.putExtra("showtime_time",     showtimeTime);
+            intent.putExtra("available_seats",   availableSeats);
+            intent.putExtra("price",             price);
+            intent.putExtra("movie_id",          movieId);
+            intent.putExtra("cinema_id",         cinemaId);
+            intent.putExtra("hall_id",           hallId);
+            intent.putExtra("hall_number",       hallNumber);
+            intent.putExtra("screen_type",       screenType);
+            intent.putExtra("total_seats",       totalSeats);
+            intent.putExtra("audio_format",      audioFormat);
+            intent.putExtra("movie_title",       movieTitle);
+            intent.putExtra("cinema_name",       cinemaName);
+            intent.putExtra("seats_label",       sb.toString());
+            intent.putExtra("time",              tvTime.getText().toString().trim());
             startActivity(intent);
         });
     }
-
 }

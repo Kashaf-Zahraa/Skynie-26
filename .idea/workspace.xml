@@ -40,6 +40,11 @@
           <theme>@android:style/Theme.Material.Light</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_trailer.xml">
+        <config>
+          <theme>@style/Theme.Skynie</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_actors.xml">
         <config>
           <theme>@style/Theme.Skynie</theme>
@@ -127,7 +132,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d9137cb-049d-4819-81c3-0ca790bb972a" name="Changes" comment="updates">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/OrderDetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/OrderDetailsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/adapters/TicketAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/adapters/TicketAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/BookingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/BookingActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/SeatsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/SeatsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_trailer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_trailer.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -407,7 +417,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/BookingActivity.java</url>
-          <line>143</line>
+          <line>137</line>
           <properties class="com.example.skynie.views.BookingActivity" method="loadDataFromFirebase">
             <option name="WATCH_EXIT" value="false" />
           </properties>
