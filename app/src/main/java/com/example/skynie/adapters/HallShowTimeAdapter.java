@@ -91,12 +91,15 @@ public class HallShowTimeAdapter extends RecyclerView.Adapter<HallShowTimeAdapte
         int availabilityPercent = (showtime.availableSeats * 100) / hall.totalSeats;
         if (availabilityPercent < 20) {
             holder.tvSeatsAvailable.setTextColor(holder.itemView.getContext().getColor(R.color.skynie_red));
+            holder.tvSlash.setTextColor(holder.itemView.getContext().getColor(R.color.skynie_red));
             holder.tvTotalSeats.setTextColor(holder.itemView.getContext().getColor(R.color.skynie_red));
         } else if (availabilityPercent < 50) {
             holder.tvSeatsAvailable.setTextColor(holder.itemView.getContext().getColor(R.color.availability_color));
+            holder.tvSlash.setTextColor(holder.itemView.getContext().getColor(R.color.availability_color));
             holder.tvTotalSeats.setTextColor(holder.itemView.getContext().getColor(R.color.availability_color));
         } else {
             holder.tvSeatsAvailable.setTextColor(holder.itemView.getContext().getColor(R.color.chip_green));
+            holder.tvSlash.setTextColor(holder.itemView.getContext().getColor(R.color.chip_green));
             holder.tvTotalSeats.setTextColor(holder.itemView.getContext().getColor(R.color.chip_green));
         }
 
@@ -137,8 +140,7 @@ public class HallShowTimeAdapter extends RecyclerView.Adapter<HallShowTimeAdapte
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvShowtime, tvHallNumber,tvFormatType;
-        TextView tvSeatsAvailable, tvTotalSeats;
+        TextView tvShowtime, tvHallNumber,tvFormatType,tvSlash,tvSeatsAvailable, tvTotalSeats;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -146,6 +148,7 @@ public class HallShowTimeAdapter extends RecyclerView.Adapter<HallShowTimeAdapte
             tvFormatType = itemView.findViewById(R.id.tv_format_type);
             tvHallNumber = itemView.findViewById(R.id.tv_hall_number);
             tvSeatsAvailable = itemView.findViewById(R.id.tv_seats_available);
+            tvSlash = itemView.findViewById(R.id.tv_slash);
             tvTotalSeats = itemView.findViewById(R.id.tv_total_seats);
         }
     }

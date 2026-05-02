@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.skynie.app-mergeDebugResources-51:/values-iw/values-iw.xml",
+            "outputFile": "com.example.skynie.app-mergeDebugResources-53:/values-iw/values-iw.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USER\\.gradle\\caches\\9.1.0\\transforms\\28135bd804107dbe624425dbe7a2379e\\workspace\\transformed\\play-services-base-18.5.0\\res\\values-iw\\values.xml",

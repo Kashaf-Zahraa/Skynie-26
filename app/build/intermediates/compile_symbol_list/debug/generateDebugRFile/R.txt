@@ -297,10 +297,12 @@ int id tv_heading_2 0x0
 int id tv_movie_title 0x0
 int id tv_seats_available 0x0
 int id tv_showtime 0x0
+int id tv_slash 0x0
 int id tv_time 0x0
 int id tv_total_seats 0x0
 int id tv_writer 0x0
 int id videoContainer 0x0
+int id video_container 0x0
 int id vpFeaturedBanner 0x0
 int id webViewTrailer 0x0
 int layout activity_all_movies 0x0

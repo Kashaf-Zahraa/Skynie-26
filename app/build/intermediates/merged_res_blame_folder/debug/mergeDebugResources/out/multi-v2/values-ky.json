@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.skynie.app-mergeDebugResources-51:/values-ky/values-ky.xml",
+            "outputFile": "com.example.skynie.app-mergeDebugResources-53:/values-ky/values-ky.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USER\\.gradle\\caches\\9.1.0\\transforms\\b9722eea4b54f73b370330c0732c0a6f\\workspace\\transformed\\browser-1.4.0\\res\\values-ky\\values-ky.xml",

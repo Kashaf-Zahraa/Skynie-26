@@ -3,8 +3,10 @@ package com.example.skynie.views;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +51,7 @@ public class BookingActivity extends AppCompatActivity {
     TextView tvMovieTitle, tvDuration;
     AppCompatButton btnTrailer;
 
+    ProgressBar progressBar;
     String movieId, movieTitle, moviePoster, movieBackdrop,movieRating, movieDuration, movieDescription;
     String cinemaName = "";
 
@@ -75,15 +78,16 @@ public class BookingActivity extends AppCompatActivity {
     }
 
     private void init() {
-        main       = findViewById(R.id.main);
-        btnBack    = findViewById(R.id.btn_back);
-        rvDays     = findViewById(R.id.rv_days);
-        rvFormats  = findViewById(R.id.rv_formats);
+        main= findViewById(R.id.main);
+        btnBack= findViewById(R.id.btn_back);
+        rvDays= findViewById(R.id.rv_days);
+        rvFormats= findViewById(R.id.rv_formats);
         rvShowTimes = findViewById(R.id.rv_show_times);
         ivMoviePoster = findViewById(R.id.iv_movie_poster);
-        tvMovieTitle  = findViewById(R.id.tv_movie_title);
-        tvDuration    = findViewById(R.id.tv_duration);
-        btnTrailer    = findViewById(R.id.btn_trailer);
+        tvMovieTitle = findViewById(R.id.tv_movie_title);
+        tvDuration = findViewById(R.id.tv_duration);
+        btnTrailer = findViewById(R.id.btn_trailer);
+        progressBar=findViewById(R.id.progressBar);
 
         // Showtimes RecyclerView
         rvShowTimes.setLayoutManager(new GridLayoutManager(this, 3));
@@ -135,6 +139,9 @@ public class BookingActivity extends AppCompatActivity {
     }
 
     private void loadDataFromFirebase() {
+        progressBar.setVisibility(View.VISIBLE);
+        rvShowTimes.setVisibility(View.GONE);
+
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
 
         databaseRef.child("cinemas").child("c1")
@@ -167,14 +174,18 @@ public class BookingActivity extends AppCompatActivity {
                         }
 
                         fetchHallShowtimes(hallShowtimeIds);
+                        progressBar.setVisibility(View.GONE);
+                        rvShowTimes.setVisibility(View.VISIBLE);
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
+                        progressBar.setVisibility(View.GONE);
                         Toast.makeText(BookingActivity.this,
                                 "Failed: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+
     }
 
     private void fetchHallShowtimes(List<String> ids) {
@@ -237,6 +248,7 @@ public class BookingActivity extends AppCompatActivity {
                                 List<Hall> hallList) {
         if (ids.isEmpty()) { updateAdapter(hstList, hallList, new ArrayList<>()); return; }
 
+
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
         List<Showtime> list = new ArrayList<>();
         int[] done = {0};
@@ -282,10 +294,21 @@ public class BookingActivity extends AppCompatActivity {
             }
         }
 
-        runOnUiThread(() -> adapter.updateItems(
-                filtered.isEmpty() ? new ArrayList<>() : filtered,
-                hallList,
-                filtered.isEmpty() ? new ArrayList<>() : valid));
+        runOnUiThread(() -> {
+            if (filtered.isEmpty()) {
+                Toast.makeText(BookingActivity.this,
+                        "Sorry, No showtimes available", Toast.LENGTH_SHORT).show();
+            }
+
+            adapter.updateItems(
+                    filtered.isEmpty() ? new ArrayList<>() : filtered,
+                    hallList,
+                    filtered.isEmpty() ? new ArrayList<>() : valid);
+
+            // Hide progress bar here too
+            progressBar.setVisibility(View.GONE);
+            rvShowTimes.setVisibility(View.VISIBLE);
+        });
 
         filterShowtimesByDateAndFormat();
     }

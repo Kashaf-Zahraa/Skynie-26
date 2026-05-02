@@ -17,6 +17,7 @@ import com.example.skynie.R;
 import com.example.skynie.models.Booking;
 import com.example.skynie.models.Seat;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
@@ -189,6 +190,16 @@ public class OrderDetailsActivity extends AppCompatActivity {
                 "confirmed", "card", "paid", bookingRef
         );
 
+        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference();
+
+            for (Seat seat : selectedSeats) {
+                seat.status = "Booked";
+                seat.userId = userId;
+                String key = seat.getHallShowtimeId() + "_" + seat.getFullSeatNumber();
+                dbRef.child("seats").child(key).setValue(seat);
+            }
+            dbRef.child("showtimes").child(showtimeId).child("availableSeats").setValue(availableSeats - selectedSeats.size());
+
         FirebaseDatabase.getInstance().getReference("bookings")
                 .child(bookingId)
                 .setValue(booking)
@@ -200,6 +211,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
                         Seat s = selectedSeats.get(idx);
                         sb.append(s.row).append(s.seatNumber);
                     }
+
 
                     Intent intent = new Intent(this, TicketDetailsActivity.class);
                     intent.putExtra("booking_id",    bookingId);

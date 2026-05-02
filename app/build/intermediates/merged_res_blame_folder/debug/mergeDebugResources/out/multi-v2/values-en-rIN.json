@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.skynie.app-mergeDebugResources-51:/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "com.example.skynie.app-mergeDebugResources-53:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USER\\.gradle\\caches\\9.1.0\\transforms\\f78b5b744b0d724a72140bef437cf091\\workspace\\transformed\\credentials-1.2.0-rc01\\res\\values-en-rIN\\values-en-rIN.xml",

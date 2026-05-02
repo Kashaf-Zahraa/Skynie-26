@@ -44,12 +44,12 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-53:\\drawable_ic_calendar.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\drawable\\ic_calendar.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-53:\\drawable_dot_active.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\drawable\\dot_active.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-53:\\drawable_ic_calendar.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\drawable\\ic_calendar.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-53:\\layout_item_coming_soon_card.xml.flat",
@@ -82,10 +82,6 @@
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-53:\\drawable_ic_google.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\drawable\\ic_google.xml"
-    },
-    {
-        "merged": "com.example.skynie.app-debug-53:/layout_dialog_actors.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/dialog_actors.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-53:\\drawable_deadpool_poster.jpg.flat",
@@ -280,10 +276,6 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\layout\\item_ticket_card.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_seats.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_seats.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-53:\\anim_logo_drop.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\anim\\logo_drop.xml"
     },
@@ -430,6 +422,10 @@
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-53:\\drawable_ic_heart.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\drawable\\ic_heart.xml"
+    },
+    {
+        "merged": "com.example.skynie.app-debug-53:/layout_activity_onboarding.xml.flat",
+        "source": "com.example.skynie.app-main-55:/layout/activity_onboarding.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-53:\\drawable_outline_privacy_tip_24.xml.flat",

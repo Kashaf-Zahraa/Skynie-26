@@ -299,10 +299,12 @@ id tv_heading_2
 id tv_movie_title
 id tv_seats_available
 id tv_showtime
+id tv_slash
 id tv_time
 id tv_total_seats
 id tv_writer
 id videoContainer
+id video_container
 id vpFeaturedBanner
 id webViewTrailer
 layout activity_all_movies

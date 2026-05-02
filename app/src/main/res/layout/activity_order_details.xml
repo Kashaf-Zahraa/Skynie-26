@@ -386,11 +386,10 @@
                 android:orientation="vertical"
                 android:layout_marginBottom="16dp" />
 
-            <!-- ===== SMAKS SECTION ===== -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Smaks"
+                android:text="Snacks"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -417,15 +416,15 @@
                         android:textColor="#888888"
                         android:textSize="13sp"
                         android:fontFamily="@font/poppins_regular" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="16 USD"
-                        android:textColor="#FFFFFF"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/poppins_semibold" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentEnd="true"-->
+<!--                        android:text="16 USD"-->
+<!--                        android:textColor="#FFFFFF"-->
+<!--                        android:textSize="13sp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:fontFamily="@font/poppins_semibold" />-->
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -439,15 +438,15 @@
                         android:textColor="#888888"
                         android:textSize="13sp"
                         android:fontFamily="@font/poppins_regular" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="16 USD"
-                        android:textColor="#FFFFFF"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/poppins_semibold" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentEnd="true"-->
+<!--                        android:text="16 USD"-->
+<!--                        android:textColor="#FFFFFF"-->
+<!--                        android:textSize="13sp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:fontFamily="@font/poppins_semibold" />-->
                 </RelativeLayout>
             </LinearLayout>
 

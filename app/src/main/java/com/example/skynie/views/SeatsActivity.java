@@ -2,7 +2,9 @@ package com.example.skynie.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +36,6 @@ public class SeatsActivity extends AppCompatActivity {
     TextView tvFilmTitle, tvscreenType, tvCinema, tvHall, tvDate, tvTime;
     RecyclerView rvSeats;
     SeatAdapter adapter;
-
     String showtimeId, showtimeTime, movieId, cinemaId, hallId, hallNumber,
             screenType, audioFormat, movieTitle, cinemaName;
     int availableSeats, totalSeats;
@@ -43,6 +44,7 @@ public class SeatsActivity extends AppCompatActivity {
     ArrayList<Seat> selectedSeats = new ArrayList<>();
     AppCompatButton btnProceedCheckout;
     String hallShowTimeId;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +80,8 @@ public class SeatsActivity extends AppCompatActivity {
         rvSeats.setLayoutManager(new GridLayoutManager(this, 8));
         adapter = new SeatAdapter(this, seats);
         rvSeats.setAdapter(adapter);
+
+        progressBar = findViewById(R.id.progressBar);
     }
 
     private void getIntentValues() {
@@ -107,6 +111,9 @@ public class SeatsActivity extends AppCompatActivity {
     }
 
     private void getSeatsFromFirebase(String hallShowTimeId) {
+        progressBar.setVisibility(View.VISIBLE);
+        rvSeats.setVisibility(View.GONE);
+
         DatabaseReference databaseReference =
                 FirebaseDatabase.getInstance().getReference("seats");
 
@@ -114,6 +121,9 @@ public class SeatsActivity extends AppCompatActivity {
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        progressBar.setVisibility(View.GONE);
+                        rvSeats.setVisibility(View.VISIBLE);
+
                         seats.clear();
                         if (snapshot.exists()) {
                             for (DataSnapshot seatSnapshot : snapshot.getChildren()) {
@@ -129,6 +139,7 @@ public class SeatsActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
+                        progressBar.setVisibility(View.GONE);
                         Toast.makeText(SeatsActivity.this,
                                 "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
