@@ -85,6 +85,7 @@ drawable ic_date
 drawable ic_empty_tickets
 drawable ic_facebook
 drawable ic_filter
+drawable ic_fullscreen
 drawable ic_google
 drawable ic_hall
 drawable ic_heart
@@ -108,6 +109,7 @@ drawable ic_search
 drawable ic_setting
 drawable ic_star
 drawable ic_ticket
+drawable ic_volume
 drawable imdb_logo
 drawable inside_out_poster
 drawable joker_poster
@@ -126,10 +128,15 @@ font poppins_bold
 font poppins_regular
 font poppins_semibold
 id backButton
+id badgeAge
+id badgeLang
+id badgeNew
 id bottomNavigationView
+id bottomPanel
 id btnAddWishlist
 id btnBack
 id btnFilter
+id btnFullscreen
 id btnInfo
 id btnMenu
 id btnPay
@@ -137,6 +144,7 @@ id btnPayContainer
 id btnSearch
 id btnSendTicket
 id btnTrailer
+id btnVolume
 id btn_back
 id btn_buy_ticket
 id btn_close
@@ -189,6 +197,7 @@ id llOurPickBottom
 id llRightBlock
 id llSmaksContainer
 id llTicketsContainer
+id llTimeBlock
 id ll_bottom_content
 id loginButton
 id main
@@ -203,6 +212,7 @@ id otpField2
 id otpField3
 id otpField4
 id passwordInput
+id progressBar
 id rowHelpCenter
 id rowLanguage
 id rowLogOut
@@ -222,6 +232,7 @@ id rv_stars
 id screenType
 id searchBar
 id seat_number
+id seekBar
 id signupButton
 id signupLink
 id switchPromo
@@ -233,6 +244,7 @@ id tvAudioFormat
 id tvCinemaAddress
 id tvCinemaName
 id tvCost
+id tvCurrentTime
 id tvDate
 id tvDistance
 id tvEmail
@@ -242,6 +254,7 @@ id tvFormat
 id tvGridTitle
 id tvHall
 id tvLanguage
+id tvMeta
 id tvMoreComingSoon
 id tvMoreNowShowing
 id tvMovieBadge
@@ -257,11 +270,13 @@ id tvSeatLabel
 id tvSeatPrice
 id tvSeats
 id tvSectionTitle
+id tvSeeMore
 id tvShowDateTime
 id tvTheater
 id tvTicketCount
 id tvTime
 id tvTotal
+id tvTotalTime
 id tv_actor_name
 id tv_actors
 id tv_app_name
@@ -286,7 +301,9 @@ id tv_showtime
 id tv_time
 id tv_total_seats
 id tv_writer
+id videoContainer
 id vpFeaturedBanner
+id webViewTrailer
 layout activity_all_movies
 layout activity_auth
 layout activity_booking

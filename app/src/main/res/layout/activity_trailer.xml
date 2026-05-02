@@ -1,61 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="#0D0D0D">
 
     <!-- TOP BAR -->
     <RelativeLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_alignParentTop="true"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:background="#1A1A1A">
+        android:layout_height="60dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="#0D0D0D">
 
         <ImageButton
             android:id="@+id/btnBack"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
             android:src="@drawable/ic_back"
             android:background="@drawable/circle_button_dark_bg"
-            android:padding="8dp"
-            android:contentDescription="Back" />
+            android:padding="9dp"
+            android:contentDescription="Back"
+            android:tint="#FFFFFF" />
 
         <TextView
-            android:id="@+id/tvMovieTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="Trailer"
             android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:fontFamily="@font/poppins_semibold"
-            android:maxLines="1"
-            android:ellipsize="end" />
+            android:textSize="17sp"
+            android:fontFamily="@font/poppins_semibold" />
 
     </RelativeLayout>
 
-    <!-- WebView for YouTube embed -->
-    <WebView
-        android:id="@+id/webViewTrailer"
+    <!-- VIDEO PLAYER AREA -->
+    <FrameLayout
+        android:id="@+id/videoContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/topBar"
-        android:background="#000000" />
+        android:layout_height="220dp"
+        android:layout_marginTop="60dp"
+        android:background="#1A1A1A">
 
-    <!-- Loading spinner -->
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
+        <WebView
+            android:id="@+id/webViewTrailer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:indeterminateTint="#E53935"
+            android:visibility="visible" />
+
+    </FrameLayout>
+
+    <!-- BOTTOM PANEL — movie info below video -->
+    <LinearLayout
+        android:id="@+id/bottomPanel"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:indeterminateTint="#E53935"
-        android:visibility="visible" />
+        android:layout_marginTop="280dp"
+        android:orientation="vertical"
+        android:background="#0D0D0D"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="24dp">
 
-</RelativeLayout>
+        <!-- "NEW · Mystery · PG-13 · 1h 56m" -->
+        <TextView
+            android:id="@+id/tvMeta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEW · Mystery · PG-13 · 1h 56m"
+            android:textColor="#888888"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins_regular"
+            android:letterSpacing="0.02" />
+
+        <!-- Title row: [NEW badge]  Arrival          See more › -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:id="@+id/badgeNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="New"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:fontFamily="@font/poppins_bold"
+                android:background="@drawable/badge_red_bg"
+                android:paddingStart="7dp"
+                android:paddingEnd="7dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp" />
+
+            <TextView
+                android:id="@+id/tvSeeMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="See more ›"
+                android:textColor="#AAAAAA"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins_regular" />
+
+            <TextView
+                android:id="@+id/tvMovieTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/badgeNew"
+                android:layout_toStartOf="@id/tvSeeMore"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:text="Arrival"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:fontFamily="@font/poppins_bold"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+        </RelativeLayout>
+
+        <!-- Audience badges: +17  EN -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/badgeAge"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:gravity="center"
+                android:text="+17"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                android:fontFamily="@font/poppins_semibold"
+                android:background="@drawable/badge_green_bg"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp" />
+
+            <TextView
+                android:id="@+id/badgeLang"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:gravity="center"
+                android:layout_marginStart="6dp"
+                android:text="EN"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                android:fontFamily="@font/poppins_semibold"
+                android:background="@drawable/chip_inactive_bg"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp" />
+
+        </LinearLayout>
+
+        <!-- Time + icons row: 00:39 / 02:15   [vol] [fullscreen] -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp">
+
+            <LinearLayout
+                android:id="@+id/llTimeBlock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvCurrentTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:39"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_regular" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" / "
+                    android:textColor="#555555"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvTotalTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02:15"
+                    android:textColor="#666666"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_regular" />
+
+            </LinearLayout>
+
+            <!-- Volume + Fullscreen icons — right side -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/btnVolume"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_volume"
+                    android:alpha="0.7"
+                    android:contentDescription="Volume" />
+
+                <ImageView
+                    android:id="@+id/btnFullscreen"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="14dp"
+                    android:src="@drawable/ic_fullscreen"
+                    android:alpha="0.7"
+                    android:contentDescription="Fullscreen" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- Progress SeekBar -->
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:progressTint="#E53935"
+            android:thumbTint="#E53935"
+            android:progressBackgroundTint="#2A2A2A"
+            android:max="100"
+            android:progress="30" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
