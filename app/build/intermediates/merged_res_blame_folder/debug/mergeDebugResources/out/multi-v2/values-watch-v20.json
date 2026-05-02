@@ -4,7 +4,7 @@
             "outputFile": "com.example.skynie.app-mergeDebugResources-51:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\9.1.0\\transforms\\cfd4ca233762afa40bd5d0035524f33b\\workspace\\transformed\\appcompat-1.7.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\5A_Traders\\.gradle\\caches\\9.1.0\\transforms\\cfd4ca233762afa40bd5d0035524f33b\\workspace\\transformed\\appcompat-1.7.1\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\9.1.0\\transforms\\950f07fca2da49b8378a382db839e5c7\\workspace\\transformed\\play-services-auth-20.7.0\\res\\values-watch-v20\\values.xml",
+                    "source": "C:\\Users\\5A_Traders\\.gradle\\caches\\9.1.0\\transforms\\950f07fca2da49b8378a382db839e5c7\\workspace\\transformed\\play-services-auth-20.7.0\\res\\values-watch-v20\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",

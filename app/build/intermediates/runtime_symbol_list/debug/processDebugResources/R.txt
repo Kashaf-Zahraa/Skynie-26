@@ -4010,6 +4010,8 @@ int id btnBack 0x7f090076
 int id btnFilter 0x7f090077
 int id btnInfo 0x7f090078
 int id btnMenu 0x7f090079
+int id btnPay 0x7f0902cb
+int id btnPayContainer 0x7f0902cc
 int id btnSearch 0x7f09007a
 int id btnSendTicket 0x7f09007b
 int id btnTrailer 0x7f09007c
@@ -4231,6 +4233,8 @@ int id llGenreChips 0x7f090153
 int id llNowShowingCards 0x7f090154
 int id llOurPickBottom 0x7f090155
 int id llRightBlock 0x7f090156
+int id llSmaksContainer 0x7f0902cd
+int id llTicketsContainer 0x7f0902ce
 int id ll_bottom_content 0x7f090157
 int id loginButton 0x7f090158
 int id m3_side_sheet 0x7f090159
@@ -4525,6 +4529,7 @@ int id transition_transform 0x7f090279
 int id triangle 0x7f09027a
 int id tvAllGenres 0x7f09027b
 int id tvAmount 0x7f09027c
+int id tvAudioFormat 0x7f0902cf
 int id tvCinemaAddress 0x7f09027d
 int id tvCinemaName 0x7f09027e
 int id tvCost 0x7f09027f
@@ -4536,6 +4541,7 @@ int id tvFeaturedTitle 0x7f090284
 int id tvFormat 0x7f090285
 int id tvGridTitle 0x7f090286
 int id tvHall 0x7f090287
+int id tvLanguage 0x7f0902d0
 int id tvMoreComingSoon 0x7f090288
 int id tvMoreNowShowing 0x7f090289
 int id tvMovieBadge 0x7f09028a
@@ -4545,11 +4551,17 @@ int id tvNewBadge 0x7f09028d
 int id tvOurPickGenreTags 0x7f09028e
 int id tvOurPickRating 0x7f09028f
 int id tvOurPickTitle 0x7f090290
+int id tvPgRating 0x7f0902d1
+int id tvScreenType 0x7f0902d2
+int id tvSeatLabel 0x7f0902d3
+int id tvSeatPrice 0x7f0902d4
 int id tvSeats 0x7f090291
 int id tvSectionTitle 0x7f090292
 int id tvShowDateTime 0x7f090293
+int id tvTheater 0x7f0902d5
 int id tvTicketCount 0x7f090294
 int id tvTime 0x7f090295
+int id tvTotal 0x7f0902d6
 int id tv_actor_name 0x7f090296
 int id tv_actors 0x7f090297
 int id tv_app_name 0x7f090298
@@ -4774,6 +4786,7 @@ int layout item_day_selector 0x7f0c004d
 int layout item_grid_movie 0x7f0c004e
 int layout item_movie_card 0x7f0c004f
 int layout item_movie_reccomendation 0x7f0c0050
+int layout item_order_seat_row 0x7f0c009e
 int layout item_screen_details 0x7f0c0051
 int layout item_screen_type 0x7f0c0052
 int layout item_seat 0x7f0c0053

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "485259442726-6ogm7hphdcot3lc5j730l4fn2cokh8m5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.skynie",
+            "certificate_hash": "90d147a2542ffb414bc61fd2c38475823c33b7fa"
+          }
+        },
+        {
           "client_id": "485259442726-gnunvm2vajfhujmdphbuhi8tmhekfue0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

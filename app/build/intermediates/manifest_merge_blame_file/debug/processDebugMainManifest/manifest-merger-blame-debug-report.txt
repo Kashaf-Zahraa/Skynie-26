@@ -9,447 +9,447 @@
 9        android:targetSdkVersion="36" />
 10
 11    <queries>
-11-->[com.facebook.android:facebook-common:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:17:5-19:15
+11-->[com.facebook.android:facebook-common:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:17:5-19:15
 12        <package android:name="com.facebook.katana" />
-12-->[com.facebook.android:facebook-common:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:18:9-55
-12-->[com.facebook.android:facebook-common:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:18:18-52
+12-->[com.facebook.android:facebook-common:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:18:9-55
+12-->[com.facebook.android:facebook-common:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:18:18-52
 13    </queries>
 14
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:25:5-67
-15-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:25:22-64
+15-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:25:5-67
+15-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:25:22-64
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-16-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:26:5-79
-16-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:26:22-76
+16-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:26:5-79
+16-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:26:22-76
 17    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-17-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\20c9ff452cdf5086a0bb0c00265188f1\workspace\transformed\recaptcha-18.6.1\AndroidManifest.xml:9:5-98
-17-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\20c9ff452cdf5086a0bb0c00265188f1\workspace\transformed\recaptcha-18.6.1\AndroidManifest.xml:9:22-95
+17-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\20c9ff452cdf5086a0bb0c00265188f1\workspace\transformed\recaptcha-18.6.1\AndroidManifest.xml:9:5-98
+17-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\20c9ff452cdf5086a0bb0c00265188f1\workspace\transformed\recaptcha-18.6.1\AndroidManifest.xml:9:22-95
 18    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-18-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:16:5-79
-18-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:16:22-76
+18-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:16:5-79
+18-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:16:22-76
 19
 20    <permission
-20-->[androidx.core:core:1.18.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\cd6d44a1c3187589e415f9f4792fc926\workspace\transformed\core-1.18.0\AndroidManifest.xml:22:5-24:47
+20-->[androidx.core:core:1.18.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\cd6d44a1c3187589e415f9f4792fc926\workspace\transformed\core-1.18.0\AndroidManifest.xml:22:5-24:47
 21        android:name="com.example.skynie.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-21-->[androidx.core:core:1.18.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\cd6d44a1c3187589e415f9f4792fc926\workspace\transformed\core-1.18.0\AndroidManifest.xml:23:9-81
+21-->[androidx.core:core:1.18.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\cd6d44a1c3187589e415f9f4792fc926\workspace\transformed\core-1.18.0\AndroidManifest.xml:23:9-81
 22        android:protectionLevel="signature" />
-22-->[androidx.core:core:1.18.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\cd6d44a1c3187589e415f9f4792fc926\workspace\transformed\core-1.18.0\AndroidManifest.xml:24:9-44
+22-->[androidx.core:core:1.18.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\cd6d44a1c3187589e415f9f4792fc926\workspace\transformed\core-1.18.0\AndroidManifest.xml:24:9-44
 23
 24    <uses-permission android:name="com.example.skynie.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-24-->[androidx.core:core:1.18.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\cd6d44a1c3187589e415f9f4792fc926\workspace\transformed\core-1.18.0\AndroidManifest.xml:26:5-97
-24-->[androidx.core:core:1.18.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\cd6d44a1c3187589e415f9f4792fc926\workspace\transformed\core-1.18.0\AndroidManifest.xml:26:22-94
+24-->[androidx.core:core:1.18.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\cd6d44a1c3187589e415f9f4792fc926\workspace\transformed\core-1.18.0\AndroidManifest.xml:26:5-97
+24-->[androidx.core:core:1.18.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\cd6d44a1c3187589e415f9f4792fc926\workspace\transformed\core-1.18.0\AndroidManifest.xml:26:22-94
 25    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-25-->[com.android.installreferrer:installreferrer:1.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\d1b41cd764fc621fe206ba61e84d08bf\workspace\transformed\installreferrer-1.0\AndroidManifest.xml:9:5-110
-25-->[com.android.installreferrer:installreferrer:1.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\d1b41cd764fc621fe206ba61e84d08bf\workspace\transformed\installreferrer-1.0\AndroidManifest.xml:9:22-107
+25-->[com.android.installreferrer:installreferrer:1.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\d1b41cd764fc621fe206ba61e84d08bf\workspace\transformed\installreferrer-1.0\AndroidManifest.xml:9:5-110
+25-->[com.android.installreferrer:installreferrer:1.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\d1b41cd764fc621fe206ba61e84d08bf\workspace\transformed\installreferrer-1.0\AndroidManifest.xml:9:22-107
 26
 27    <application
-27-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:6:5-99:19
+27-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:6:5-99:19
 28        android:allowBackup="true"
-28-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:7:9-35
+28-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:7:9-35
 29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-29-->[androidx.core:core:1.18.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\cd6d44a1c3187589e415f9f4792fc926\workspace\transformed\core-1.18.0\AndroidManifest.xml:28:18-86
+29-->[androidx.core:core:1.18.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\cd6d44a1c3187589e415f9f4792fc926\workspace\transformed\core-1.18.0\AndroidManifest.xml:28:18-86
 30        android:dataExtractionRules="@xml/data_extraction_rules"
-30-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:8:9-65
+30-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:8:9-65
 31        android:debuggable="true"
 32        android:extractNativeLibs="false"
 33        android:fullBackupContent="@xml/backup_rules"
-33-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:9:9-54
+33-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:9:9-54
 34        android:icon="@mipmap/ic_launcher"
-34-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:10:9-43
+34-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:10:9-43
 35        android:label="@string/app_name"
-35-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:11:9-41
+35-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:11:9-41
 36        android:roundIcon="@mipmap/ic_launcher_round"
-36-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:12:9-54
+36-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:12:9-54
 37        android:supportsRtl="true"
-37-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:13:9-35
+37-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:13:9-35
 38        android:testOnly="true"
 39        android:theme="@style/Theme.Skynie" >
-39-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:14:9-44
+39-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:14:9-44
 40        <activity
-40-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:15:9-17:40
+40-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:15:9-17:40
 41            android:name="com.example.skynie.views.MainActivity"
-41-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:16:13-47
+41-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:16:13-47
 42            android:exported="false" />
-42-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:17:13-37
+42-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:17:13-37
 43        <activity
-43-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:18:9-20:40
+43-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:18:9-20:40
 44            android:name="com.example.skynie.views.TrailerActivity"
-44-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:19:13-50
+44-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:19:13-50
 45            android:exported="false" />
-45-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:20:13-37
+45-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:20:13-37
 46        <activity android:name="com.example.skynie.views.AllMoviesActivity" />
-46-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:21:9-61
-46-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:21:19-58
+46-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:21:9-61
+46-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:21:19-58
 47        <activity
-47-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:22:9-24:40
+47-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:22:9-24:40
 48            android:name="com.example.skynie.views.TicketDetailsActivity"
-48-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:23:13-56
+48-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:23:13-56
 49            android:exported="false" />
-49-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:24:13-37
+49-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:24:13-37
 50        <activity
-50-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:25:9-27:40
+50-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:25:9-27:40
 51            android:name="com.example.skynie.views.OrderDetailsActivity"
-51-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:26:13-55
+51-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:26:13-55
 52            android:exported="false" />
-52-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:27:13-37
+52-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:27:13-37
 53        <activity
-53-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:28:9-30:40
+53-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:28:9-30:40
 54            android:name="com.example.skynie.views.SeatsActivity"
-54-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:29:13-48
+54-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:29:13-48
 55            android:exported="false" />
-55-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:30:13-37
+55-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:30:13-37
 56        <activity
-56-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:31:9-33:40
+56-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:31:9-33:40
 57            android:name="com.example.skynie.views.BookingActivity"
-57-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:32:13-50
+57-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:32:13-50
 58            android:exported="false" />
-58-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:33:13-37
+58-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:33:13-37
 59        <activity
-59-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:34:9-36:40
+59-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:34:9-36:40
 60            android:name="com.example.skynie.views.FilmDetailsActivity"
-60-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:35:13-54
+60-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:35:13-54
 61            android:exported="false" />
-61-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:36:13-37
+61-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:36:13-37
 62        <activity
-62-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:37:9-39:40
+62-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:37:9-39:40
 63            android:name="com.example.skynie.views.VerifyOTP_Activity"
-63-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:38:13-53
+63-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:38:13-53
 64            android:exported="false" />
-64-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:39:13-37
+64-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:39:13-37
 65        <activity
-65-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:40:9-42:40
+65-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:40:9-42:40
 66            android:name="com.example.skynie.views.ForgotPasswordActivity"
-66-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:41:13-57
+66-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:41:13-57
 67            android:exported="false" />
-67-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:42:13-37
+67-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:42:13-37
 68        <activity
-68-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:43:9-45:40
+68-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:43:9-45:40
 69            android:name="com.example.skynie.views.SignupActivity"
-69-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:44:13-49
+69-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:44:13-49
 70            android:exported="false" />
-70-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:45:13-37
+70-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:45:13-37
 71        <activity
-71-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:46:9-48:40
+71-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:46:9-48:40
 72            android:name="com.example.skynie.views.LoginActivity"
-72-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:47:13-48
+72-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:47:13-48
 73            android:exported="false" />
-73-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:48:13-37
+73-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:48:13-37
 74        <activity
-74-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:49:9-51:40
+74-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:49:9-51:40
 75            android:name="com.example.skynie.views.AuthActivity"
-75-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:50:13-47
+75-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:50:13-47
 76            android:exported="false" />
-76-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:51:13-37
+76-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:51:13-37
 77        <activity
-77-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:52:9-54:40
+77-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:52:9-54:40
 78            android:name="com.example.skynie.views.OnboardingActivity"
-78-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:53:13-53
+78-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:53:13-53
 79            android:exported="false" />
-79-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:54:13-37
+79-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:54:13-37
 80        <activity
-80-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:55:9-63:20
+80-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:55:9-63:20
 81            android:name="com.example.skynie.views.SplashActivity"
-81-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:56:13-49
+81-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:56:13-49
 82            android:exported="true" >
-82-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:57:13-36
+82-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:57:13-36
 83            <intent-filter>
-83-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:58:13-62:29
+83-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:58:13-62:29
 84                <action android:name="android.intent.action.MAIN" />
-84-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:59:17-69
-84-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:59:25-66
+84-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:59:17-69
+84-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:59:25-66
 85
 86                <category android:name="android.intent.category.LAUNCHER" />
-86-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:61:17-77
-86-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:61:27-74
+86-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:61:17-77
+86-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:61:27-74
 87            </intent-filter>
 88        </activity>
 89
 90        <!-- Facebook App ID -->
 91        <meta-data
-91-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:66:9-68:54
+91-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:66:9-68:54
 92            android:name="com.facebook.sdk.ApplicationId"
-92-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:67:13-58
+92-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:67:13-58
 93            android:value="@string/facebook_app_id" />
-93-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:68:13-52
+93-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:68:13-52
 94
 95        <!-- Facebook Client Token -->
 96        <meta-data
-96-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:71:9-73:63
+96-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:71:9-73:63
 97            android:name="com.facebook.sdk.ClientToken"
-97-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:72:13-56
+97-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:72:13-56
 98            android:value="2d2634232a19691f7c1014e851e5b1f0" />
-98-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:73:13-61
+98-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:73:13-61
 99
 100        <!-- Facebook Login Activity -->
 101        <activity
-101-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:76:9-79:47
+101-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:76:9-79:47
 102            android:name="com.facebook.FacebookActivity"
-102-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:77:13-57
+102-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:77:13-57
 103            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-103-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:78:13-96
+103-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:78:13-96
 104            android:label="@string/app_name"
-104-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:79:13-45
+104-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:79:13-45
 105            android:theme="@style/com_facebook_activity_theme" />
-105-->[com.facebook.android:facebook-common:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:25:13-63
+105-->[com.facebook.android:facebook-common:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:25:13-63
 106        <activity
-106-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:81:9-90:20
+106-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:81:9-90:20
 107            android:name="com.facebook.CustomTabActivity"
-107-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:82:13-58
+107-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:82:13-58
 108            android:exported="true" >
-108-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:83:13-36
+108-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:83:13-36
 109            <intent-filter>
-109-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:84:13-89:29
+109-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:84:13-89:29
 110                <action android:name="android.intent.action.VIEW" />
-110-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:17-69
-110-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:25-66
+110-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:17-69
+110-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:25-66
 111
 112                <category android:name="android.intent.category.DEFAULT" />
-112-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-76
-112-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:27-73
+112-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-76
+112-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:27-73
 113                <category android:name="android.intent.category.BROWSABLE" />
-113-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-78
-113-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-75
+113-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-78
+113-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-75
 114
 115                <data android:scheme="@string/fb_login_protocol_scheme" />
-115-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-75
-115-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:23-72
+115-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-75
+115-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:23-72
 116            </intent-filter>
 117            <intent-filter>
-117-->[com.facebook.android:facebook-common:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:31:13-40:29
+117-->[com.facebook.android:facebook-common:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:31:13-40:29
 118                <action android:name="android.intent.action.VIEW" />
-118-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:17-69
-118-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:25-66
+118-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:17-69
+118-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:25-66
 119
 120                <category android:name="android.intent.category.DEFAULT" />
-120-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-76
-120-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:27-73
+120-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-76
+120-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:27-73
 121                <category android:name="android.intent.category.BROWSABLE" />
-121-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-78
-121-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-75
+121-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-78
+121-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-75
 122
 123                <data
-123-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-75
+123-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-75
 124                    android:host="cct.com.example.skynie"
 125                    android:scheme="fbconnect" />
-125-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:23-72
+125-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:23-72
 126            </intent-filter>
 127        </activity>
 128
 129        <!-- Google Services -->
 130        <meta-data
-130-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:93:9-95:68
+130-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:93:9-95:68
 131            android:name="com.google.android.gms.version"
-131-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:94:13-58
+131-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:94:13-58
 132            android:value="@integer/google_play_services_version" />
-132-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:95:13-66
+132-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:95:13-66
 133
 134        <activity android:name="com.facebook.CustomTabMainActivity" />
-134-->[com.facebook.android:facebook-common:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:26:9-71
-134-->[com.facebook.android:facebook-common:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:26:19-68
+134-->[com.facebook.android:facebook-common:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:26:9-71
+134-->[com.facebook.android:facebook-common:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\c9b207c931e392aab5d0502f9994b911\workspace\transformed\facebook-common-16.3.0\AndroidManifest.xml:26:19-68
 135        <activity
-135-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:29:9-46:20
+135-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:29:9-46:20
 136            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-136-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:30:13-80
+136-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:30:13-80
 137            android:excludeFromRecents="true"
-137-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:31:13-46
+137-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:31:13-46
 138            android:exported="true"
-138-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:32:13-36
+138-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:32:13-36
 139            android:launchMode="singleTask"
-139-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:33:13-44
+139-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:33:13-44
 140            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-140-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:34:13-72
+140-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:34:13-72
 141            <intent-filter>
-141-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:35:13-45:29
+141-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:35:13-45:29
 142                <action android:name="android.intent.action.VIEW" />
-142-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:17-69
-142-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:25-66
+142-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:17-69
+142-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:25-66
 143
 144                <category android:name="android.intent.category.DEFAULT" />
-144-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-76
-144-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:27-73
+144-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-76
+144-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:27-73
 145                <category android:name="android.intent.category.BROWSABLE" />
-145-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-78
-145-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-75
+145-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-78
+145-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-75
 146
 147                <data
-147-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-75
+147-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-75
 148                    android:host="firebase.auth"
 149                    android:path="/"
 150                    android:scheme="genericidp" />
-150-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:23-72
+150-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:23-72
 151            </intent-filter>
 152        </activity>
 153        <activity
-153-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:47:9-64:20
+153-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:47:9-64:20
 154            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-154-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:48:13-79
+154-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:48:13-79
 155            android:excludeFromRecents="true"
-155-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:49:13-46
+155-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:49:13-46
 156            android:exported="true"
-156-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:50:13-36
+156-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:50:13-36
 157            android:launchMode="singleTask"
-157-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:51:13-44
+157-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:51:13-44
 158            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-158-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:52:13-72
+158-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:52:13-72
 159            <intent-filter>
-159-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:53:13-63:29
+159-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:53:13-63:29
 160                <action android:name="android.intent.action.VIEW" />
-160-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:17-69
-160-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:25-66
+160-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:17-69
+160-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:85:25-66
 161
 162                <category android:name="android.intent.category.DEFAULT" />
-162-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-76
-162-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:27-73
+162-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:17-76
+162-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:86:27-73
 163                <category android:name="android.intent.category.BROWSABLE" />
-163-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-78
-163-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-75
+163-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:17-78
+163-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:87:27-75
 164
 165                <data
-165-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-75
+165-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:17-75
 166                    android:host="firebase.auth"
 167                    android:path="/"
 168                    android:scheme="recaptcha" />
-168-->C:\Users\USER\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:23-72
+168-->C:\Users\5A_Traders\AndroidStudioProjects\Skynie\app\src\main\AndroidManifest.xml:88:23-72
 169            </intent-filter>
 170        </activity>
 171
 172        <service
-172-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:66:9-72:19
+172-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:66:9-72:19
 173            android:name="com.google.firebase.components.ComponentDiscoveryService"
-173-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:67:13-84
+173-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:67:13-84
 174            android:directBootAware="true"
-174-->[com.google.firebase:firebase-common:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:32:13-43
+174-->[com.google.firebase:firebase-common:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:32:13-43
 175            android:exported="false" >
-175-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:68:13-37
+175-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:68:13-37
 176            <meta-data
-176-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:69:13-71:85
+176-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:69:13-71:85
 177                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-177-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:70:17-109
+177-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:70:17-109
 178                android:value="com.google.firebase.components.ComponentRegistrar" />
-178-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:71:17-82
+178-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\0cc0b21b51d7402524c843f96124ea31\workspace\transformed\firebase-auth-24.0.1\AndroidManifest.xml:71:17-82
 179            <meta-data
-179-->[com.google.firebase:firebase-database:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\d14572106fcea6e555eeb7ecc64e597c\workspace\transformed\firebase-database-22.0.1\AndroidManifest.xml:29:13-31:85
+179-->[com.google.firebase:firebase-database:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\d14572106fcea6e555eeb7ecc64e597c\workspace\transformed\firebase-database-22.0.1\AndroidManifest.xml:29:13-31:85
 180                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
-180-->[com.google.firebase:firebase-database:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\d14572106fcea6e555eeb7ecc64e597c\workspace\transformed\firebase-database-22.0.1\AndroidManifest.xml:30:17-120
+180-->[com.google.firebase:firebase-database:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\d14572106fcea6e555eeb7ecc64e597c\workspace\transformed\firebase-database-22.0.1\AndroidManifest.xml:30:17-120
 181                android:value="com.google.firebase.components.ComponentRegistrar" />
-181-->[com.google.firebase:firebase-database:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\d14572106fcea6e555eeb7ecc64e597c\workspace\transformed\firebase-database-22.0.1\AndroidManifest.xml:31:17-82
+181-->[com.google.firebase:firebase-database:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\d14572106fcea6e555eeb7ecc64e597c\workspace\transformed\firebase-database-22.0.1\AndroidManifest.xml:31:17-82
 182            <meta-data
-182-->[com.google.firebase:firebase-database:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\d14572106fcea6e555eeb7ecc64e597c\workspace\transformed\firebase-database-22.0.1\AndroidManifest.xml:32:13-34:85
+182-->[com.google.firebase:firebase-database:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\d14572106fcea6e555eeb7ecc64e597c\workspace\transformed\firebase-database-22.0.1\AndroidManifest.xml:32:13-34:85
 183                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-183-->[com.google.firebase:firebase-database:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\d14572106fcea6e555eeb7ecc64e597c\workspace\transformed\firebase-database-22.0.1\AndroidManifest.xml:33:17-109
+183-->[com.google.firebase:firebase-database:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\d14572106fcea6e555eeb7ecc64e597c\workspace\transformed\firebase-database-22.0.1\AndroidManifest.xml:33:17-109
 184                android:value="com.google.firebase.components.ComponentRegistrar" />
-184-->[com.google.firebase:firebase-database:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\d14572106fcea6e555eeb7ecc64e597c\workspace\transformed\firebase-database-22.0.1\AndroidManifest.xml:34:17-82
+184-->[com.google.firebase:firebase-database:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\d14572106fcea6e555eeb7ecc64e597c\workspace\transformed\firebase-database-22.0.1\AndroidManifest.xml:34:17-82
 185            <meta-data
-185-->[com.google.firebase:firebase-common:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:35:13-37:85
+185-->[com.google.firebase:firebase-common:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:35:13-37:85
 186                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-186-->[com.google.firebase:firebase-common:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:36:17-109
+186-->[com.google.firebase:firebase-common:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:36:17-109
 187                android:value="com.google.firebase.components.ComponentRegistrar" />
-187-->[com.google.firebase:firebase-common:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:37:17-82
+187-->[com.google.firebase:firebase-common:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:37:17-82
 188        </service>
 189        <service
-189-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\USER\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:24:9-32:19
+189-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:24:9-32:19
 190            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
-190-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\USER\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:25:13-94
+190-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:25:13-94
 191            android:enabled="true"
-191-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\USER\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:26:13-35
+191-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:26:13-35
 192            android:exported="false" >
-192-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\USER\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:27:13-37
+192-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:27:13-37
 193            <meta-data
-193-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\USER\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:29:13-31:104
+193-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:29:13-31:104
 194                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
-194-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\USER\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:30:17-76
+194-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:30:17-76
 195                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
-195-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\USER\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:31:17-101
+195-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:31:17-101
 196        </service>
 197
 198        <activity
-198-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\USER\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:34:9-41:20
+198-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:34:9-41:20
 199            android:name="androidx.credentials.playservices.HiddenActivity"
-199-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\USER\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:35:13-76
+199-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:35:13-76
 200            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-200-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\USER\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:36:13-87
+200-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:36:13-87
 201            android:enabled="true"
-201-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\USER\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:37:13-35
+201-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:37:13-35
 202            android:exported="false"
-202-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\USER\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:38:13-37
+202-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:38:13-37
 203            android:fitsSystemWindows="true"
-203-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\USER\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:39:13-45
+203-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:39:13-45
 204            android:theme="@style/Theme.Hidden" >
-204-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\USER\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:40:13-48
+204-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\2639cbe8ec40489cacf6ea0e2ba76df0\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:40:13-48
 205        </activity>
 206        <activity
-206-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:23:9-27:75
+206-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:23:9-27:75
 207            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-207-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:24:13-93
+207-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:24:13-93
 208            android:excludeFromRecents="true"
-208-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:25:13-46
+208-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:25:13-46
 209            android:exported="false"
-209-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:26:13-37
+209-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:26:13-37
 210            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-210-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:27:13-72
+210-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:27:13-72
 211        <!--
 212            Service handling Google Sign-In user revocation. For apps that do not integrate with
 213            Google Sign-In, this service will never be started.
 214        -->
 215        <service
-215-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:33:9-37:51
+215-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:33:9-37:51
 216            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-216-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:34:13-89
+216-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:34:13-89
 217            android:exported="true"
-217-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:35:13-36
+217-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:35:13-36
 218            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-218-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:36:13-107
+218-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:36:13-107
 219            android:visibleToInstantApps="true" />
-219-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:37:13-48
+219-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\950f07fca2da49b8378a382db839e5c7\workspace\transformed\play-services-auth-20.7.0\AndroidManifest.xml:37:13-48
 220
 221        <provider
-221-->[com.google.firebase:firebase-common:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:23:9-28:39
+221-->[com.google.firebase:firebase-common:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:23:9-28:39
 222            android:name="com.google.firebase.provider.FirebaseInitProvider"
-222-->[com.google.firebase:firebase-common:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:24:13-77
+222-->[com.google.firebase:firebase-common:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:24:13-77
 223            android:authorities="com.example.skynie.firebaseinitprovider"
-223-->[com.google.firebase:firebase-common:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:25:13-72
+223-->[com.google.firebase:firebase-common:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:25:13-72
 224            android:directBootAware="true"
-224-->[com.google.firebase:firebase-common:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:26:13-43
+224-->[com.google.firebase:firebase-common:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:26:13-43
 225            android:exported="false"
-225-->[com.google.firebase:firebase-common:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:27:13-37
+225-->[com.google.firebase:firebase-common:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:27:13-37
 226            android:initOrder="100" />
-226-->[com.google.firebase:firebase-common:22.0.1] C:\Users\USER\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:28:13-36
+226-->[com.google.firebase:firebase-common:22.0.1] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\9b08ebb983d6e1114b155b08061cdb49\workspace\transformed\firebase-common-22.0.1\AndroidManifest.xml:28:13-36
 227
 228        <activity
-228-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\28135bd804107dbe624425dbe7a2379e\workspace\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+228-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\28135bd804107dbe624425dbe7a2379e\workspace\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
 229            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-229-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\28135bd804107dbe624425dbe7a2379e\workspace\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+229-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\28135bd804107dbe624425dbe7a2379e\workspace\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
 230            android:exported="false"
-230-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\28135bd804107dbe624425dbe7a2379e\workspace\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+230-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\28135bd804107dbe624425dbe7a2379e\workspace\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
 231            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-231-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\28135bd804107dbe624425dbe7a2379e\workspace\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+231-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\28135bd804107dbe624425dbe7a2379e\workspace\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
 232
 233        <provider
-233-->[androidx.emoji2:emoji2:1.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\314dca7affcf4f824e1057e8b2db64b4\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+233-->[androidx.emoji2:emoji2:1.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\314dca7affcf4f824e1057e8b2db64b4\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
 234            android:name="androidx.startup.InitializationProvider"
-234-->[androidx.emoji2:emoji2:1.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\314dca7affcf4f824e1057e8b2db64b4\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+234-->[androidx.emoji2:emoji2:1.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\314dca7affcf4f824e1057e8b2db64b4\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
 235            android:authorities="com.example.skynie.androidx-startup"
-235-->[androidx.emoji2:emoji2:1.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\314dca7affcf4f824e1057e8b2db64b4\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+235-->[androidx.emoji2:emoji2:1.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\314dca7affcf4f824e1057e8b2db64b4\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
 236            android:exported="false" >
-236-->[androidx.emoji2:emoji2:1.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\314dca7affcf4f824e1057e8b2db64b4\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+236-->[androidx.emoji2:emoji2:1.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\314dca7affcf4f824e1057e8b2db64b4\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
 237            <meta-data
-237-->[androidx.emoji2:emoji2:1.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\314dca7affcf4f824e1057e8b2db64b4\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+237-->[androidx.emoji2:emoji2:1.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\314dca7affcf4f824e1057e8b2db64b4\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
 238                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-238-->[androidx.emoji2:emoji2:1.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\314dca7affcf4f824e1057e8b2db64b4\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+238-->[androidx.emoji2:emoji2:1.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\314dca7affcf4f824e1057e8b2db64b4\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
 239                android:value="androidx.startup" />
-239-->[androidx.emoji2:emoji2:1.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\314dca7affcf4f824e1057e8b2db64b4\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+239-->[androidx.emoji2:emoji2:1.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\314dca7affcf4f824e1057e8b2db64b4\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
 240            <meta-data
-240-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\USER\.gradle\caches\9.1.0\transforms\e5fb0cc64bc596143b7062095625e811\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+240-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\e5fb0cc64bc596143b7062095625e811\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
 241                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-241-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\USER\.gradle\caches\9.1.0\transforms\e5fb0cc64bc596143b7062095625e811\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+241-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\e5fb0cc64bc596143b7062095625e811\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
 242                android:value="androidx.startup" />
-242-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\USER\.gradle\caches\9.1.0\transforms\e5fb0cc64bc596143b7062095625e811\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+242-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\e5fb0cc64bc596143b7062095625e811\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
 243            <meta-data
-243-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+243-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
 244                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-244-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+244-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
 245                android:value="androidx.startup" />
-245-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+245-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
 246        </provider>
 247        <!--
 248         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
@@ -461,87 +461,87 @@
 254         a completely different provider.
 255        -->
 256        <provider
-256-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:29:9-32:40
+256-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:29:9-32:40
 257            android:name="com.facebook.internal.FacebookInitProvider"
-257-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:30:13-70
+257-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:30:13-70
 258            android:authorities="com.example.skynie.FacebookInitProvider"
-258-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:31:13-72
+258-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:31:13-72
 259            android:exported="false" />
-259-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:32:13-37
+259-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:32:13-37
 260
 261        <receiver
-261-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:34:9-40:20
+261-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:34:9-40:20
 262            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
-262-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:35:13-86
+262-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:35:13-86
 263            android:exported="false" >
-263-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:36:13-37
+263-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:36:13-37
 264            <intent-filter>
-264-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:37:13-39:29
+264-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:37:13-39:29
 265                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
-265-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:38:17-95
-265-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:38:25-92
+265-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:38:17-95
+265-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:38:25-92
 266            </intent-filter>
 267        </receiver>
 268        <receiver
-268-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:41:9-47:20
+268-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:41:9-47:20
 269            android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver"
-269-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:42:13-118
+269-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:42:13-118
 270            android:exported="false" >
-270-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:43:13-37
+270-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:43:13-37
 271            <intent-filter>
-271-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:44:13-46:29
+271-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:44:13-46:29
 272                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED" />
-272-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:45:17-103
-272-->[com.facebook.android:facebook-core:16.3.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:45:25-100
+272-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:45:17-103
+272-->[com.facebook.android:facebook-core:16.3.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\6503a01e731de4a6f69ef1bde4de88e9\workspace\transformed\facebook-core-16.3.0\AndroidManifest.xml:45:25-100
 273            </intent-filter>
 274        </receiver>
 275        <receiver
-275-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+275-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
 276            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-276-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+276-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
 277            android:directBootAware="false"
-277-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+277-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
 278            android:enabled="true"
-278-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+278-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
 279            android:exported="true"
-279-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+279-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
 280            android:permission="android.permission.DUMP" >
-280-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+280-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
 281            <intent-filter>
-281-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+281-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
 282                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-282-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
-282-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+282-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+282-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
 283            </intent-filter>
 284            <intent-filter>
-284-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+284-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
 285                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-285-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
-285-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+285-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+285-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
 286            </intent-filter>
 287            <intent-filter>
-287-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+287-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
 288                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-288-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
-288-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+288-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+288-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
 289            </intent-filter>
 290            <intent-filter>
-290-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+290-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
 291                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-291-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
-291-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\USER\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+291-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+291-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\605c79783d5be5729866c0ccd307ab7e\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
 292            </intent-filter>
 293        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
 294        <activity
-294-->[com.google.android.play:core-common:2.0.3] C:\Users\USER\.gradle\caches\9.1.0\transforms\b69f40f22094e1b25987d90f47644224\workspace\transformed\core-common-2.0.3\AndroidManifest.xml:14:9-18:65
+294-->[com.google.android.play:core-common:2.0.3] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\b69f40f22094e1b25987d90f47644224\workspace\transformed\core-common-2.0.3\AndroidManifest.xml:14:9-18:65
 295            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
-295-->[com.google.android.play:core-common:2.0.3] C:\Users\USER\.gradle\caches\9.1.0\transforms\b69f40f22094e1b25987d90f47644224\workspace\transformed\core-common-2.0.3\AndroidManifest.xml:15:13-93
+295-->[com.google.android.play:core-common:2.0.3] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\b69f40f22094e1b25987d90f47644224\workspace\transformed\core-common-2.0.3\AndroidManifest.xml:15:13-93
 296            android:exported="false"
-296-->[com.google.android.play:core-common:2.0.3] C:\Users\USER\.gradle\caches\9.1.0\transforms\b69f40f22094e1b25987d90f47644224\workspace\transformed\core-common-2.0.3\AndroidManifest.xml:16:13-37
+296-->[com.google.android.play:core-common:2.0.3] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\b69f40f22094e1b25987d90f47644224\workspace\transformed\core-common-2.0.3\AndroidManifest.xml:16:13-37
 297            android:stateNotNeeded="true"
-297-->[com.google.android.play:core-common:2.0.3] C:\Users\USER\.gradle\caches\9.1.0\transforms\b69f40f22094e1b25987d90f47644224\workspace\transformed\core-common-2.0.3\AndroidManifest.xml:17:13-42
+297-->[com.google.android.play:core-common:2.0.3] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\b69f40f22094e1b25987d90f47644224\workspace\transformed\core-common-2.0.3\AndroidManifest.xml:17:13-42
 298            android:theme="@style/Theme.PlayCore.Transparent" />
-298-->[com.google.android.play:core-common:2.0.3] C:\Users\USER\.gradle\caches\9.1.0\transforms\b69f40f22094e1b25987d90f47644224\workspace\transformed\core-common-2.0.3\AndroidManifest.xml:18:13-62
+298-->[com.google.android.play:core-common:2.0.3] C:\Users\5A_Traders\.gradle\caches\9.1.0\transforms\b69f40f22094e1b25987d90f47644224\workspace\transformed\core-common-2.0.3\AndroidManifest.xml:18:13-62
 299    </application>
 300
 301</manifest>

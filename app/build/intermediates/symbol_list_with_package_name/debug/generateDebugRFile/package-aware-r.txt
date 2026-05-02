@@ -132,6 +132,8 @@ id btnBack
 id btnFilter
 id btnInfo
 id btnMenu
+id btnPay
+id btnPayContainer
 id btnSearch
 id btnSendTicket
 id btnTrailer
@@ -185,6 +187,8 @@ id llGenreChips
 id llNowShowingCards
 id llOurPickBottom
 id llRightBlock
+id llSmaksContainer
+id llTicketsContainer
 id ll_bottom_content
 id loginButton
 id main
@@ -225,6 +229,7 @@ id switchPush
 id topBar
 id tvAllGenres
 id tvAmount
+id tvAudioFormat
 id tvCinemaAddress
 id tvCinemaName
 id tvCost
@@ -236,6 +241,7 @@ id tvFeaturedTitle
 id tvFormat
 id tvGridTitle
 id tvHall
+id tvLanguage
 id tvMoreComingSoon
 id tvMoreNowShowing
 id tvMovieBadge
@@ -245,11 +251,17 @@ id tvNewBadge
 id tvOurPickGenreTags
 id tvOurPickRating
 id tvOurPickTitle
+id tvPgRating
+id tvScreenType
+id tvSeatLabel
+id tvSeatPrice
 id tvSeats
 id tvSectionTitle
 id tvShowDateTime
+id tvTheater
 id tvTicketCount
 id tvTime
+id tvTotal
 id tv_actor_name
 id tv_actors
 id tv_app_name
@@ -303,6 +315,7 @@ layout item_day_selector
 layout item_grid_movie
 layout item_movie_card
 layout item_movie_reccomendation
+layout item_order_seat_row
 layout item_screen_details
 layout item_screen_type
 layout item_seat

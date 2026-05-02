@@ -131,6 +131,8 @@ int id btnBack 0x0
 int id btnFilter 0x0
 int id btnInfo 0x0
 int id btnMenu 0x0
+int id btnPay 0x0
+int id btnPayContainer 0x0
 int id btnSearch 0x0
 int id btnSendTicket 0x0
 int id btnTrailer 0x0
@@ -184,6 +186,8 @@ int id llGenreChips 0x0
 int id llNowShowingCards 0x0
 int id llOurPickBottom 0x0
 int id llRightBlock 0x0
+int id llSmaksContainer 0x0
+int id llTicketsContainer 0x0
 int id ll_bottom_content 0x0
 int id loginButton 0x0
 int id main 0x0
@@ -224,6 +228,7 @@ int id switchPush 0x0
 int id topBar 0x0
 int id tvAllGenres 0x0
 int id tvAmount 0x0
+int id tvAudioFormat 0x0
 int id tvCinemaAddress 0x0
 int id tvCinemaName 0x0
 int id tvCost 0x0
@@ -235,6 +240,7 @@ int id tvFeaturedTitle 0x0
 int id tvFormat 0x0
 int id tvGridTitle 0x0
 int id tvHall 0x0
+int id tvLanguage 0x0
 int id tvMoreComingSoon 0x0
 int id tvMoreNowShowing 0x0
 int id tvMovieBadge 0x0
@@ -244,11 +250,17 @@ int id tvNewBadge 0x0
 int id tvOurPickGenreTags 0x0
 int id tvOurPickRating 0x0
 int id tvOurPickTitle 0x0
+int id tvPgRating 0x0
+int id tvScreenType 0x0
+int id tvSeatLabel 0x0
+int id tvSeatPrice 0x0
 int id tvSeats 0x0
 int id tvSectionTitle 0x0
 int id tvShowDateTime 0x0
+int id tvTheater 0x0
 int id tvTicketCount 0x0
 int id tvTime 0x0
+int id tvTotal 0x0
 int id tv_actor_name 0x0
 int id tv_actors 0x0
 int id tv_app_name 0x0
@@ -302,6 +314,7 @@ int layout item_day_selector 0x0
 int layout item_grid_movie 0x0
 int layout item_movie_card 0x0
 int layout item_movie_reccomendation 0x0
+int layout item_order_seat_row 0x0
 int layout item_screen_details 0x0
 int layout item_screen_type 0x0
 int layout item_seat 0x0

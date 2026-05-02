@@ -1,15 +1,492 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.OrderDetailsActivity">
+    android:background="#121212">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- ===== TOP BAR ===== -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ORDER DETAILS"/>
+        android:padding="16dp"
+        android:paddingTop="44dp"
+        android:layout_alignParentTop="true">
 
-</LinearLayout>
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/circle_button_bg"
+            android:padding="10dp"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Order Details"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins_bold" />
+
+        <ImageButton
+            android:id="@+id/btnFilter"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/circle_button_bg"
+            android:padding="10dp"
+            android:src="@drawable/ic_filter"
+            android:contentDescription="Filter" />
+    </RelativeLayout>
+
+    <!-- ===== PAY BUTTON (fixed bottom) ===== -->
+    <LinearLayout
+        android:id="@+id/btnPayContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="32dp"
+        android:paddingTop="12dp"
+        android:background="#121212">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPay"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/button_red_bg"
+            android:text="Pay"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins_bold"
+            android:stateListAnimator="@null" />
+    </LinearLayout>
+
+    <!-- ===== SCROLLABLE CONTENT ===== -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/btnPayContainer"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <!-- ===== MOVIE CARD ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <!-- Movie Poster -->
+                <ImageView
+                    android:id="@+id/ivMoviePoster"
+                    android:layout_width="70dp"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/card_rounded_bg"
+                    android:contentDescription="Movie Poster" />
+
+                <!-- Movie Info -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/tvMovieTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Oppenheimer"
+                        android:textColor="#FFFFFF"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_marginBottom="6dp" />
+
+                    <!-- Badges row 1: +13 | EN | ScreenX -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="4dp">
+
+                        <!-- +13 badge -->
+                        <TextView
+                            android:id="@+id/tvPgRating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/badge_green_bg"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:text="+13"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="5dp" />
+
+                        <!-- EN badge -->
+                        <TextView
+                            android:id="@+id/tvLanguage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/badge_dark_outline_bg"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:text="EN"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp"
+                            android:layout_marginEnd="5dp" />
+
+                        <!-- ScreenX text -->
+                        <TextView
+                            android:id="@+id/tvScreenType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ScreenX"
+                            android:textColor="#CCCCCC"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/poppins_regular" />
+                    </LinearLayout>
+
+                    <!-- Audio format -->
+                    <TextView
+                        android:id="@+id/tvAudioFormat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dolby Atmos"
+                        android:textColor="#CCCCCC"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/poppins_regular" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ===== INFO ROW: Theater | Hall | Date | Time ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <!-- Theater -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_marginEnd="3dp"
+                            android:src="@drawable/ic_location"
+                            android:contentDescription="Theater" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Theater"
+                            android:textColor="#888888"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/poppins_regular" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvTheater"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="Stars (90°Mall)"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_semibold" />
+                </LinearLayout>
+
+                <!-- Hall -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_marginEnd="3dp"
+                            android:src="@drawable/ic_hall"
+                            android:contentDescription="Hall" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hall"
+                            android:textColor="#888888"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/poppins_regular" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvHall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="1st"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_semibold" />
+                </LinearLayout>
+
+                <!-- Date -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_marginEnd="3dp"
+                            android:src="@drawable/ic_date"
+                            android:contentDescription="Date" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Date"
+                            android:textColor="#888888"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/poppins_regular" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="13.04.2025"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_semibold" />
+                </LinearLayout>
+
+                <!-- Time -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_marginEnd="3dp"
+                            android:src="@drawable/ic_clock"
+                            android:contentDescription="Time" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Time"
+                            android:textColor="#888888"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/poppins_regular" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="22:15"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_semibold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#2A2A2A"
+                android:layout_marginBottom="16dp" />
+
+            <!-- ===== TICKETS SECTION ===== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tickets"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Seat rows — Java se dynamically add hongi -->
+            <LinearLayout
+                android:id="@+id/llTicketsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp" />
+
+            <!-- ===== SMAKS SECTION ===== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Smaks"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:id="@+id/llSmaksContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <!-- Static snack items — baad mein dynamic bhi kar sakte hain -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="X2  Medium Salt Popcorn"
+                        android:textColor="#888888"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/poppins_regular" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="16 USD"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_semibold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="X1  Larg Caramel Popcorn"
+                        android:textColor="#888888"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/poppins_regular" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="16 USD"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_semibold" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#2A2A2A"
+                android:layout_marginBottom="16dp" />
+
+            <!-- ===== TOTAL ROW ===== -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="TOTAL"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppins_bold" />
+
+                <TextView
+                    android:id="@+id/tvTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="59.98 USD"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppins_bold" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
