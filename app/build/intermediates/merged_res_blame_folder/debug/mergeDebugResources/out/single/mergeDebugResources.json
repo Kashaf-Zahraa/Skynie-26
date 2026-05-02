@@ -84,6 +84,10 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\drawable\\ic_google.xml"
     },
     {
+        "merged": "com.example.skynie.app-debug-53:/layout_dialog_actors.xml.flat",
+        "source": "com.example.skynie.app-main-55:/layout/dialog_actors.xml"
+    },
+    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-53:\\drawable_deadpool_poster.jpg.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\drawable\\deadpool_poster.jpg"
     },
@@ -268,10 +272,6 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\layout\\item_ticket_card.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_seats.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_seats.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-53:\\anim_logo_drop.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\anim\\logo_drop.xml"
     },
@@ -340,6 +340,10 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\drawable\\ic_language.xml"
     },
     {
+        "merged": "com.example.skynie.app-debug-53:/layout_item_actor.xml.flat",
+        "source": "com.example.skynie.app-main-55:/layout/item_actor.xml"
+    },
+    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-53:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
@@ -378,6 +382,10 @@
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-53:\\drawable_card_rounded_bg.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-55:\\drawable\\card_rounded_bg.xml"
+    },
+    {
+        "merged": "com.example.skynie.app-debug-53:/layout_item_screen_details.xml.flat",
+        "source": "com.example.skynie.app-main-55:/layout/item_screen_details.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-53:\\drawable_ic_notifications.xml.flat",
