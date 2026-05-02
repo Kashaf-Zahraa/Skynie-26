@@ -53,6 +53,7 @@ public class SeatsActivity extends AppCompatActivity {
             return insets;
         });
         getIntentValues();
+        setMovieInfo();
         getSeatsFromFirebase(hallShowTimeId);
         init();
         setOnClickListeners();
@@ -110,7 +111,6 @@ public class SeatsActivity extends AppCompatActivity {
         //seats list wil get populated
 
     }
-
     private void getIntentValues() {
         Intent intent = getIntent();
 
@@ -125,7 +125,12 @@ public class SeatsActivity extends AppCompatActivity {
         hallNumber = intent.getStringExtra("hall_number");
         screenType = intent.getStringExtra("screen_type");
         totalSeats = intent.getIntExtra("total_seats", 0);
-        audioFormat = intent.getStringExtra("audio_format");
+
+    }
+    private void setMovieInfo(){
+        tvscreenType.setText(screenType);
+        tvHall.setText(hallNumber);
+        tvTime.setText(showtimeTime);
     }
     private void setOnClickListeners() {
         btnBack.setOnClickListener((v) -> {

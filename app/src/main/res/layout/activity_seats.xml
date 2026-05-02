@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:text="@string/oppenheimer"
             android:letterSpacing="0.05"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:layout_centerInParent="true"
             android:textColor="@color/text_primary"
             android:textSize="26sp"
@@ -65,22 +65,25 @@
             <com.google.android.material.chip.Chip
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="4dp"
                 android:text="@string/rating_13"
                 android:textColor="@color/text_primary"
+                android:textSize="11sp"
                 app:chipBackgroundColor="@color/chip_green"
                 app:chipIconTint="@color/text_primary" />
 
             <com.google.android.material.chip.Chip
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="4dp"
                 android:text="@string/en"
                 android:textColor="@color/text_primary"
+                android:textSize="11sp"
                 app:chipBackgroundColor="@color/chip_dark"
                 app:chipIconTint="@color/text_primary" />
 
-           <TextView
+
+            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:text="@string/screen_x"
@@ -133,6 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
+                android:layout_marginStart="4dp"
                 android:text="Cue Cinemas"
                 android:textColor="@color/text_primary"
                 android:textSize="12sp" />
@@ -173,6 +177,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="1st"
+                android:layout_marginStart="4dp"
                 android:textColor="@color/text_primary"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -249,6 +254,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="22:15"
+                android:layout_marginStart="4dp"
                 android:textColor="@color/text_primary"
                 android:textSize="12sp" />
         </LinearLayout>

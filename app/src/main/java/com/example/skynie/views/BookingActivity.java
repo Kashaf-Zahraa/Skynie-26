@@ -48,8 +48,10 @@ public class BookingActivity extends AppCompatActivity {
     ImageView ivMoviePoster, ivLocationArrow;
     TextView tvMovieTitle, tvDuration;
     AppCompatButton btnTrailer;
+
     // Movie data from Intent
     String movieId, movieTitle, moviePoster, movieBackdrop, movieRating, movieDuration, movieDescription;
+    String cinemaName = ""; // Store cinema name
     Cinema currentCinema;
     List<HallShowTime> hallShowTimes = new ArrayList<>();
     List<Hall> halls = new ArrayList<>();
@@ -98,13 +100,14 @@ public class BookingActivity extends AppCompatActivity {
         });
         rvDays.setAdapter(dateAdapter);
 
-        // Format Adapter - WITH LISTENER
+        // Format Adapter
         rvFormats.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         formatAdapter = new FormatAdapter(this, (format, position) -> {
             filterShowtimesByDateAndFormat();
         });
         rvFormats.setAdapter(formatAdapter);
     }
+
     private void getIntentData() {
         Intent intent = getIntent();
         movieId = intent.getStringExtra("movie_id");
@@ -143,10 +146,20 @@ public class BookingActivity extends AppCompatActivity {
 
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
 
+        // First, fetch cinema name
         databaseRef.child("cinemas").child("c1").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot cinemaSnapshot) {
                 if (cinemaSnapshot.exists()) {
+                    // Get cinema name
+                    cinemaName = cinemaSnapshot.child("name").getValue(String.class);
+
+                    // Pass movie title and cinema name to adapter
+                    if (movieTitle != null && cinemaName != null) {
+                        adapter.setMovieAndCinema(movieTitle, cinemaName);
+                    }
+
+                    // Get hallShowtimeIds
                     List<String> hallShowtimeIds = new ArrayList<>();
                     DataSnapshot hallShowtimeIdsSnapshot = cinemaSnapshot.child("hallShowtimeIds");
                     for (DataSnapshot idSnapshot : hallShowtimeIdsSnapshot.getChildren()) {
@@ -304,7 +317,7 @@ public class BookingActivity extends AppCompatActivity {
         List<Showtime> filteredShowtimes = new ArrayList<>();
 
         for (Showtime showtime : showtimes) {
-            // Filter by date - direct string comparison
+            // Filter by date
             if (showtime.date == null || !showtime.date.equals(selectedDate)) {
                 continue;
             }
