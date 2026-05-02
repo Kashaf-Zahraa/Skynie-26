@@ -103,9 +103,9 @@ public class FilmDetailsActivity extends AppCompatActivity {
         String movie_backdrop = i.getStringExtra("movie_backdrop");
         String movie_rating = i.getStringExtra("movie_rating");
 
-        tvFilmTitle.setText(movie_title.trim());
-        tvDescription.setText(movie_description.trim());
-        tvDuration.setText(duration_st.trim());
+        tvFilmTitle.setText(movie_title);
+        tvDescription.setText(movie_description);
+        tvDuration.setText(duration_st);
 
         // Convert string name to drawable resource ID
         int imageResId = getDrawableResourceId(movie_poster);

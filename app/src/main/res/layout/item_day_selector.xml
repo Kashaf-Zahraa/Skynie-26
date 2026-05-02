@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/circle_transparent_bg"
+    android:id="@+id/day_card"
     android:padding="2dp">
 
     <TextView

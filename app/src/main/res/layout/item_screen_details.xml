@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="110dp"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:background="@drawable/button_grey_bg"
     android:orientation="vertical"
-    android:padding="12dp">
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/tv_format_type"
@@ -16,22 +16,13 @@
         android:textSize="12sp" />
 
     <TextView
-        android:id="@+id/tv_audio_format"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="@string/dolby_atmos"
-        android:textColor="@color/text_secondary"
-        android:textSize="11sp" />
-
-    <TextView
         android:id="@+id/tv_showtime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/time_random"
         android:textColor="@color/text_primary"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -61,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="@string/slash"
+            android:text="Available /"
             android:textColor="@color/availability_color"
             android:textSize="11sp" />
 

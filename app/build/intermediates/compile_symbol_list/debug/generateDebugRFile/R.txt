@@ -156,6 +156,7 @@ int id chipRomance 0x0
 int id chipScreenX 0x0
 int id confirmButton 0x0
 int id confirmPasswordInput 0x0
+int id day_card 0x0
 int id details 0x0
 int id dotsContainer 0x0
 int id emailInput 0x0
@@ -251,7 +252,6 @@ int id tvTime 0x0
 int id tv_actor_name 0x0
 int id tv_actors 0x0
 int id tv_app_name 0x0
-int id tv_audio_format 0x0
 int id tv_cast_character 0x0
 int id tv_cast_name 0x0
 int id tv_cinema 0x0

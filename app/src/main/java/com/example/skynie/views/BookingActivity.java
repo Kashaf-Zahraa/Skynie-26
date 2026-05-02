@@ -17,10 +17,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.skynie.R;
+import com.example.skynie.adapters.DateAdapter;
+import com.example.skynie.adapters.FormatAdapter;
 import com.example.skynie.adapters.HallShowTimeAdapter;
 import com.example.skynie.models.Cinema;
 import com.example.skynie.models.Hall;
@@ -38,15 +41,17 @@ import java.util.List;
 public class BookingActivity extends AppCompatActivity {
     CoordinatorLayout main;
     ImageButton btnBack;
-    RecyclerView rvDays,rvFormats,rvShowTimes;
+    RecyclerView rvDays, rvFormats, rvShowTimes;
     HallShowTimeAdapter adapter;
-    ImageView ivMoviePoster,ivLocationArrow;
-    TextView tvMovieTitle,tvDuration;
+    DateAdapter dateAdapter;
+    FormatAdapter formatAdapter;
+    ImageView ivMoviePoster, ivLocationArrow;
+    TextView tvMovieTitle, tvDuration;
     AppCompatButton btnTrailer;
     // Movie data from Intent
-    String movieId,movieTitle,moviePoster,movieBackdrop,movieRating,movieDuration,movieDescription;
+    String movieId, movieTitle, moviePoster, movieBackdrop, movieRating, movieDuration, movieDescription;
     Cinema currentCinema;
-    List<HallShowTime> hallShowTimes=new ArrayList<>();
+    List<HallShowTime> hallShowTimes = new ArrayList<>();
     List<Hall> halls = new ArrayList<>();
     List<Showtime> showtimes = new ArrayList<>();
 
@@ -68,7 +73,7 @@ public class BookingActivity extends AppCompatActivity {
         setupClickListeners();
     }
 
-    private void init(){
+    private void init() {
         main = findViewById(R.id.main);
         btnBack = findViewById(R.id.btn_back);
         rvDays = findViewById(R.id.rv_days);
@@ -76,14 +81,29 @@ public class BookingActivity extends AppCompatActivity {
         rvShowTimes = findViewById(R.id.rv_show_times);
         ivMoviePoster = findViewById(R.id.iv_movie_poster);
         tvMovieTitle = findViewById(R.id.tv_movie_title);
-        tvDuration=findViewById(R.id.tv_duration);
+        tvDuration = findViewById(R.id.tv_duration);
         btnTrailer = findViewById(R.id.btn_trailer);
         ivLocationArrow = findViewById(R.id.iv_location_arrow);
 
-        rvShowTimes.setLayoutManager(new GridLayoutManager(this,3));
-        adapter=new HallShowTimeAdapter(hallShowTimes,this);
-
+        // Showtimes RecyclerView
+        rvShowTimes.setLayoutManager(new GridLayoutManager(this, 3));
+        adapter = new HallShowTimeAdapter(hallShowTimes, this);
         rvShowTimes.setAdapter(adapter);
+
+        // Date Adapter
+        rvDays.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        dateAdapter = new DateAdapter(this);
+        dateAdapter.setOnDateChangeListener(() -> {
+            filterShowtimesByDateAndFormat();
+        });
+        rvDays.setAdapter(dateAdapter);
+
+        // Format Adapter - WITH LISTENER
+        rvFormats.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        formatAdapter = new FormatAdapter(this, (format, position) -> {
+            filterShowtimesByDateAndFormat();
+        });
+        rvFormats.setAdapter(formatAdapter);
     }
     private void getIntentData() {
         Intent intent = getIntent();
@@ -92,9 +112,10 @@ public class BookingActivity extends AppCompatActivity {
         moviePoster = intent.getStringExtra("movie_poster");
         movieBackdrop = intent.getStringExtra("movie_backdrop");
         movieRating = intent.getStringExtra("movie_rating");
-        movieDuration = String.valueOf(intent.getIntExtra("movie_duration",0));
+        movieDuration = String.valueOf(intent.getIntExtra("movie_duration", 0));
         movieDescription = intent.getStringExtra("movie_description");
     }
+
     private void setupMovieInfo() {
         if (movieTitle != null) {
             tvMovieTitle.setText(movieTitle);
@@ -103,7 +124,6 @@ public class BookingActivity extends AppCompatActivity {
             tvDuration.setText(movieDuration + " min");
         }
 
-        // Fix: Load from drawable resource by name
         if (moviePoster != null && !moviePoster.isEmpty()) {
             int resourceId = getResources().getIdentifier(moviePoster, "drawable", getPackageName());
             if (resourceId != 0) {
@@ -113,23 +133,20 @@ public class BookingActivity extends AppCompatActivity {
                         .error(R.drawable.ic_movie_placeholder)
                         .into(ivMoviePoster);
             } else {
-                // If resource not found, use placeholder
                 ivMoviePoster.setImageResource(R.drawable.ic_movie_placeholder);
             }
         }
     }
+
     private void loadDataFromFirebase() {
         Toast.makeText(this, "Loading showtimes...", Toast.LENGTH_SHORT).show();
 
-        // Reference to Firebase Realtime Database
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
 
-        // Step 1: First, get the cinema to access its hallShowtimeIds
         databaseRef.child("cinemas").child("c1").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot cinemaSnapshot) {
                 if (cinemaSnapshot.exists()) {
-                    // Get hallShowtimeIds from cinema
                     List<String> hallShowtimeIds = new ArrayList<>();
                     DataSnapshot hallShowtimeIdsSnapshot = cinemaSnapshot.child("hallShowtimeIds");
                     for (DataSnapshot idSnapshot : hallShowtimeIdsSnapshot.getChildren()) {
@@ -141,7 +158,6 @@ public class BookingActivity extends AppCompatActivity {
                         return;
                     }
 
-                    // Step 2: Fetch all HallShowTime objects using the IDs
                     fetchHallShowtimes(hallShowtimeIds);
                 } else {
                     Toast.makeText(BookingActivity.this, "Cinema not found", Toast.LENGTH_SHORT).show();
@@ -154,11 +170,10 @@ public class BookingActivity extends AppCompatActivity {
             }
         });
     }
+
     private void fetchHallShowtimes(List<String> hallShowtimeIds) {
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
         List<HallShowTime> hallShowtimesList = new ArrayList<>();
-
-        // Counter to track when all fetches are complete
         int[] counter = {0};
 
         for (String hstId : hallShowtimeIds) {
@@ -171,10 +186,7 @@ public class BookingActivity extends AppCompatActivity {
                     }
 
                     counter[0]++;
-
-                    // When all HallShowTime objects are fetched
                     if (counter[0] == hallShowtimeIds.size()) {
-                        // Step 3: Fetch related Halls and Showtimes
                         fetchRelatedData(hallShowtimesList);
                     }
                 }
@@ -189,13 +201,13 @@ public class BookingActivity extends AppCompatActivity {
             });
         }
     }
+
     private void fetchRelatedData(List<HallShowTime> hallShowtimesList) {
         if (hallShowtimesList.isEmpty()) {
             Toast.makeText(this, "No showtimes found", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Collect unique hall IDs and showtime IDs
         List<String> hallIds = new ArrayList<>();
         List<String> showtimeIds = new ArrayList<>();
 
@@ -208,9 +220,9 @@ public class BookingActivity extends AppCompatActivity {
             }
         }
 
-        // Fetch all Halls
         fetchHalls(hallIds, hallShowtimesList, showtimeIds);
     }
+
     private void fetchHalls(List<String> hallIds, List<HallShowTime> hallShowtimesList, List<String> showtimeIds) {
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
         List<Hall> hallsList = new ArrayList<>();
@@ -227,7 +239,6 @@ public class BookingActivity extends AppCompatActivity {
 
                     counter[0]++;
                     if (counter[0] == hallIds.size()) {
-                        // All halls fetched, now fetch showtimes
                         fetchShowtimes(showtimeIds, hallShowtimesList, hallsList);
                     }
                 }
@@ -242,6 +253,7 @@ public class BookingActivity extends AppCompatActivity {
             });
         }
     }
+
     private void fetchShowtimes(List<String> showtimeIds, List<HallShowTime> hallShowtimesList, List<Hall> hallsList) {
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
         List<Showtime> showtimesList = new ArrayList<>();
@@ -281,14 +293,74 @@ public class BookingActivity extends AppCompatActivity {
             });
         }
     }
+
+    private void filterShowtimesByDateAndFormat() {
+        if (dateAdapter == null || formatAdapter == null) return;
+
+        String selectedDate = dateAdapter.getSelectedDateString();
+        String selectedFormat = formatAdapter.getSelectedFormat();
+
+        List<HallShowTime> filteredHallShowtimes = new ArrayList<>();
+        List<Showtime> filteredShowtimes = new ArrayList<>();
+
+        for (Showtime showtime : showtimes) {
+            // Filter by date - direct string comparison
+            if (showtime.date == null || !showtime.date.equals(selectedDate)) {
+                continue;
+            }
+
+            // Find hall for this showtime
+            Hall hall = null;
+            for (Hall h : halls) {
+                if (h.id.equals(showtime.hallId)) {
+                    hall = h;
+                    break;
+                }
+            }
+
+            // Filter by format
+            if (hall != null) {
+                if (selectedFormat.equals("ALL") || hall.screenType.equals(selectedFormat)) {
+                    filteredShowtimes.add(showtime);
+
+                    for (HallShowTime hst : hallShowTimes) {
+                        if (hst.getShowtimeId().equals(showtime.id)) {
+                            filteredHallShowtimes.add(hst);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        runOnUiThread(() -> {
+            if (filteredHallShowtimes.isEmpty()) {
+                adapter.updateItems(new ArrayList<>(), halls, new ArrayList<>());
+                if (showtimes.size() > 0) {
+                    Toast.makeText(this, "No showtimes for selected date and format", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                adapter.updateItems(filteredHallShowtimes, halls, filteredShowtimes);
+            }
+        });
+    }
+
     private void updateAdapterWithData(List<HallShowTime> hallShowtimesList, List<Hall> hallsList, List<Showtime> showtimesList) {
+        // Store data for filtering
+        this.hallShowTimes = hallShowtimesList;
+        this.halls = hallsList;
+        this.showtimes = showtimesList;
+
         // Filter HallShowTime objects to only include those with matching showtimes
         List<HallShowTime> filteredHallShowtimes = new ArrayList<>();
+        List<Showtime> validShowtimes = new ArrayList<>();
+
         for (HallShowTime hst : hallShowtimesList) {
             boolean hasMatchingShowtime = false;
             for (Showtime st : showtimesList) {
                 if (st.id.equals(hst.getShowtimeId())) {
                     hasMatchingShowtime = true;
+                    validShowtimes.add(st);
                     break;
                 }
             }
@@ -297,22 +369,27 @@ public class BookingActivity extends AppCompatActivity {
             }
         }
 
-        // Update the adapter on UI thread
+        // Update adapter with filtered data
         runOnUiThread(() -> {
             if (filteredHallShowtimes.isEmpty()) {
                 Toast.makeText(BookingActivity.this, "No showtimes available for this movie", Toast.LENGTH_SHORT).show();
+                adapter.updateItems(new ArrayList<>(), hallsList, new ArrayList<>());
             } else {
-                adapter.updateItems(filteredHallShowtimes, hallsList, showtimesList);}
+                adapter.updateItems(filteredHallShowtimes, hallsList, validShowtimes);
+            }
         });
+
+        // Filter by current selected date and format after data loads
+        filterShowtimesByDateAndFormat();
     }
+
     private void setupClickListeners() {
         btnBack.setOnClickListener(v -> {
-            startActivity(new Intent(this,FilmDetailsActivity.class));
+            startActivity(new Intent(this, FilmDetailsActivity.class));
             finish();
         });
 
         btnTrailer.setOnClickListener(v -> {
-            // Open trailer video
             Toast.makeText(this, "Play Trailer", Toast.LENGTH_SHORT).show();
         });
     }

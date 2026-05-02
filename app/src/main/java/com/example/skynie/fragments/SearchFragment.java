@@ -38,7 +38,6 @@ import java.util.Locale;
 public class SearchFragment extends Fragment {
 
     private static final int LOCATION_PERMISSION_REQUEST = 1001;
-
     private DatabaseReference cinemasRef;
     private FusedLocationProviderClient fusedLocationClient;
 

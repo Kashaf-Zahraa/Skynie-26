@@ -158,6 +158,7 @@ id chipRomance
 id chipScreenX
 id confirmButton
 id confirmPasswordInput
+id day_card
 id details
 id dotsContainer
 id emailInput
@@ -253,7 +254,6 @@ id tvTime
 id tv_actor_name
 id tv_actors
 id tv_app_name
-id tv_audio_format
 id tv_cast_character
 id tv_cast_name
 id tv_cinema
