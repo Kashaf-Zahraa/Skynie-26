@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -46,11 +47,27 @@
         android:layout_marginTop="60dp"
         android:background="#1A1A1A">
 
+        <!-- WebView - visibility set to gone now -->
         <WebView
             android:id="@+id/webViewTrailer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#000000" />
+            android:background="#000000"
+            android:visibility="gone" />
+
+        <!-- Trailer not available message -->
+        <TextView
+            android:id="@+id/tvTrailerNotAvailable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Trailer not available"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:padding="16dp"
+            android:visibility="gone"
+            android:fontFamily="@font/poppins_regular" />
 
         <ProgressBar
             android:id="@+id/progressBar"

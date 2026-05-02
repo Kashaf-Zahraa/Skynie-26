@@ -21,7 +21,6 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.skynie.R;
 import com.example.skynie.adapters.ActorAdapter;
 import com.example.skynie.adapters.ActorDialog;
@@ -46,6 +45,10 @@ public class FilmDetailsActivity extends AppCompatActivity {
     CoordinatorLayout main;
     ArrayList<String> directors, writers, actors;
     DatabaseReference databaseReference;
+
+    // Store movie details as class variables
+    private String movie_id, movie_title, movie_poster, movie_backdrop, movie_rating, movie_description;
+    private int movie_duration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,8 +78,7 @@ public class FilmDetailsActivity extends AppCompatActivity {
         tvDuration = findViewById(R.id.tv_duration);
         tvWriter = findViewById(R.id.tv_writer);
         tvDirector = findViewById(R.id.tv_director);
-        movieBg=findViewById(R.id.movie_bg);
-//        rvVideos = findViewById(R.id.rv_videos);
+        movieBg = findViewById(R.id.movie_bg);
         rvStars = findViewById(R.id.rv_stars);
         rvRecommendations = findViewById(R.id.rv_recommendations);
         main = findViewById(R.id.main);
@@ -85,23 +87,28 @@ public class FilmDetailsActivity extends AppCompatActivity {
             startActivity(new Intent(FilmDetailsActivity.this, MainActivity.class));
             finish();
         });
+
         btnFav.setOnClickListener((v) -> {
             btnFav.setImageResource(R.drawable.ic_heart_filled);
-            //for now
+            Toast.makeText(this, "Added to wishlist", Toast.LENGTH_SHORT).show();
         });
-
     }
 
     private void getAndSetValues() {
         Intent i = getIntent();
-        String movie_id = i.getStringExtra("movie_id");
-        String movie_title = i.getStringExtra("movie_title");
-        int movie_duration = i.getIntExtra("movie_duration", 0);
-        String movie_description = i.getStringExtra("movie_description");
+        movie_id = i.getStringExtra("movie_id");
+        movie_title = i.getStringExtra("movie_title");
+        movie_duration = i.getIntExtra("movie_duration", 0);
+        movie_description = i.getStringExtra("movie_description");
         String duration_st = String.valueOf(movie_duration) + " mins";
-        String movie_poster = i.getStringExtra("movie_poster");
-        String movie_backdrop = i.getStringExtra("movie_backdrop");
-        String movie_rating = i.getStringExtra("movie_rating");
+        movie_poster = i.getStringExtra("movie_poster");
+        movie_backdrop = i.getStringExtra("movie_backdrop");
+        movie_rating = i.getStringExtra("movie_rating");
+
+        // Get additional data for trailer
+        String trailerUrl = i.getStringExtra("trailer_url");
+        String pgRating = i.getStringExtra("pg_rating");
+        String language = i.getStringExtra("language");
 
         tvFilmTitle.setText(movie_title);
         tvDescription.setText(movie_description);
@@ -111,15 +118,40 @@ public class FilmDetailsActivity extends AppCompatActivity {
         int imageResId = getDrawableResourceId(movie_poster);
         movieBg.setBackgroundResource(imageResId);
 
-        btnBuyTicket.setOnClickListener((v) -> {
-            Intent intent = new Intent(this, BookingActivity.class);
+        // ✅ FIXED: btnPlay - Create final copies for lambda
+        final String finalTrailerUrl = trailerUrl;
+        final String finalPgRating = pgRating;
+        final String finalLanguage = language;
+
+        btnPlay.setOnClickListener(v -> {
+            Intent intent = new Intent(FilmDetailsActivity.this, TrailerActivity.class);
             intent.putExtra("movie_id", movie_id);
             intent.putExtra("movie_title", movie_title);
-            intent.putExtra("movie_poster", movie_poster);
-            intent.putExtra("movie_backdrop", movie_backdrop);
-            intent.putExtra("movie_rating", movie_rating);
             intent.putExtra("movie_duration", movie_duration);
-            intent.putExtra("movie_description", movie_description);
+            intent.putExtra("trailer_url", finalTrailerUrl);
+            intent.putExtra("pg_rating", finalPgRating);
+            intent.putExtra("language", finalLanguage);
+            startActivity(intent);
+        });
+
+        // ✅ FIXED: btnBuyTicket - Create final copies for lambda
+        final String finalMovieId = movie_id;
+        final String finalMovieTitle = movie_title;
+        final String finalMoviePoster = movie_poster;
+        final String finalMovieBackdrop = movie_backdrop;
+        final String finalMovieRating = movie_rating;
+        final int finalMovieDuration = movie_duration;
+        final String finalMovieDescription = movie_description;
+
+        btnBuyTicket.setOnClickListener((v) -> {
+            Intent intent = new Intent(this, BookingActivity.class);
+            intent.putExtra("movie_id", finalMovieId);
+            intent.putExtra("movie_title", finalMovieTitle);
+            intent.putExtra("movie_poster", finalMoviePoster);
+            intent.putExtra("movie_backdrop", finalMovieBackdrop);
+            intent.putExtra("movie_rating", finalMovieRating);
+            intent.putExtra("movie_duration", finalMovieDuration);
+            intent.putExtra("movie_description", finalMovieDescription);
             startActivity(intent);
         });
 
@@ -162,16 +194,15 @@ public class FilmDetailsActivity extends AppCompatActivity {
             return R.drawable.ic_movie_placeholder;
         }
 
-        // Try to get resource ID from drawable name
         int resId = this.getResources().getIdentifier(
                 drawableName,
                 "drawable",
                 this.getPackageName()
         );
 
-        // Return placeholder if resource not found
         return resId != 0 ? resId : R.drawable.ic_movie_placeholder;
     }
+
     private void setupActorsRecyclerView(ArrayList<String> actors) {
         if (actors == null || actors.isEmpty()) {
             rvStars.setVisibility(View.GONE);
@@ -179,7 +210,6 @@ public class FilmDetailsActivity extends AppCompatActivity {
         }
 
         ActorAdapter adapter = new ActorAdapter(actors, allActors -> {
-            // Show dialog with all actors when "See More" is clicked
             ActorDialog dialog = new ActorDialog(FilmDetailsActivity.this, allActors, "Full Cast");
             dialog.show();
         });
@@ -199,7 +229,6 @@ public class FilmDetailsActivity extends AppCompatActivity {
                 for (DataSnapshot data : snapshot.getChildren()) {
                     String movieId = data.child("id").getValue(String.class);
 
-                    // Don't recommend the current movie
                     if (movieId != null && !movieId.equals(currentMovieId)) {
                         String title = data.child("title").getValue(String.class);
                         String description = data.child("description").getValue(String.class);
@@ -225,15 +254,10 @@ public class FilmDetailsActivity extends AppCompatActivity {
                     }
                 }
 
-                // Optional: Shuffle for variety
-                // Collections.shuffle(recommendations);
-
-                // Limit to 10 recommendations
                 if (recommendations.size() > 10) {
                     recommendations = recommendations.subList(0, 10);
                 }
 
-                // Set up RecyclerView
                 setupRecommendations(recommendations);
             }
 
@@ -244,6 +268,7 @@ public class FilmDetailsActivity extends AppCompatActivity {
             }
         });
     }
+
     private void setupRecommendations(List<Movie> recommendations) {
         if (recommendations == null || recommendations.isEmpty()) {
             rvRecommendations.setVisibility(View.GONE);
@@ -277,7 +302,7 @@ public class FilmDetailsActivity extends AppCompatActivity {
 
         Cast movie3 = new Cast(actors3, "movie3", directors3, writers3);
 
-// MOVIE 4: Deadpool & Wolverine
+        // MOVIE 4: Deadpool & Wolverine
         ArrayList<String> directors4 = new ArrayList<>();
         directors4.add("Shawn Levy");
 
@@ -298,7 +323,7 @@ public class FilmDetailsActivity extends AppCompatActivity {
 
         Cast movie4 = new Cast(actors4, "movie4", directors4, writers4);
 
-// MOVIE 5: Gladiator II
+        // MOVIE 5: Gladiator II
         ArrayList<String> directors5 = new ArrayList<>();
         directors5.add("Ridley Scott");
 
@@ -315,7 +340,7 @@ public class FilmDetailsActivity extends AppCompatActivity {
 
         Cast movie5 = new Cast(actors5, "movie5", directors5, writers5);
 
-// MOVIE 6: Joker 2
+        // MOVIE 6: Joker 2
         ArrayList<String> directors6 = new ArrayList<>();
         directors6.add("Todd Phillips");
 
@@ -332,7 +357,7 @@ public class FilmDetailsActivity extends AppCompatActivity {
 
         Cast movie6 = new Cast(actors6, "movie6", directors6, writers6);
 
-// MOVIE 7: Kraven the Hunter
+        // MOVIE 7: Kraven the Hunter
         ArrayList<String> directors7 = new ArrayList<>();
         directors7.add("J.C. Chandor");
 
@@ -350,7 +375,7 @@ public class FilmDetailsActivity extends AppCompatActivity {
 
         Cast movie7 = new Cast(actors7, "movie7", directors7, writers7);
 
-// MOVIE 8: Mickey 17
+        // MOVIE 8: Mickey 17
         ArrayList<String> directors8 = new ArrayList<>();
         directors8.add("Bong Joon-ho");
 
@@ -366,7 +391,7 @@ public class FilmDetailsActivity extends AppCompatActivity {
 
         Cast movie8 = new Cast(actors8, "movie8", directors8, writers8);
 
-// MOVIE 9: Snow White
+        // MOVIE 9: Snow White
         ArrayList<String> directors9 = new ArrayList<>();
         directors9.add("Marc Webb");
 

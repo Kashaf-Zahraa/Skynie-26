@@ -1,6 +1,8 @@
 package com.example.skynie.views;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -12,13 +14,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.skynie.R;
-import com.example.skynie.models.Seat;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
@@ -38,8 +40,9 @@ public class TicketDetailsActivity extends AppCompatActivity {
         displayFromIntent();
 
         btnBack.setOnClickListener(v -> finish());
-        btnSendTicket.setOnClickListener(v ->
-                Toast.makeText(this, "Share feature coming soon!", Toast.LENGTH_SHORT).show());
+
+        // ✅ FIXED: Send ticket via email with pre-filled To field
+        btnSendTicket.setOnClickListener(v -> sendTicketByEmail());
     }
 
     private void initViews() {
@@ -67,14 +70,16 @@ public class TicketDetailsActivity extends AppCompatActivity {
         String hallNumber  = getIntent().getStringExtra("hall_number");
         String screenType  = getIntent().getStringExtra("screen_type");
         String audioFormat = getIntent().getStringExtra("audio_format");
-        String pgRating    = getIntent().getStringExtra("pg_rating");
-        String language    = getIntent().getStringExtra("language");
         String time        = getIntent().getStringExtra("time");
         String showtimeDate= getIntent().getStringExtra("showtime_date");
         double totalPrice  = getIntent().getDoubleExtra("total_price", 0.0);
         int seatCount      = getIntent().getIntExtra("seat_count", 0);
         String seatsLabel  = getIntent().getStringExtra("seats_label");
         String moviePoster = getIntent().getStringExtra("movie_poster");
+
+        // Store for email
+        storeEmailData(bookingRef, movieTitle, cinemaName, hallNumber, screenType,
+                audioFormat, time, showtimeDate, totalPrice, seatCount, seatsLabel);
 
         // Movie title
         if (movieTitle != null) tvMovieTitle.setText(movieTitle);
@@ -130,6 +135,29 @@ public class TicketDetailsActivity extends AppCompatActivity {
         generateQRCode(qrData);
     }
 
+    // Store data for email
+    private String emailBookingRef, emailMovieTitle, emailCinemaName, emailHallNumber;
+    private String emailScreenType, emailAudioFormat, emailTime, emailDate, emailSeatsLabel;
+    private double emailTotalPrice;
+    private int emailSeatCount;
+
+    private void storeEmailData(String bookingRef, String movieTitle, String cinemaName,
+                                String hallNumber, String screenType, String audioFormat,
+                                String time, String date, double totalPrice,
+                                int seatCount, String seatsLabel) {
+        this.emailBookingRef = bookingRef;
+        this.emailMovieTitle = movieTitle;
+        this.emailCinemaName = cinemaName;
+        this.emailHallNumber = hallNumber;
+        this.emailScreenType = screenType;
+        this.emailAudioFormat = audioFormat;
+        this.emailTime = time;
+        this.emailDate = date;
+        this.emailTotalPrice = totalPrice;
+        this.emailSeatCount = seatCount;
+        this.emailSeatsLabel = seatsLabel;
+    }
+
     private void generateQRCode(String text) {
         try {
             BitMatrix matrix = new MultiFormatWriter()
@@ -143,5 +171,70 @@ public class TicketDetailsActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    // ✅ FIXED: Send ticket via email with pre-filled To field
+    private void sendTicketByEmail() {
+        // Firebase Auth se current user ki email lo
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user == null) {
+            Toast.makeText(this, "Please log in first", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String userEmail = user.getEmail();
+        if (userEmail == null || userEmail.isEmpty()) {
+            Toast.makeText(this, "No email found for account", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Email subject
+        String subject = "Your Skynie Ticket - " + safe(emailMovieTitle);
+
+        // Email body
+        String body = "Hi!\n\n"
+                + "Your booking is confirmed. Details below:\n\n"
+                + "Movie:    " + safe(emailMovieTitle) + "\n"
+                + "Format:   " + safe(emailScreenType)
+                + (emailAudioFormat != null && !emailAudioFormat.isEmpty() ? " - " + emailAudioFormat : "") + "\n"
+                + "Theater:  " + safe(emailCinemaName) + "\n"
+                + "Hall:     " + safe(emailHallNumber) + "\n"
+                + "Date:     " + safe(emailDate) + "\n"
+                + "Time:     " + safe(emailTime) + "\n"
+                + "Seats:    " + safe(emailSeatsLabel)
+                + " (" + emailSeatCount + " ticket" + (emailSeatCount != 1 ? "s" : "") + ")\n"
+                + "Total:    " + String.format(Locale.getDefault(), "%.2f USD", emailTotalPrice) + "\n\n"
+                + "Booking Ref: " + safe(emailBookingRef) + "\n\n"
+                + "Enjoy your movie!\n- Skynie";
+
+        // ✅ Gmail mein directly To: user ki apni email, ready to send
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{userEmail});
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        emailIntent.putExtra(Intent.EXTRA_TEXT, body);
+
+        try {
+            startActivity(emailIntent);
+            Toast.makeText(this, "Sending to " + userEmail, Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            // Gmail nahi hai — generic chooser
+            try {
+                Intent fallback = new Intent(Intent.ACTION_SEND);
+                fallback.setType("text/plain");
+                fallback.putExtra(Intent.EXTRA_EMAIL, new String[]{userEmail});
+                fallback.putExtra(Intent.EXTRA_SUBJECT, subject);
+                fallback.putExtra(Intent.EXTRA_TEXT, body);
+                startActivity(Intent.createChooser(fallback, "Send ticket via..."));
+            } catch (Exception e2) {
+                Toast.makeText(this, "No email app found", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    // Helper method to handle null values
+    private String safe(String val) {
+        return val != null ? val : "";
     }
 }

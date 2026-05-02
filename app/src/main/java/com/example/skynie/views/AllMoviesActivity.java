@@ -119,9 +119,11 @@ public class AllMoviesActivity extends AppCompatActivity {
                 intent.putExtra("movie_title",       movie.title);
                 intent.putExtra("movie_poster",      movie.poster_drawable);
                 intent.putExtra("movie_backdrop",    movie.backdrop_drawable);
-                intent.putExtra("movie_rating",      movie.rating);
+             //   intent.putExtra("movie_rating",      movie.rating);
                 intent.putExtra("movie_duration",    movie.duration_minutes);
                 intent.putExtra("movie_description", movie.description);
+
+                intent.putExtra("movie_rating", String.valueOf(movie.rating));
                 startActivity(intent);
             });
         }

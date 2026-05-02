@@ -26,6 +26,7 @@ public class HallShowTimeAdapter extends RecyclerView.Adapter<HallShowTimeAdapte
     private Map<String, Hall> hallMap = new HashMap<>();      // Cache for halls by ID
     private Map<String, Showtime> showtimeMap = new HashMap<>(); // Cache for showtimes by ID
     String movieTitle, cinemaName;
+    String selectedDate;  // ✅ ADD THIS - to store date
     private Context context;
 
     public HallShowTimeAdapter(List<HallShowTime> items, Context context) {
@@ -56,6 +57,11 @@ public class HallShowTimeAdapter extends RecyclerView.Adapter<HallShowTimeAdapte
         notifyDataSetChanged();
     }
 
+    // ✅ ADD THIS METHOD to set the selected date
+    public void setSelectedDate(String date) {
+        this.selectedDate = date;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -68,7 +74,7 @@ public class HallShowTimeAdapter extends RecyclerView.Adapter<HallShowTimeAdapte
         HallShowTime hallShowTime = items.get(position);
 
         // Get the actual Hall and Showtime objects from the maps
-        String hallShowTimeId=hallShowTime.getId();
+        String hallShowTimeId = hallShowTime.getId();
         Hall hall = hallMap.get(hallShowTime.getHallId());
         Showtime showtime = showtimeMap.get(hallShowTime.getShowtimeId());
 
@@ -85,7 +91,7 @@ public class HallShowTimeAdapter extends RecyclerView.Adapter<HallShowTimeAdapte
         holder.tvShowtime.setText(showtime.time);
         holder.tvHallNumber.setText(hall.hallNumber);
         holder.tvSeatsAvailable.setText(String.valueOf(showtime.availableSeats));
-        holder.tvTotalSeats.setText(String.valueOf(hall.totalSeats)+ " Available");
+        holder.tvTotalSeats.setText(String.valueOf(hall.totalSeats) + " Available");
 
         // Calculate and set availability color
         int availabilityPercent = (showtime.availableSeats * 100) / hall.totalSeats;
@@ -103,11 +109,11 @@ public class HallShowTimeAdapter extends RecyclerView.Adapter<HallShowTimeAdapte
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, SeatsActivity.class);
 
-            intent.putExtra("hallShowTime_id",hallShowTimeId);
+            intent.putExtra("hallShowTime_id", hallShowTimeId);
 
             intent.putExtra("showtime_id", showtime.id);
             intent.putExtra("showtime_time", showtime.time);
-            intent.putExtra("showtime_time", showtime.time);
+            intent.putExtra("showtime_date", selectedDate);  // ✅ ADD THIS LINE - pass date
             intent.putExtra("available_seats", showtime.availableSeats);
             intent.putExtra("price", showtime.price);
             intent.putExtra("movie_id", showtime.movieId);
@@ -130,6 +136,7 @@ public class HallShowTimeAdapter extends RecyclerView.Adapter<HallShowTimeAdapte
     public int getItemCount() {
         return items.size();
     }
+
     // This method is already in your adapter
     public void setMovieAndCinema(String movieTitle, String cinemaName) {
         this.movieTitle = movieTitle;
@@ -137,7 +144,7 @@ public class HallShowTimeAdapter extends RecyclerView.Adapter<HallShowTimeAdapte
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvShowtime, tvHallNumber,tvFormatType;
+        TextView tvShowtime, tvHallNumber, tvFormatType;
         TextView tvSeatsAvailable, tvTotalSeats;
 
         public ViewHolder(@NonNull View itemView) {

@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
@@ -17,7 +18,11 @@ import com.example.skynie.R;
 import com.example.skynie.models.Booking;
 import com.example.skynie.models.Seat;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -50,6 +55,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
         getIntentData();
         displayOrderInfo();
         displayTicketRows();
+        fetchMissingDataFromFirebase();  // ✅ ADD THIS LINE
         setClickListeners();
     }
 
@@ -116,19 +122,17 @@ public class OrderDetailsActivity extends AppCompatActivity {
         tvLanguage.setText(language);
         tvLanguage.setVisibility(language.isEmpty() ? View.GONE : View.VISIBLE);
 
-        // screenType = e.g. "ScreenX", audioFormat = e.g. "Dolby Atmos"
         tvScreenType.setText(screenType);
         tvScreenType.setVisibility(screenType.isEmpty() ? View.GONE : View.VISIBLE);
 
         tvAudioFormat.setText(audioFormat);
         tvAudioFormat.setVisibility(audioFormat.isEmpty() ? View.GONE : View.VISIBLE);
 
-        // Real cinema name — no "Cinema" fallback
         tvTheater.setText(cinemaName);
         tvHall.setText(hallNumber);
         tvTime.setText(time);
 
-        // Date — use showtime date if passed, else today
+        // Date formatting
         if (showtimeDate != null && !showtimeDate.isEmpty()) {
             try {
                 SimpleDateFormat inFmt  = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
@@ -164,8 +168,114 @@ public class OrderDetailsActivity extends AppCompatActivity {
         }
     }
 
+    // ✅ ADD THIS METHOD - Fetch missing data from Firebase
+    private void fetchMissingDataFromFirebase() {
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference();
+
+        // 1. Movie se pg_rating aur language fetch karo
+        if (movieId != null && (pgRating.isEmpty() || language.isEmpty() || movieTitle.isEmpty())) {
+            db.child("movies").child(movieId)
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.exists()) {
+                                // Fetch PG Rating
+                                if (pgRating.isEmpty()) {
+                                    String pg = snapshot.child("pg_rating").getValue(String.class);
+                                    if (pg != null && !pg.isEmpty()) {
+                                        pgRating = pg;
+                                        tvPgRating.setText(pgRating);
+                                        tvPgRating.setVisibility(View.VISIBLE);
+                                    }
+                                }
+
+                                // Fetch Language
+                                if (language.isEmpty()) {
+                                    String lang = snapshot.child("language").getValue(String.class);
+                                    if (lang != null && !lang.isEmpty()) {
+                                        language = lang;
+                                        tvLanguage.setText(language);
+                                        tvLanguage.setVisibility(View.VISIBLE);
+                                    }
+                                }
+
+                                // Fetch Movie Title (if missing)
+                                if (movieTitle.isEmpty()) {
+                                    String title = snapshot.child("title").getValue(String.class);
+                                    if (title != null && !title.isEmpty()) {
+                                        movieTitle = title;
+                                        tvMovieTitle.setText(movieTitle);
+                                    }
+                                }
+
+                                // Fetch Poster (if missing)
+                                if ((moviePoster == null || moviePoster.isEmpty())) {
+                                    String poster = snapshot.child("poster_drawable").getValue(String.class);
+                                    if (poster != null && !poster.isEmpty()) {
+                                        moviePoster = poster;
+                                        int resId = getResources().getIdentifier(
+                                                poster, "drawable", getPackageName());
+                                        if (resId != 0) ivMoviePoster.setImageResource(resId);
+                                    }
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            // Silent fail - data already showing what we have
+                        }
+                    });
+        }
+
+        // 2. Cinema name fetch karo agar blank hai
+        if (cinemaId != null && (cinemaName == null || cinemaName.isEmpty())) {
+            db.child("cinemas").child(cinemaId)
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.exists()) {
+                                String name = snapshot.child("name").getValue(String.class);
+                                if (name != null && !name.isEmpty()) {
+                                    cinemaName = name;
+                                    tvTheater.setText(cinemaName);
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            // Silent fail
+                        }
+                    });
+        }
+
+        // 3. Audio format fetch karo hallShowtime se (agar missing hai)
+        if (hallShowtimeId != null && (audioFormat == null || audioFormat.isEmpty())) {
+            db.child("hallShowtimes").child(hallShowtimeId)
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.exists()) {
+                                String af = snapshot.child("audioFormat").getValue(String.class);
+                                if (af != null && !af.isEmpty()) {
+                                    audioFormat = af;
+                                    tvAudioFormat.setText(audioFormat);
+                                    tvAudioFormat.setVisibility(View.VISIBLE);
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            // Silent fail
+                        }
+                    });
+        }
+    }
+
     private void setClickListeners() {
-        btnBack.setOnClickListener(v -> finish()); // sirf back — no new activity
+        btnBack.setOnClickListener(v -> finish());
 
         btnFilter.setOnClickListener(v ->
                 Toast.makeText(this, "Filter", Toast.LENGTH_SHORT).show());
@@ -193,7 +303,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
                 .child(bookingId)
                 .setValue(booking)
                 .addOnSuccessListener(unused -> {
-                    // Build seats summary string: "A5, A6, B3"
+                    // Build seats summary string
                     StringBuilder sb = new StringBuilder();
                     for (int idx = 0; idx < selectedSeats.size(); idx++) {
                         if (idx > 0) sb.append(", ");

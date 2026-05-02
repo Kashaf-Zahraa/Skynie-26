@@ -35,7 +35,8 @@ public class SeatsActivity extends AppCompatActivity {
     RecyclerView rvSeats;
     SeatAdapter adapter;
 
-    String showtimeId, showtimeTime, movieId, cinemaId, hallId, hallNumber,
+    // ✅ ADDED showtimeDate here
+    String showtimeId, showtimeTime, showtimeDate, movieId, cinemaId, hallId, hallNumber,
             screenType, audioFormat, movieTitle, cinemaName;
     int availableSeats, totalSeats;
     double price;
@@ -85,6 +86,7 @@ public class SeatsActivity extends AppCompatActivity {
         hallShowTimeId = intent.getStringExtra("hallShowTime_id");
         showtimeId     = intent.getStringExtra("showtime_id");
         showtimeTime   = intent.getStringExtra("showtime_time");
+        showtimeDate   = intent.getStringExtra("showtime_date");  // ✅ ADD THIS LINE
         availableSeats = intent.getIntExtra("available_seats", 0);
         price          = intent.getDoubleExtra("price", 0.0);
         movieId        = intent.getStringExtra("movie_id");
@@ -96,6 +98,11 @@ public class SeatsActivity extends AppCompatActivity {
         movieTitle     = intent.getStringExtra("movie_title");
         cinemaName     = intent.getStringExtra("cinema_name");
         audioFormat    = intent.getStringExtra("audio_format");
+
+        // ✅ Set date on TextView if available
+        if (tvDate != null && showtimeDate != null) {
+            tvDate.setText(showtimeDate);
+        }
     }
 
     private void setMovieInfo() {
@@ -137,7 +144,6 @@ public class SeatsActivity extends AppCompatActivity {
 
     private void setOnClickListeners() {
 
-        // ✅ FIX: Back button — sirf finish(), koi naya Intent nahi
         btnBack.setOnClickListener(v -> finish());
 
         btnFav.setOnClickListener(v ->
@@ -170,7 +176,7 @@ public class SeatsActivity extends AppCompatActivity {
             }
             adapter.notifyDataSetChanged();
 
-            // Build seats label: "A5, A6, B3"
+            // Build seats label
             StringBuilder sb = new StringBuilder();
             for (int idx = 0; idx < selectedSeats.size(); idx++) {
                 if (idx > 0) sb.append(", ");
@@ -183,6 +189,7 @@ public class SeatsActivity extends AppCompatActivity {
             intent.putExtra("hallShowtime_id",   hallShowTimeId);
             intent.putExtra("showtime_id",       showtimeId);
             intent.putExtra("showtime_time",     showtimeTime);
+            intent.putExtra("showtime_date",     showtimeDate);  // ✅ ADD THIS LINE
             intent.putExtra("available_seats",   availableSeats);
             intent.putExtra("price",             price);
             intent.putExtra("movie_id",          movieId);

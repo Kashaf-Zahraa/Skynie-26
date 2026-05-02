@@ -1,14 +1,10 @@
 package com.example.skynie.views;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -29,11 +25,13 @@ import com.google.firebase.database.ValueEventListener;
 
 public class TrailerActivity extends AppCompatActivity {
 
-    private WebView webViewTrailer;
     private ProgressBar progressBar;
     private ImageButton btnBack;
     private TextView tvMovieTitle, tvMeta, badgeAge, badgeLang;
+    private TextView tvTrailerNotAvailable;
     private SeekBar seekBar;
+
+    private String resolvedTrailerUrl = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,18 +48,18 @@ public class TrailerActivity extends AppCompatActivity {
         initViews();
         populateFromIntent();
         btnBack.setOnClickListener(v -> finish());
-        if (seekBar != null) seekBar.setEnabled(false); // display only
+        if (seekBar != null) seekBar.setEnabled(false);
     }
 
     private void initViews() {
-        webViewTrailer = findViewById(R.id.webViewTrailer);
-        progressBar    = findViewById(R.id.progressBar);
-        btnBack        = findViewById(R.id.btnBack);
-        tvMovieTitle   = findViewById(R.id.tvMovieTitle);
-        tvMeta         = findViewById(R.id.tvMeta);
-        badgeAge       = findViewById(R.id.badgeAge);
-        badgeLang      = findViewById(R.id.badgeLang);
-        seekBar        = findViewById(R.id.seekBar);
+        progressBar         = findViewById(R.id.progressBar);
+        btnBack             = findViewById(R.id.btnBack);
+        tvMovieTitle        = findViewById(R.id.tvMovieTitle);
+        tvMeta              = findViewById(R.id.tvMeta);
+        badgeAge            = findViewById(R.id.badgeAge);
+        badgeLang           = findViewById(R.id.badgeLang);
+        seekBar             = findViewById(R.id.seekBar);
+        tvTrailerNotAvailable = findViewById(R.id.tvTrailerNotAvailable);
     }
 
     private void populateFromIntent() {
@@ -73,10 +71,8 @@ public class TrailerActivity extends AppCompatActivity {
         int    duration   = getIntent().getIntExtra("movie_duration", 0);
         String genre      = getIntent().getStringExtra("movie_genre");
 
-        // Title
         if (tvMovieTitle != null && movieTitle != null) tvMovieTitle.setText(movieTitle);
 
-        // Meta: "NEW · Mystery · PG-13 · 1h 56m"
         StringBuilder meta = new StringBuilder("NEW");
         if (genre    != null && !genre.isEmpty())    meta.append(" · ").append(genre);
         if (pgRating != null && !pgRating.isEmpty()) meta.append(" · ").append(pgRating);
@@ -86,80 +82,151 @@ public class TrailerActivity extends AppCompatActivity {
         }
         if (tvMeta != null) tvMeta.setText(meta.toString());
 
-        // Language badge (EN)
         if (badgeLang != null && language != null && !language.isEmpty()) {
             String lang = language.length() >= 2
                     ? language.substring(0, 2).toUpperCase() : language.toUpperCase();
             badgeLang.setText(lang);
         }
 
-        // Age badge (PG-13 → show as-is)
         if (badgeAge != null && pgRating != null && !pgRating.isEmpty())
             badgeAge.setText(pgRating);
 
-        // Load trailer
         if (trailerUrl != null && !trailerUrl.isEmpty()) {
-            playTrailer(trailerUrl);
+            resolvedTrailerUrl = trailerUrl;
+            openTrailer(trailerUrl);
         } else if (movieId != null) {
-            fetchAndPlayTrailer(movieId);
+            fetchAndOpenTrailer(movieId);
         } else {
-            if (progressBar != null) progressBar.setVisibility(View.GONE);
+            showNotAvailable();
         }
     }
 
-    private void fetchAndPlayTrailer(String movieId) {
+    private void fetchAndOpenTrailer(String movieId) {
         if (progressBar != null) progressBar.setVisibility(View.VISIBLE);
         FirebaseDatabase.getInstance().getReference("movies").child(movieId)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override public void onDataChange(@NonNull DataSnapshot snap) {
-                        String url = snap.child("trailer_url").getValue(String.class);
-                        if (url != null && !url.isEmpty()) playTrailer(url);
-                        else if (progressBar != null) progressBar.setVisibility(View.GONE);
-                    }
-                    @Override public void onCancelled(@NonNull DatabaseError e) {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snap) {
                         if (progressBar != null) progressBar.setVisibility(View.GONE);
+                        String url = snap.child("trailer_url").getValue(String.class);
+                        if (url != null && !url.isEmpty()) {
+                            resolvedTrailerUrl = url;
+                            openTrailer(url);
+                        } else {
+                            showNotAvailable();
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError e) {
+                        if (progressBar != null) progressBar.setVisibility(View.GONE);
+                        showNotAvailable();
                     }
                 });
     }
 
-    private void playTrailer(String url) {
+    /**
+     * ✅ FIXED: Seedha browser mein open karo - No WebView, No Error 153
+     */
+    private void openTrailer(String url) {
+        if (progressBar != null) progressBar.setVisibility(View.GONE);
+
         String videoId = extractYouTubeId(url);
-        String loadUrl = (videoId != null)
-                ? "https://www.youtube.com/embed/" + videoId + "?autoplay=1&controls=1&rel=0"
+        String openUrl = (videoId != null)
+                ? "https://www.youtube.com/watch?v=" + videoId
                 : url;
 
-        WebSettings s = webViewTrailer.getSettings();
-        s.setJavaScriptEnabled(true);
-        s.setDomStorageEnabled(true);
-        s.setMediaPlaybackRequiresUserGesture(false);
+        if (openUrl == null || openUrl.isEmpty()) {
+            showNotAvailable();
+            return;
+        }
 
-        webViewTrailer.setWebChromeClient(new WebChromeClient());
-        webViewTrailer.setWebViewClient(new WebViewClient() {
-            @Override public void onPageFinished(WebView v, String u) {
-                if (progressBar != null) progressBar.setVisibility(View.GONE);
-            }
-        });
-        webViewTrailer.loadUrl(loadUrl);
+        try {
+            // ✅ Seedha browser/YouTube mein open karo
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(openUrl));
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+
+            // Activity mein message dikhao
+            showOpenedExternally(openUrl);
+
+        } catch (Exception e) {
+            showNotAvailable();
+        }
+    }
+
+    private void showOpenedExternally(final String url) {
+        View videoContainer = findViewById(R.id.videoContainer);
+        if (videoContainer != null) {
+            videoContainer.setBackgroundColor(0xFF1A1A1A);
+        }
+
+        if (tvTrailerNotAvailable != null) {
+            tvTrailerNotAvailable.setText("▶  Tap to watch trailer");
+            tvTrailerNotAvailable.setTextSize(16f);
+            tvTrailerNotAvailable.setTextColor(0xFFE53935);
+            tvTrailerNotAvailable.setVisibility(View.VISIBLE);
+            tvTrailerNotAvailable.setOnClickListener(v -> {
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                } catch (Exception ignored) {}
+            });
+        }
+    }
+
+    private void showNotAvailable() {
+        if (progressBar != null) progressBar.setVisibility(View.GONE);
+        if (tvTrailerNotAvailable != null) {
+            tvTrailerNotAvailable.setText("Trailer not available");
+            tvTrailerNotAvailable.setTextSize(14f);
+            tvTrailerNotAvailable.setTextColor(0xFFFFFFFF);
+            tvTrailerNotAvailable.setVisibility(View.VISIBLE);
+            tvTrailerNotAvailable.setOnClickListener(null);
+        }
+        Toast.makeText(this, "Trailer not available", Toast.LENGTH_SHORT).show();
     }
 
     private String extractYouTubeId(String url) {
         if (url == null) return null;
+
+        // Handle youtu.be format
         if (url.contains("youtu.be/")) {
             String[] p = url.split("youtu.be/");
-            if (p.length > 1) { String id = p[1]; if (id.contains("?")) id = id.substring(0, id.indexOf("?")); return id.trim(); }
+            if (p.length > 1) {
+                String id = p[1];
+                if (id.contains("?")) id = id.substring(0, id.indexOf("?"));
+                if (id.contains("&")) id = id.substring(0, id.indexOf("&"));
+                return id.trim();
+            }
         }
-        if (url.contains("watch?v=")) { String id = Uri.parse(url).getQueryParameter("v"); if (id != null) return id; }
+
+        // Handle youtube.com/watch?v= format
+        if (url.contains("watch?v=")) {
+            String id = Uri.parse(url).getQueryParameter("v");
+            if (id != null) return id;
+        }
+
+        // Handle youtube.com/embed/ format
         if (url.contains("embed/")) {
             String[] p = url.split("embed/");
-            if (p.length > 1) { String id = p[1]; if (id.contains("?")) id = id.substring(0, id.indexOf("?")); return id.trim(); }
+            if (p.length > 1) {
+                String id = p[1];
+                if (id.contains("?")) id = id.substring(0, id.indexOf("?"));
+                if (id.contains("&")) id = id.substring(0, id.indexOf("&"));
+                return id.trim();
+            }
         }
-        return null;
-    }
 
-    @Override protected void onPause()   { super.onPause();   if (webViewTrailer != null) webViewTrailer.onPause(); }
-    @Override protected void onResume()  { super.onResume();  if (webViewTrailer != null) webViewTrailer.onResume(); }
-    @Override protected void onDestroy() {
-        if (webViewTrailer != null) { webViewTrailer.stopLoading(); webViewTrailer.destroy(); }
-        super.onDestroy();
+        // Handle shorts format
+        if (url.contains("/shorts/")) {
+            String[] p = url.split("/shorts/");
+            if (p.length > 1) {
+                String id = p[1];
+                if (id.contains("?")) id = id.substring(0, id.indexOf("?"));
+                return id.trim();
+            }
+        }
+
+        return null;
     }
 }

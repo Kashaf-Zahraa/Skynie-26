@@ -27,7 +27,6 @@ import com.example.skynie.R;
 import com.example.skynie.fragments.AccountFragment;
 import com.example.skynie.fragments.MyTicketsFragment;
 import com.example.skynie.fragments.SearchFragment;
-import com.example.skynie.models.Cast;
 import com.example.skynie.models.Movie;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -78,8 +77,7 @@ public class MainActivity extends AppCompatActivity {
         initViews();
         setupBottomNavigation();
         setupClickListeners();
-        loadMovies(); // Database se movies load karo
-
+        loadMovies();
     }
 
     // Views ko initialize karo
@@ -420,7 +418,7 @@ public class MainActivity extends AppCompatActivity {
         llComingSoonCards.addView(card);
     }
 
-    // Click listeners setup karo
+    // ✅ FIXED: Click listeners setup karo - Trailer button ab kaam karega
     private void setupClickListeners() {
         TextView tvMoreNowShowing = findViewById(R.id.tvMoreNowShowing);
         if (tvMoreNowShowing != null)
@@ -440,43 +438,82 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayout chipAdventure = findViewById(R.id.chipAdventure);
         if (chipAdventure != null) chipAdventure.setOnClickListener(v -> filterOurPickByGenre("Adventure"));
+
         LinearLayout chipComedy = findViewById(R.id.chipComedy);
         if (chipComedy != null) chipComedy.setOnClickListener(v -> filterOurPickByGenre("Comedy"));
+
         LinearLayout chipRomance = findViewById(R.id.chipRomance);
         if (chipRomance != null) chipRomance.setOnClickListener(v -> filterOurPickByGenre("Romance"));
+
         LinearLayout chipAction = findViewById(R.id.chipAction);
         if (chipAction != null) chipAction.setOnClickListener(v -> filterOurPickByGenre("Action"));
 
         TextView tvAllGenres = findViewById(R.id.tvAllGenres);
         if (tvAllGenres != null) tvAllGenres.setOnClickListener(v -> {
+            // Show all genres - reset filter
+            ourPickMovies.clear();
+            ourPickMovies.addAll(featuredMovies);
+            currentOurPickIndex = 0;
+            if (!ourPickMovies.isEmpty()) displayOurPick(ourPickMovies.get(0));
         });
+
+        // ✅ FIXED: Trailer Button - Currently displayed "Our Pick" movie ka trailer open karo
         LinearLayout btnTrailer = findViewById(R.id.btnTrailer);
-        if (btnTrailer != null) btnTrailer.setOnClickListener(v -> {
-        });
+        if (btnTrailer != null) {
+            btnTrailer.setOnClickListener(v -> {
+                if (!ourPickMovies.isEmpty() && currentOurPickIndex < ourPickMovies.size()) {
+                    Movie movie = ourPickMovies.get(currentOurPickIndex);
+                    Intent intent = new Intent(this, TrailerActivity.class);
+                    intent.putExtra("movie_id", movie.id);
+                    intent.putExtra("movie_title", movie.title);
+                    intent.putExtra("movie_duration", movie.duration_minutes);
+                    intent.putExtra("trailer_url", movie.trailer_url);
+                    intent.putExtra("pg_rating", movie.pg_rating);
+                    intent.putExtra("language", movie.language);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(this, "Trailer not available", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
         ImageButton btnMenu = findViewById(R.id.btnMenu);
         if (btnMenu != null) btnMenu.setOnClickListener(v -> {
+            // Menu functionality - can be implemented later
+            Toast.makeText(this, "Menu", Toast.LENGTH_SHORT).show();
         });
+
         ImageButton btnSearch = findViewById(R.id.btnSearch);
         if (btnSearch != null) btnSearch.setOnClickListener(v -> {
+            // Switch to search fragment
+            loadFragment(new SearchFragment());
+            BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
+            if (bottomNav != null) bottomNav.setSelectedItemId(R.id.nav_search);
         });
+
         ImageButton btnAddWishlist = findViewById(R.id.btnAddWishlist);
         if (btnAddWishlist != null) btnAddWishlist.setOnClickListener(v -> {
+            Toast.makeText(this, "Added to wishlist", Toast.LENGTH_SHORT).show();
         });
+
         ImageButton btnInfo = findViewById(R.id.btnInfo);
         if (btnInfo != null) btnInfo.setOnClickListener(v -> {
+            if (!ourPickMovies.isEmpty() && currentOurPickIndex < ourPickMovies.size()) {
+                Movie movie = ourPickMovies.get(currentOurPickIndex);
+                navigateToFilmDetails(movie);
+            }
         });
     }
 
     // Film details screen par jao
     private void navigateToFilmDetails(Movie movie) {
         Intent intent = new Intent(this, FilmDetailsActivity.class);
-
-
         intent.putExtra("movie_id", movie.id);
         intent.putExtra("movie_title", movie.title);
         intent.putExtra("movie_poster", movie.poster_drawable);
         intent.putExtra("movie_backdrop", movie.backdrop_drawable);
-        intent.putExtra("movie_rating", movie.rating);
+
+        intent.putExtra("movie_rating", String.valueOf(movie.rating));
         intent.putExtra("movie_duration", movie.duration_minutes);
         intent.putExtra("movie_description", movie.description);
         startActivity(intent);
@@ -488,6 +525,4 @@ public class MainActivity extends AppCompatActivity {
         if (autoSwipeRunnable != null)
             autoSwipeHandler.removeCallbacks(autoSwipeRunnable);
     }
-
-
 }

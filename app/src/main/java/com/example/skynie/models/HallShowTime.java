@@ -9,11 +9,12 @@ public class HallShowTime {
 
     public HallShowTime() {}
 
+    // HallShowTime.java - FIXED constructor
     public HallShowTime(String id, String hallId, String showtimeId, String audioFormat) {
         this.id = id;
         this.hallId = hallId;
         this.showtimeId = showtimeId;
-        this.audioFormat = getAudioFormatForScreenType("ScreenX");
+        this.audioFormat = audioFormat;
     }
 
     private String getAudioFormatForScreenType(String screenType) {

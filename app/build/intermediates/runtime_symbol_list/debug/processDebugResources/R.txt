@@ -4577,6 +4577,7 @@ int id tvTicketCount 0x7f090294
 int id tvTime 0x7f090295
 int id tvTotal 0x7f0902d6
 int id tvTotalTime 0x7f0902e3
+int id tvTrailerNotAvailable 0x7f0902e6
 int id tv_actor_name 0x7f090296
 int id tv_actors 0x7f090297
 int id tv_app_name 0x7f090298
