@@ -57,6 +57,8 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.viewpager2:viewpager2:1.1.0")
     implementation("com.google.zxing:core:3.5.1")
+    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
+    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
 
 
 }

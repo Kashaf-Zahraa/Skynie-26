@@ -51,6 +51,9 @@ public class BookingActivity extends AppCompatActivity {
 
     String movieId, movieTitle, moviePoster, movieBackdrop,
             movieRating, movieDuration, movieDescription;
+    String trailerUrl = "";   // ✅ ADDED
+    String pgRating   = "";   // ✅ ADDED
+    String language   = "";   // ✅ ADDED
     String cinemaName = "";
 
     List<HallShowTime> hallShowTimes = new ArrayList<>();
@@ -115,6 +118,9 @@ public class BookingActivity extends AppCompatActivity {
         movieRating      = intent.getStringExtra("movie_rating");
         movieDuration    = String.valueOf(intent.getIntExtra("movie_duration", 0));
         movieDescription = intent.getStringExtra("movie_description");
+        trailerUrl       = intent.getStringExtra("trailer_url");   // ✅ ADDED
+        pgRating         = intent.getStringExtra("pg_rating");     // ✅ ADDED
+        language         = intent.getStringExtra("language");      // ✅ ADDED
     }
 
     private void setupMovieInfo() {
@@ -324,16 +330,19 @@ public class BookingActivity extends AppCompatActivity {
     }
 
     private void setupClickListeners() {
-        // ✅ FIX: Back button — sirf finish(), koi naya Intent nahi
+        // Back button — sirf finish(), koi naya Intent nahi
         btnBack.setOnClickListener(v -> finish());
 
+        // ✅ FIXED: btnTrailer - Pass all trailer data
         btnTrailer.setOnClickListener(v -> {
             Intent intent = new Intent(this, TrailerActivity.class);
             intent.putExtra("movie_id",       movieId);
             intent.putExtra("movie_title",    movieTitle);
             intent.putExtra("movie_duration", movieDuration != null
                     ? Integer.parseInt(movieDuration) : 0);
-            // trailer_url blank — TrailerActivity Firebase se fetch karega
+            intent.putExtra("trailer_url",    trailerUrl);  // ✅ Actual URL passed
+            intent.putExtra("pg_rating",      pgRating);    // ✅ Added
+            intent.putExtra("language",       language);    // ✅ Added
             startActivity(intent);
         });
     }

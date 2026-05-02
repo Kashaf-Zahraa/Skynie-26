@@ -134,17 +134,14 @@
     <list default="true" id="0d9137cb-049d-4819-81c3-0ca790bb972a" name="Changes" comment="updates">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/adapters/HallShowTimeAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/adapters/HallShowTimeAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/models/HallShowTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/models/HallShowTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/AllMoviesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/AllMoviesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/BookingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/BookingActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/FilmDetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/FilmDetailsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/OrderDetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/OrderDetailsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/SeatsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/SeatsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/TicketDetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/TicketDetailsActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/TrailerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/TrailerActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_trailer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_trailer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -424,7 +421,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/skynie/views/BookingActivity.java</url>
-          <line>137</line>
+          <line>143</line>
           <properties class="com.example.skynie.views.BookingActivity" method="loadDataFromFirebase">
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -438,12 +435,12 @@
       <map>
         <entry key="com.example.skynie">
           <value>
-            <CheckInfo lastCheckTimestamp="1777662547271" />
+            <CheckInfo lastCheckTimestamp="1777749296756" />
           </value>
         </entry>
         <entry key="com.example.skynie.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1777662547276" />
+            <CheckInfo lastCheckTimestamp="1777749296756" />
           </value>
         </entry>
       </map>

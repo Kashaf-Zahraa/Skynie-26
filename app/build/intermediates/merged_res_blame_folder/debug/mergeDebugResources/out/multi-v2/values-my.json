@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.skynie.app-mergeDebugResources-51:/values-my/values-my.xml",
+            "outputFile": "com.example.skynie.app-mergeDebugResources-53:/values-my/values-my.xml",
             "map": [
                 {
                     "source": "C:\\Users\\5A_Traders\\.gradle\\caches\\9.1.0\\transforms\\28135bd804107dbe624425dbe7a2379e\\workspace\\transformed\\play-services-base-18.5.0\\res\\values-my\\values.xml",

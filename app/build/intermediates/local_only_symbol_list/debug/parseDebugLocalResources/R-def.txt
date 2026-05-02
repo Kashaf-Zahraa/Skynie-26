@@ -137,15 +137,14 @@ id bottomPanel
 id btnAddWishlist
 id btnBack
 id btnFilter
-id btnFullscreen
 id btnInfo
 id btnMenu
 id btnPay
 id btnPayContainer
+id btnPlayYouTube
 id btnSearch
 id btnSendTicket
 id btnTrailer
-id btnVolume
 id btn_back
 id btn_buy_ticket
 id btn_close
@@ -184,6 +183,7 @@ id ivPin
 id ivPoster
 id ivProfile
 id ivQRCode
+id ivThumbnail
 id iv_bg_grid
 id iv_cast_photo
 id iv_location_arrow
@@ -198,7 +198,6 @@ id llOurPickBottom
 id llRightBlock
 id llSmaksContainer
 id llTicketsContainer
-id llTimeBlock
 id ll_bottom_content
 id loginButton
 id main
@@ -233,7 +232,6 @@ id rv_stars
 id screenType
 id searchBar
 id seat_number
-id seekBar
 id signupButton
 id signupLink
 id switchPromo
@@ -245,7 +243,6 @@ id tvAudioFormat
 id tvCinemaAddress
 id tvCinemaName
 id tvCost
-id tvCurrentTime
 id tvDate
 id tvDistance
 id tvEmail
@@ -277,8 +274,6 @@ id tvTheater
 id tvTicketCount
 id tvTime
 id tvTotal
-id tvTotalTime
-id tvTrailerNotAvailable
 id tv_actor_name
 id tv_actors
 id tv_app_name
@@ -305,7 +300,6 @@ id tv_total_seats
 id tv_writer
 id videoContainer
 id vpFeaturedBanner
-id webViewTrailer
 layout activity_all_movies
 layout activity_auth
 layout activity_booking

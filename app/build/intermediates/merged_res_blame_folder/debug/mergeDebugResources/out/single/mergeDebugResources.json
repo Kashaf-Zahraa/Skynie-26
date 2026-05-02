@@ -1,578 +1,582 @@
 [
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_main.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_main.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_bg_onboarding.png.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\bg_onboarding.png"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_privacy.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_privacy.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_location.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_location.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_genre_chip_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/genre_chip_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_button_red_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\button_red_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_heart.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_heart.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_home.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_home.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_button_buy_ticket.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/button_buy_ticket.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_deadpool_poster.jpg.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\deadpool_poster.jpg"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_item_day_selector.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\item_day_selector.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_badge_blue_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\badge_blue_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_ticket_details.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_ticket_details.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_otp_field_background.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\otp_field_background.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_arrow_right.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_arrow_right.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_item_order_seat_row.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/item_order_seat_row.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_button_back_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\button_back_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_ticket.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_ticket.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_gradient_card_overlay.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\gradient_card_overlay.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_placeholder_qr.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/placeholder_qr.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_back.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_back.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_fragment_my_tickets.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/fragment_my_tickets.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_circle_play_button.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\circle_play_button.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_auth.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_auth.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\anim_logo_drop.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\anim\\logo_drop.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_heart.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_heart.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_button_grey_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/button_grey_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_ticket_details.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_ticket_details.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_gladiator_poster.jpg.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/gladiator_poster.jpg"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\color_switch_track_selector.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\color\\switch_track_selector.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_all_movies.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_all_movies.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_gradient_card_overlay.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/gradient_card_overlay.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_dune_poster.jpg.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\dune_poster.jpg"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_verify_otp.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_verify_otp.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_badge_green_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\badge_green_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_profile.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_profile.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_button_trailer_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\button_trailer_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/font_poppins_regular.ttf.flat",
-        "source": "com.example.skynie.app-main-55:/font/poppins_regular.ttf"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_circle_button_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\circle_button_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_calendar.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_calendar.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_dot_active.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\dot_active.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_item_movie_reccomendation.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/item_movie_reccomendation.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_item_grid_movie.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\item_grid_movie.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.skynie.app-main-55:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_play.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_play.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_item_screen_type.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/item_screen_type.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_item_coming_soon_card.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\item_coming_soon_card.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/font_poppins_semibold.ttf.flat",
-        "source": "com.example.skynie.app-main-55:/font/poppins_semibold.ttf"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_notifications.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_notifications.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_item_ticket_card.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/item_ticket_card.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\font_poppins_semibold.ttf.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\font\\poppins_semibold.ttf"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_hall.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_hall.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_pill_white_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\pill_white_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_volume.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_volume.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_edit_text_background.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\edit_text_background.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_item_video.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/item_video.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_dialog_actors.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/dialog_actors.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_help.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_help.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_item_cinema_row.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/item_cinema_row.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/anim_logo_drop.xml.flat",
-        "source": "com.example.skynie.app-main-55:/anim/logo_drop.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_badge_red_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\badge_red_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ourpick_banner.png.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ourpick_banner.png"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_location.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_location.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ourpick_banner.png.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ourpick_banner.png"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/anim_fadeoftext.xml.flat",
-        "source": "com.example.skynie.app-main-55:/anim/fadeoftext.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_mickey_poster.jpg.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/mickey_poster.jpg"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_imdb_logo.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\imdb_logo.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_button_back_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/button_back_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_filter.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_filter.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_item_video.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\item_video.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_film_details.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_film_details.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_empty_tickets.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_empty_tickets.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_booking.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_booking.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_setting.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_setting.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_button_grey_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\button_grey_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_star.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_star.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_item_order_seat_row.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\item_order_seat_row.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_dune_poster.jpg.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/dune_poster.jpg"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_auth.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_auth.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_featured_banner.png.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/featured_banner.png"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_verify_otp.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_verify_otp.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_search.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_search.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_button_buy_ticket.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\button_buy_ticket.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_help.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_help.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_fragment_my_tickets.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\fragment_my_tickets.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_deadpool_poster.jpg.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/deadpool_poster.jpg"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_outline_privacy_tip_24.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\outline_privacy_tip_24.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_outline_privacy_tip_24.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/outline_privacy_tip_24.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_onboarding.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_onboarding.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_movie_placeholder.png.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_movie_placeholder.png"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_film_details.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_film_details.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/xml_backup_rules.xml.flat",
-        "source": "com.example.skynie.app-main-55:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_star.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_star.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_filter.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_filter.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_date.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_date.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_chevron_right.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_chevron_right.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_location_pin.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_location_pin.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_circle_button_dark_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\circle_button_dark_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_badge_green_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/badge_green_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_volume.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_volume.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_all_movies.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_all_movies.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_circle_play_button.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/circle_play_button.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_badge_red_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/badge_red_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_hall.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_hall.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_setting.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_setting.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_snowwhite_poster.png.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\snowwhite_poster.png"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_circle_red_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/circle_red_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\anim_fadeoftext.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\anim\\fadeoftext.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_circle_button_dark_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/circle_button_dark_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_calendar.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_calendar.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_fragment_search.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/fragment_search.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\font_poppins_regular.ttf.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\font\\poppins_regular.ttf"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_home.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_home.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_mickey_poster.jpg.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\mickey_poster.jpg"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_item_cast_member.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/item_cast_member.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_movie_placeholder.png.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_movie_placeholder.png"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_back.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_back.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_dialog_actors.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\dialog_actors.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_button_red_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/button_red_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_play.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_play.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_arrow_right.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_arrow_right.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_booking.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_booking.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_notifications.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_notifications.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_search_bar_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\search_bar_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_heart_filled.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_heart_filled.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_screen_shape.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\screen_shape.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_splash.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_splash.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_kraven_poster.jpg.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\kraven_poster.jpg"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_logout.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_logout.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_login.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_seats.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_seats.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_item_cinema_row.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\item_cinema_row.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_empty_tickets.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_empty_tickets.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_seats.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_seats.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_screen_shape.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/screen_shape.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_card_rounded_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\card_rounded_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_signup.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_signup.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_ticket.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_ticket.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_item_grid_movie.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/item_grid_movie.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_profile.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_profile.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_fullscreen.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_fullscreen.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_snowwhite_poster.png.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/snowwhite_poster.png"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_item_actor.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\item_actor.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/font_poppins_bold.ttf.flat",
-        "source": "com.example.skynie.app-main-55:/font/poppins_bold.ttf"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_fragment_account.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\fragment_account.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_login.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_login.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_heart_filled.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_heart_filled.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_pill_white_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/pill_white_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_language.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_language.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_trailer.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_trailer.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_item_cast_member.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\item_cast_member.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_gradient_banner_overlay.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/gradient_banner_overlay.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_genre_chip_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\genre_chip_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_edit_text_background.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/edit_text_background.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_chevron_right.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_chevron_right.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_imdb_logo.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/imdb_logo.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_dot_inactive.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\dot_inactive.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_button_red_outline.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/button_red_outline.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_forgot_password.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_forgot_password.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_item_actor.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/item_actor.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_item_movie_reccomendation.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\item_movie_reccomendation.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_button_transparent_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/button_transparent_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_item_screen_type.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\item_screen_type.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_item_seat.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/item_seat.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/menu_bottom_nav_menu.xml.flat",
-        "source": "com.example.skynie.app-main-55:/menu/bottom_nav_menu.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\anim_logo_rot.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\anim\\logo_rot.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_button_trailer_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/button_trailer_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_chip_inactive_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\chip_inactive_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_dot_inactive.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/dot_inactive.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_privacy.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_privacy.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_info.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_info.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-mdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\font_poppins_bold.ttf.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\font\\poppins_bold.ttf"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_badge_dark_outline_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/badge_dark_outline_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_location_pin.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_location_pin.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-mdpi/ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_featured_banner.png.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\featured_banner.png"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_item_screen_details.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/item_screen_details.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_facebook.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_facebook.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_add.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_add.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_card_rounded_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/card_rounded_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_google.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_google.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_item_ticket_card.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\item_ticket_card.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_logo.png.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/logo.png"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_button_outline_background.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\button_outline_background.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_badge_dark_outline_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\badge_dark_outline_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_onboarding.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_onboarding.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_splash.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_date.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_date.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_bottom_nav_icon_selector.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\bottom_nav_icon_selector.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_item_coming_soon_card.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/item_coming_soon_card.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_gladiator_poster.jpg.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\gladiator_poster.jpg"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_button_outline_background.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/button_outline_background.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_placeholder_qr.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\placeholder_qr.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_inside_out_poster.jpg.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/inside_out_poster.jpg"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_circle_play_overlay.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\circle_play_overlay.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_forgot_password.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_forgot_password.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_button_red_background.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\button_red_background.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_dot_active.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/dot_active.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_menu.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_menu.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_menu.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_menu.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_button_red_outline.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\button_red_outline.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/color_switch_track_selector.xml.flat",
-        "source": "com.example.skynie.app-main-55:/color/switch_track_selector.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_circle_red_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\circle_red_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_fragment_account.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/fragment_account.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_otp_field_background.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/otp_field_background.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_button_red_background.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/button_red_background.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_inside_out_poster.jpg.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\inside_out_poster.jpg"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-hdpi/ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_logo.png.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\logo.png"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_item_movie_card.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/item_movie_card.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_clock.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_clock.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_item_day_selector.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/item_day_selector.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_fragment_search.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\fragment_search.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_arrival_poster.jpg.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/arrival_poster.jpg"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_google.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_google.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_activity_order_details.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/activity_order_details.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-hdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_search_bar_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/search_bar_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_fullscreen.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_fullscreen.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_kraven_poster.jpg.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/kraven_poster.jpg"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_item_movie_card.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\item_movie_card.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_bg_onboarding.png.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/bg_onboarding.png"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_trailer.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_trailer.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/layout_fragment_home.xml.flat",
-        "source": "com.example.skynie.app-main-55:/layout/fragment_home.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_facebook.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_facebook.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_logout.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_logout.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_language.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_language.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_joker_poster.jpg.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\joker_poster.jpg"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/anim_logo_rot.xml.flat",
-        "source": "com.example.skynie.app-main-55:/anim/logo_rot.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_circle_transparent_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\circle_transparent_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_badge_blue_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/badge_blue_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_info.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_info.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_item_screen_details.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\item_screen_details.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_joker_poster.jpg.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/joker_poster.jpg"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_signup.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_signup.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-xhdpi/ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_button_transparent_bg.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\button_transparent_bg.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.skynie.app-main-55:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_search.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_search.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_circle_transparent_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/circle_transparent_bg.xml"
+        "merged": "com.example.skynie.app-debug-55:/layout_activity_trailer.xml.flat",
+        "source": "com.example.skynie.app-main-57:/layout/activity_trailer.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_ic_clock.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/ic_clock.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_gradient_banner_overlay.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\gradient_banner_overlay.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_circle_play_overlay.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/circle_play_overlay.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_arrival_poster.jpg.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\arrival_poster.jpg"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_circle_button_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/circle_button_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_add.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_add.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_chip_inactive_bg.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/chip_inactive_bg.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_order_details.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\activity_order_details.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-53:/drawable_bottom_nav_icon_selector.xml.flat",
-        "source": "com.example.skynie.app-main-55:/drawable/bottom_nav_icon_selector.xml"
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_item_seat.xml.flat",
+        "source": "C:\\Users\\5A_Traders\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\layout\\item_seat.xml"
     }
 ]

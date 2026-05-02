@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -28,10 +30,12 @@ public class TrailerActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private ImageButton btnBack;
     private TextView tvMovieTitle, tvMeta, badgeAge, badgeLang;
-    private TextView tvTrailerNotAvailable;
     private SeekBar seekBar;
+    private ImageView ivThumbnail;
+    private LinearLayout btnPlayYouTube;
 
-    private String resolvedTrailerUrl = null;
+    private String movieId, movieTitle, trailerUrl, pgRating, language, moviePoster;
+    private int duration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,41 +44,48 @@ public class TrailerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_trailer);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            Insets sys = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(sys.left, sys.top, sys.right, sys.bottom);
             return insets;
         });
 
         initViews();
-        populateFromIntent();
+        getIntentData();
+        populateUI();
+
         btnBack.setOnClickListener(v -> finish());
         if (seekBar != null) seekBar.setEnabled(false);
     }
 
     private void initViews() {
-        progressBar         = findViewById(R.id.progressBar);
-        btnBack             = findViewById(R.id.btnBack);
-        tvMovieTitle        = findViewById(R.id.tvMovieTitle);
-        tvMeta              = findViewById(R.id.tvMeta);
-        badgeAge            = findViewById(R.id.badgeAge);
-        badgeLang           = findViewById(R.id.badgeLang);
-        seekBar             = findViewById(R.id.seekBar);
-        tvTrailerNotAvailable = findViewById(R.id.tvTrailerNotAvailable);
+        progressBar    = findViewById(R.id.progressBar);
+        btnBack        = findViewById(R.id.btnBack);
+        tvMovieTitle   = findViewById(R.id.tvMovieTitle);
+        tvMeta         = findViewById(R.id.tvMeta);
+        badgeAge       = findViewById(R.id.badgeAge);
+        badgeLang      = findViewById(R.id.badgeLang);
+
+        ivThumbnail    = findViewById(R.id.ivThumbnail);
+        btnPlayYouTube = findViewById(R.id.btnPlayYouTube);
     }
 
-    private void populateFromIntent() {
-        String movieId    = getIntent().getStringExtra("movie_id");
-        String movieTitle = getIntent().getStringExtra("movie_title");
-        String trailerUrl = getIntent().getStringExtra("trailer_url");
-        String pgRating   = getIntent().getStringExtra("pg_rating");
-        String language   = getIntent().getStringExtra("language");
-        int    duration   = getIntent().getIntExtra("movie_duration", 0);
-        String genre      = getIntent().getStringExtra("movie_genre");
+    private void getIntentData() {
+        movieId     = getIntent().getStringExtra("movie_id");
+        movieTitle  = getIntent().getStringExtra("movie_title");
+        trailerUrl  = getIntent().getStringExtra("trailer_url");
+        pgRating    = getIntent().getStringExtra("pg_rating");
+        language    = getIntent().getStringExtra("language");
+        moviePoster = getIntent().getStringExtra("movie_poster");
+        duration    = getIntent().getIntExtra("movie_duration", 0);
+    }
 
-        if (tvMovieTitle != null && movieTitle != null) tvMovieTitle.setText(movieTitle);
+    private void populateUI() {
+        // ── Title ──
+        if (tvMovieTitle != null && movieTitle != null)
+            tvMovieTitle.setText(movieTitle);
 
+        // ── Meta ──
         StringBuilder meta = new StringBuilder("NEW");
-        if (genre    != null && !genre.isEmpty())    meta.append(" · ").append(genre);
         if (pgRating != null && !pgRating.isEmpty()) meta.append(" · ").append(pgRating);
         if (duration > 0) {
             int h = duration / 60, m = duration % 60;
@@ -82,114 +93,107 @@ public class TrailerActivity extends AppCompatActivity {
         }
         if (tvMeta != null) tvMeta.setText(meta.toString());
 
+        // ── Language badge ──
         if (badgeLang != null && language != null && !language.isEmpty()) {
             String lang = language.length() >= 2
                     ? language.substring(0, 2).toUpperCase() : language.toUpperCase();
             badgeLang.setText(lang);
         }
 
+        // ── Age badge ──
         if (badgeAge != null && pgRating != null && !pgRating.isEmpty())
             badgeAge.setText(pgRating);
 
-        if (trailerUrl != null && !trailerUrl.isEmpty()) {
-            resolvedTrailerUrl = trailerUrl;
-            openTrailer(trailerUrl);
-        } else if (movieId != null) {
-            fetchAndOpenTrailer(movieId);
-        } else {
-            showNotAvailable();
+        // ── Movie thumbnail (poster ya backdrop se) ──
+        if (ivThumbnail != null && moviePoster != null && !moviePoster.isEmpty()) {
+            int resId = getResources().getIdentifier(moviePoster, "drawable", getPackageName());
+            if (resId != 0) ivThumbnail.setImageResource(resId);
+        }
+
+        // ── Play button click → YouTube ──
+        if (btnPlayYouTube != null) {
+            btnPlayYouTube.setOnClickListener(v -> {
+                if (trailerUrl != null && !trailerUrl.isEmpty()) {
+                    openYouTube(trailerUrl);
+                } else if (movieId != null) {
+                    fetchUrlThenOpen(movieId);
+                } else {
+                    Toast.makeText(this, "Trailer not available", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+        if (progressBar != null) progressBar.setVisibility(View.GONE);
+    }
+
+    /**
+     * YouTube app ya browser mein video open karo.
+     * Jaise WhatsApp pe link click karte hain — YouTube app open hoti hai directly.
+     *
+     * Flow:
+     * 1. vnd.youtube:VIDEO_ID → YouTube app (agar installed hai)
+     * 2. Fallback → Browser mein YouTube open
+     */
+    private void openYouTube(String url) {
+        String videoId = extractYouTubeId(url);
+
+        if (videoId != null) {
+            // YouTube app pe bhejo
+            Intent appIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("vnd.youtube:" + videoId));
+
+            try {
+                startActivity(appIntent); // YouTube app open hogi
+                return;
+            } catch (Exception e) {
+                // YouTube app nahi hai — browser fallback
+            }
+        }
+
+        // Browser fallback
+        try {
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(webIntent);
+        } catch (Exception e) {
+            Toast.makeText(this, "Could not open trailer", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void fetchAndOpenTrailer(String movieId) {
+    private void fetchUrlThenOpen(String movieId) {
         if (progressBar != null) progressBar.setVisibility(View.VISIBLE);
+        if (btnPlayYouTube != null) btnPlayYouTube.setEnabled(false);
+
         FirebaseDatabase.getInstance().getReference("movies").child(movieId)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snap) {
                         if (progressBar != null) progressBar.setVisibility(View.GONE);
+                        if (btnPlayYouTube != null) btnPlayYouTube.setEnabled(true);
+
                         String url = snap.child("trailer_url").getValue(String.class);
                         if (url != null && !url.isEmpty()) {
-                            resolvedTrailerUrl = url;
-                            openTrailer(url);
+                            trailerUrl = url;
+                            openYouTube(url);
                         } else {
-                            showNotAvailable();
+                            Toast.makeText(TrailerActivity.this,
+                                    "Trailer not available", Toast.LENGTH_SHORT).show();
                         }
                     }
+
                     @Override
                     public void onCancelled(@NonNull DatabaseError e) {
                         if (progressBar != null) progressBar.setVisibility(View.GONE);
-                        showNotAvailable();
+                        if (btnPlayYouTube != null) btnPlayYouTube.setEnabled(true);
+                        Toast.makeText(TrailerActivity.this,
+                                "Failed to load trailer", Toast.LENGTH_SHORT).show();
                     }
                 });
-    }
-
-    /**
-     * ✅ FIXED: Seedha browser mein open karo - No WebView, No Error 153
-     */
-    private void openTrailer(String url) {
-        if (progressBar != null) progressBar.setVisibility(View.GONE);
-
-        String videoId = extractYouTubeId(url);
-        String openUrl = (videoId != null)
-                ? "https://www.youtube.com/watch?v=" + videoId
-                : url;
-
-        if (openUrl == null || openUrl.isEmpty()) {
-            showNotAvailable();
-            return;
-        }
-
-        try {
-            // ✅ Seedha browser/YouTube mein open karo
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(openUrl));
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-
-            // Activity mein message dikhao
-            showOpenedExternally(openUrl);
-
-        } catch (Exception e) {
-            showNotAvailable();
-        }
-    }
-
-    private void showOpenedExternally(final String url) {
-        View videoContainer = findViewById(R.id.videoContainer);
-        if (videoContainer != null) {
-            videoContainer.setBackgroundColor(0xFF1A1A1A);
-        }
-
-        if (tvTrailerNotAvailable != null) {
-            tvTrailerNotAvailable.setText("▶  Tap to watch trailer");
-            tvTrailerNotAvailable.setTextSize(16f);
-            tvTrailerNotAvailable.setTextColor(0xFFE53935);
-            tvTrailerNotAvailable.setVisibility(View.VISIBLE);
-            tvTrailerNotAvailable.setOnClickListener(v -> {
-                try {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                } catch (Exception ignored) {}
-            });
-        }
-    }
-
-    private void showNotAvailable() {
-        if (progressBar != null) progressBar.setVisibility(View.GONE);
-        if (tvTrailerNotAvailable != null) {
-            tvTrailerNotAvailable.setText("Trailer not available");
-            tvTrailerNotAvailable.setTextSize(14f);
-            tvTrailerNotAvailable.setTextColor(0xFFFFFFFF);
-            tvTrailerNotAvailable.setVisibility(View.VISIBLE);
-            tvTrailerNotAvailable.setOnClickListener(null);
-        }
-        Toast.makeText(this, "Trailer not available", Toast.LENGTH_SHORT).show();
     }
 
     private String extractYouTubeId(String url) {
         if (url == null) return null;
 
-        // Handle youtu.be format
+        // youtu.be/VIDEO_ID
         if (url.contains("youtu.be/")) {
             String[] p = url.split("youtu.be/");
             if (p.length > 1) {
@@ -200,31 +204,12 @@ public class TrailerActivity extends AppCompatActivity {
             }
         }
 
-        // Handle youtube.com/watch?v= format
+        // youtube.com/watch?v=VIDEO_ID
         if (url.contains("watch?v=")) {
-            String id = Uri.parse(url).getQueryParameter("v");
-            if (id != null) return id;
-        }
-
-        // Handle youtube.com/embed/ format
-        if (url.contains("embed/")) {
-            String[] p = url.split("embed/");
-            if (p.length > 1) {
-                String id = p[1];
-                if (id.contains("?")) id = id.substring(0, id.indexOf("?"));
-                if (id.contains("&")) id = id.substring(0, id.indexOf("&"));
-                return id.trim();
-            }
-        }
-
-        // Handle shorts format
-        if (url.contains("/shorts/")) {
-            String[] p = url.split("/shorts/");
-            if (p.length > 1) {
-                String id = p[1];
-                if (id.contains("?")) id = id.substring(0, id.indexOf("?"));
-                return id.trim();
-            }
+            try {
+                String id = Uri.parse(url).getQueryParameter("v");
+                if (id != null && !id.isEmpty()) return id;
+            } catch (Exception ignored) {}
         }
 
         return null;

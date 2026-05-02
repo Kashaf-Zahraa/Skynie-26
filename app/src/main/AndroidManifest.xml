@@ -17,7 +17,8 @@
             android:exported="false" />
         <activity
             android:name=".views.TrailerActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:hardwareAccelerated="true"/>
         <activity android:name=".views.AllMoviesActivity" />
         <activity
             android:name=".views.TicketDetailsActivity"

@@ -1,4 +1,5 @@
 package com.example.skynie.views;
+import java.util.HashMap;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import java.util.HashMap;
+import java.util.Map;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -35,6 +38,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class FilmDetailsActivity extends AppCompatActivity {
     ImageButton btnBack, btnFav, btnPlay;
@@ -122,36 +126,46 @@ public class FilmDetailsActivity extends AppCompatActivity {
         final String finalTrailerUrl = trailerUrl;
         final String finalPgRating = pgRating;
         final String finalLanguage = language;
+        final String finalMovieId = movie_id;
+        final String finalMovieTitle = movie_title;
+        final int finalMovieDuration = movie_duration;
 
         btnPlay.setOnClickListener(v -> {
             Intent intent = new Intent(FilmDetailsActivity.this, TrailerActivity.class);
-            intent.putExtra("movie_id", movie_id);
-            intent.putExtra("movie_title", movie_title);
-            intent.putExtra("movie_duration", movie_duration);
+            intent.putExtra("movie_id", finalMovieId);
+            intent.putExtra("movie_title", finalMovieTitle);
+            intent.putExtra("movie_duration", finalMovieDuration);
             intent.putExtra("trailer_url", finalTrailerUrl);
             intent.putExtra("pg_rating", finalPgRating);
+           // intent.putExtra("trailer_url", "https://youtu.be/iV46TJKL8cU");
             intent.putExtra("language", finalLanguage);
             startActivity(intent);
         });
 
-        // ✅ FIXED: btnBuyTicket - Create final copies for lambda
-        final String finalMovieId = movie_id;
-        final String finalMovieTitle = movie_title;
+        // ✅ FIXED: btnBuyTicket - Pass all data including trailer info
+        final String finalMovieId2 = movie_id;
+        final String finalMovieTitle2 = movie_title;
         final String finalMoviePoster = movie_poster;
         final String finalMovieBackdrop = movie_backdrop;
         final String finalMovieRating = movie_rating;
-        final int finalMovieDuration = movie_duration;
+        final int finalMovieDuration2 = movie_duration;
         final String finalMovieDescription = movie_description;
+        final String finalTrailerUrl2 = trailerUrl;
+        final String finalPgRating2 = pgRating;
+        final String finalLanguage2 = language;
 
         btnBuyTicket.setOnClickListener((v) -> {
             Intent intent = new Intent(this, BookingActivity.class);
-            intent.putExtra("movie_id", finalMovieId);
-            intent.putExtra("movie_title", finalMovieTitle);
+            intent.putExtra("movie_id", finalMovieId2);
+            intent.putExtra("movie_title", finalMovieTitle2);
             intent.putExtra("movie_poster", finalMoviePoster);
             intent.putExtra("movie_backdrop", finalMovieBackdrop);
             intent.putExtra("movie_rating", finalMovieRating);
-            intent.putExtra("movie_duration", finalMovieDuration);
+            intent.putExtra("movie_duration", finalMovieDuration2);
             intent.putExtra("movie_description", finalMovieDescription);
+            intent.putExtra("trailer_url", finalTrailerUrl2);      // ✅ ADDED
+            intent.putExtra("pg_rating", finalPgRating2);          // ✅ ADDED
+            intent.putExtra("language", finalLanguage2);           // ✅ ADDED
             startActivity(intent);
         });
 
@@ -282,137 +296,60 @@ public class FilmDetailsActivity extends AppCompatActivity {
     }
 
     private void addMoviesToFirebase() {
-        DatabaseReference moviesRef = FirebaseDatabase.getInstance()
+        // Cast data - movie_details node
+        DatabaseReference detailsRef = FirebaseDatabase.getInstance()
                 .getReference("movie_details");
 
-        // MOVIE 3: Inside Out 2
-        ArrayList<String> directors3 = new ArrayList<>();
-        directors3.add("Kelsey Mann");
+        // Trailer URLs - movies node (BILKUL ALAG reference)
+        DatabaseReference moviesRef = FirebaseDatabase.getInstance()
+                .getReference("movies");
 
-        ArrayList<String> writers3 = new ArrayList<>();
-        writers3.add("Meg LeFauve");
-        writers3.add("Dave Holstein");
+        // Cast objects banao (same as before)
+        ArrayList<String> d3 = new ArrayList<>(); d3.add("Kelsey Mann");
+        ArrayList<String> w3 = new ArrayList<>(); w3.add("Meg LeFauve"); w3.add("Dave Holstein");
+        ArrayList<String> a3 = new ArrayList<>(); a3.add("Amy Poehler"); a3.add("Maya Hawke");
+        detailsRef.child("movie3").setValue(new Cast(a3, "movie3", d3, w3));
 
-        ArrayList<String> actors3 = new ArrayList<>();
-        actors3.add("Amy Poehler");
-        actors3.add("Maya Hawke");
-        actors3.add("Kensington Tallman");
-        actors3.add("Liza Lapira");
-        actors3.add("Tony Hale");
+        ArrayList<String> d4 = new ArrayList<>(); d4.add("Shawn Levy");
+        ArrayList<String> w4 = new ArrayList<>(); w4.add("Ryan Reynolds"); w4.add("Rhett Reese");
+        ArrayList<String> a4 = new ArrayList<>(); a4.add("Ryan Reynolds"); a4.add("Hugh Jackman");
+        detailsRef.child("movie4").setValue(new Cast(a4, "movie4", d4, w4));
 
-        Cast movie3 = new Cast(actors3, "movie3", directors3, writers3);
+        ArrayList<String> d5 = new ArrayList<>(); d5.add("Ridley Scott");
+        ArrayList<String> w5 = new ArrayList<>(); w5.add("David Scarpa");
+        ArrayList<String> a5 = new ArrayList<>(); a5.add("Paul Mescal"); a5.add("Denzel Washington");
+        detailsRef.child("movie5").setValue(new Cast(a5, "movie5", d5, w5));
 
-        // MOVIE 4: Deadpool & Wolverine
-        ArrayList<String> directors4 = new ArrayList<>();
-        directors4.add("Shawn Levy");
+        ArrayList<String> d6 = new ArrayList<>(); d6.add("Todd Phillips");
+        ArrayList<String> w6 = new ArrayList<>(); w6.add("Todd Phillips"); w6.add("Scott Silver");
+        ArrayList<String> a6 = new ArrayList<>(); a6.add("Joaquin Phoenix"); a6.add("Lady Gaga");
+        detailsRef.child("movie6").setValue(new Cast(a6, "movie6", d6, w6));
 
-        ArrayList<String> writers4 = new ArrayList<>();
-        writers4.add("Ryan Reynolds");
-        writers4.add("Rhett Reese");
-        writers4.add("Paul Wernick");
-        writers4.add("Zeb Wells");
-        writers4.add("Shawn Levy");
+        ArrayList<String> d7 = new ArrayList<>(); d7.add("J.C. Chandor");
+        ArrayList<String> w7 = new ArrayList<>(); w7.add("Richard Wenk");
+        ArrayList<String> a7 = new ArrayList<>(); a7.add("Aaron Taylor-Johnson"); a7.add("Russell Crowe");
+        detailsRef.child("movie7").setValue(new Cast(a7, "movie7", d7, w7));
 
-        ArrayList<String> actors4 = new ArrayList<>();
-        actors4.add("Ryan Reynolds");
-        actors4.add("Hugh Jackman");
-        actors4.add("Emma Corrin");
-        actors4.add("Morena Baccarin");
-        actors4.add("Rob Delaney");
-        actors4.add("Leslie Uggams");
+        ArrayList<String> d8 = new ArrayList<>(); d8.add("Bong Joon-ho");
+        ArrayList<String> w8 = new ArrayList<>(); w8.add("Bong Joon-ho");
+        ArrayList<String> a8 = new ArrayList<>(); a8.add("Robert Pattinson"); a8.add("Naomi Ackie");
+        detailsRef.child("movie8").setValue(new Cast(a8, "movie8", d8, w8));
 
-        Cast movie4 = new Cast(actors4, "movie4", directors4, writers4);
+        ArrayList<String> d9 = new ArrayList<>(); d9.add("Marc Webb");
+        ArrayList<String> w9 = new ArrayList<>(); w9.add("Greta Gerwig");
+        ArrayList<String> a9 = new ArrayList<>(); a9.add("Rachel Zegler"); a9.add("Gal Gadot");
+        detailsRef.child("movie9").setValue(new Cast(a9, "movie9", d9, w9));
 
-        // MOVIE 5: Gladiator II
-        ArrayList<String> directors5 = new ArrayList<>();
-        directors5.add("Ridley Scott");
-
-        ArrayList<String> writers5 = new ArrayList<>();
-        writers5.add("David Scarpa");
-
-        ArrayList<String> actors5 = new ArrayList<>();
-        actors5.add("Paul Mescal");
-        actors5.add("Denzel Washington");
-        actors5.add("Pedro Pascal");
-        actors5.add("Joseph Quinn");
-        actors5.add("Connie Nielsen");
-        actors5.add("Derek Jacobi");
-
-        Cast movie5 = new Cast(actors5, "movie5", directors5, writers5);
-
-        // MOVIE 6: Joker 2
-        ArrayList<String> directors6 = new ArrayList<>();
-        directors6.add("Todd Phillips");
-
-        ArrayList<String> writers6 = new ArrayList<>();
-        writers6.add("Todd Phillips");
-        writers6.add("Scott Silver");
-
-        ArrayList<String> actors6 = new ArrayList<>();
-        actors6.add("Joaquin Phoenix");
-        actors6.add("Lady Gaga");
-        actors6.add("Zazie Beetz");
-        actors6.add("Brendan Gleeson");
-        actors6.add("Catherine Keener");
-
-        Cast movie6 = new Cast(actors6, "movie6", directors6, writers6);
-
-        // MOVIE 7: Kraven the Hunter
-        ArrayList<String> directors7 = new ArrayList<>();
-        directors7.add("J.C. Chandor");
-
-        ArrayList<String> writers7 = new ArrayList<>();
-        writers7.add("Richard Wenk");
-        writers7.add("Art Marcum");
-        writers7.add("Matt Holloway");
-
-        ArrayList<String> actors7 = new ArrayList<>();
-        actors7.add("Aaron Taylor-Johnson");
-        actors7.add("Russell Crowe");
-        actors7.add("Ariana DeBose");
-        actors7.add("Fred Hechinger");
-        actors7.add("Alessandro Nivola");
-
-        Cast movie7 = new Cast(actors7, "movie7", directors7, writers7);
-
-        // MOVIE 8: Mickey 17
-        ArrayList<String> directors8 = new ArrayList<>();
-        directors8.add("Bong Joon-ho");
-
-        ArrayList<String> writers8 = new ArrayList<>();
-        writers8.add("Bong Joon-ho");
-
-        ArrayList<String> actors8 = new ArrayList<>();
-        actors8.add("Robert Pattinson");
-        actors8.add("Naomi Ackie");
-        actors8.add("Steven Yeun");
-        actors8.add("Toni Collette");
-        actors8.add("Mark Ruffalo");
-
-        Cast movie8 = new Cast(actors8, "movie8", directors8, writers8);
-
-        // MOVIE 9: Snow White
-        ArrayList<String> directors9 = new ArrayList<>();
-        directors9.add("Marc Webb");
-
-        ArrayList<String> writers9 = new ArrayList<>();
-        writers9.add("Greta Gerwig");
-        writers9.add("Erin Cressida Wilson");
-
-        ArrayList<String> actors9 = new ArrayList<>();
-        actors9.add("Rachel Zegler");
-        actors9.add("Gal Gadot");
-        actors9.add("Andrew Burnap");
-        actors9.add("Ansu Kabia");
-
-        Cast movie9 = new Cast(actors9, "movie9", directors9, writers9);
-
-        moviesRef.child("movie3").setValue(movie3);
-        moviesRef.child("movie4").setValue(movie4);
-        moviesRef.child("movie5").setValue(movie5);
-        moviesRef.child("movie6").setValue(movie6);
-        moviesRef.child("movie7").setValue(movie7);
-        moviesRef.child("movie8").setValue(movie8);
-        moviesRef.child("movie9").setValue(movie9);
+        // ✅ Trailer URLs → movies node mein SEEDHA
+        moviesRef.child("movie1").child("trailer_url")
+                .setValue("https://youtu.be/iV46TJKL8cU");
+        moviesRef.child("movie2").child("trailer_url")
+                .setValue("https://youtu.be/Way9Dexny3w");
+        moviesRef.child("movie5").child("trailer_url")
+                .setValue("https://youtu.be/P5ieIbInFpg");
+        moviesRef.child("movie6").child("trailer_url")
+                .setValue("https://youtu.be/zAGVQLHvwOY");
+        moviesRef.child("movie9").child("trailer_url")
+                .setValue("https://youtu.be/iV46TJKL8cU");
     }
 }

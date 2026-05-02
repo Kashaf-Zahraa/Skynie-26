@@ -43,7 +43,8 @@
             android:exported="false" />
         <activity
             android:name="com.example.skynie.views.TrailerActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:hardwareAccelerated="true" />
         <activity android:name="com.example.skynie.views.AllMoviesActivity" />
         <activity
             android:name="com.example.skynie.views.TicketDetailsActivity"
