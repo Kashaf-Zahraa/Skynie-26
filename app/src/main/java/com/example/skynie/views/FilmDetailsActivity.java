@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,6 +51,8 @@ public class FilmDetailsActivity extends AppCompatActivity {
     ArrayList<String> directors, writers, actors;
     DatabaseReference databaseReference;
 
+    ProgressBar progressBar;
+
     // Store movie details as class variables
     private String movie_id, movie_title, movie_poster, movie_backdrop, movie_rating, movie_description;
     private int movie_duration;
@@ -86,6 +89,7 @@ public class FilmDetailsActivity extends AppCompatActivity {
         rvStars = findViewById(R.id.rv_stars);
         rvRecommendations = findViewById(R.id.rv_recommendations);
         main = findViewById(R.id.main);
+        progressBar=findViewById(R.id.progressBar);
 
         btnBack.setOnClickListener((v) -> {
             startActivity(new Intent(FilmDetailsActivity.this, MainActivity.class));
@@ -142,7 +146,6 @@ public class FilmDetailsActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // ✅ FIXED: btnBuyTicket - Pass all data including trailer info
         final String finalMovieId2 = movie_id;
         final String finalMovieTitle2 = movie_title;
         final String finalMoviePoster = movie_poster;
@@ -233,6 +236,9 @@ public class FilmDetailsActivity extends AppCompatActivity {
     }
 
     private void loadRecommendations(String currentMovieId) {
+
+        progressBar.setVisibility(View.VISIBLE);
+        rvRecommendations.setVisibility(View.GONE);
         DatabaseReference moviesRef = FirebaseDatabase.getInstance().getReference("movies");
 
         moviesRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -273,6 +279,10 @@ public class FilmDetailsActivity extends AppCompatActivity {
                 }
 
                 setupRecommendations(recommendations);
+
+
+                progressBar.setVisibility(View.GONE);
+                rvRecommendations.setVisibility(View.VISIBLE);
             }
 
             @Override

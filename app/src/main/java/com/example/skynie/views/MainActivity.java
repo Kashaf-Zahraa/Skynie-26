@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.activity.EdgeToEdge;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,6 +44,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private DatabaseReference moviesRef;
+    ProgressBar progressBar;
+    NestedScrollView nestedScrollView;
 
     // Home screen k views
     private View homeContent;
@@ -95,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
         tvOurPickGenreTags = findViewById(R.id.tvOurPickGenreTags);
         tvOurPickRating = findViewById(R.id.tvOurPickRating);
 
+        progressBar=findViewById(R.id.progressBar);
+        nestedScrollView=findViewById(R.id.nestedScrollView);
         llNowShowingCards = findViewById(R.id.llNowShowingCards);
         llComingSoonCards = findViewById(R.id.llComingSoonCards);
     }
@@ -150,6 +156,10 @@ public class MainActivity extends AppCompatActivity {
 
     // Database se movies load karo
     private void loadMovies() {
+
+        progressBar.setVisibility(View.VISIBLE);
+        nestedScrollView.setVisibility(View.GONE);
+
         // Abhi showing movies
         moviesRef.orderByChild("is_now_showing").equalTo("true")
                 .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -191,6 +201,10 @@ public class MainActivity extends AppCompatActivity {
                             Movie movie = data.getValue(Movie.class);
                             if (movie != null) addComingSoonCard(movie);
                         }
+
+
+                        progressBar.setVisibility(View.GONE);
+                        nestedScrollView.setVisibility(View.VISIBLE);
                     }
 
                     @Override

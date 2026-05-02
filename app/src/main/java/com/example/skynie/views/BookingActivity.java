@@ -174,8 +174,6 @@ public class BookingActivity extends AppCompatActivity {
                         }
 
                         fetchHallShowtimes(hallShowtimeIds);
-                        progressBar.setVisibility(View.GONE);
-                        rvShowTimes.setVisibility(View.VISIBLE);
                     }
 
                     @Override

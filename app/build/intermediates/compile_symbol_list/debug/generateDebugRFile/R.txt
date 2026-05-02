@@ -135,15 +135,14 @@ int id bottomPanel 0x0
 int id btnAddWishlist 0x0
 int id btnBack 0x0
 int id btnFilter 0x0
-int id btnFullscreen 0x0
 int id btnInfo 0x0
 int id btnMenu 0x0
 int id btnPay 0x0
 int id btnPayContainer 0x0
+int id btnPlayYouTube 0x0
 int id btnSearch 0x0
 int id btnSendTicket 0x0
 int id btnTrailer 0x0
-int id btnVolume 0x0
 int id btn_back 0x0
 int id btn_buy_ticket 0x0
 int id btn_close 0x0
@@ -182,6 +181,7 @@ int id ivPin 0x0
 int id ivPoster 0x0
 int id ivProfile 0x0
 int id ivQRCode 0x0
+int id ivThumbnail 0x0
 int id iv_bg_grid 0x0
 int id iv_cast_photo 0x0
 int id iv_location_arrow 0x0
@@ -196,7 +196,6 @@ int id llOurPickBottom 0x0
 int id llRightBlock 0x0
 int id llSmaksContainer 0x0
 int id llTicketsContainer 0x0
-int id llTimeBlock 0x0
 int id ll_bottom_content 0x0
 int id loginButton 0x0
 int id main 0x0
@@ -230,11 +229,11 @@ int id rv_stars 0x0
 int id screenType 0x0
 int id searchBar 0x0
 int id seat_number 0x0
-int id seekBar 0x0
 int id signupButton 0x0
 int id signupLink 0x0
 int id switchPromo 0x0
 int id switchPush 0x0
+int id thumbnailContainer 0x0
 int id topBar 0x0
 int id tvAllGenres 0x0
 int id tvAmount 0x0
@@ -242,7 +241,6 @@ int id tvAudioFormat 0x0
 int id tvCinemaAddress 0x0
 int id tvCinemaName 0x0
 int id tvCost 0x0
-int id tvCurrentTime 0x0
 int id tvDate 0x0
 int id tvDistance 0x0
 int id tvEmail 0x0
@@ -274,7 +272,6 @@ int id tvTheater 0x0
 int id tvTicketCount 0x0
 int id tvTime 0x0
 int id tvTotal 0x0
-int id tvTotalTime 0x0
 int id tv_actor_name 0x0
 int id tv_actors 0x0
 int id tv_actors_list 0x0
@@ -302,9 +299,7 @@ int id tv_time 0x0
 int id tv_total_seats 0x0
 int id tv_writer 0x0
 int id videoContainer 0x0
-int id video_container 0x0
 int id vpFeaturedBanner 0x0
-int id webViewTrailer 0x0
 int layout activity_all_movies 0x0
 int layout activity_auth 0x0
 int layout activity_booking 0x0

@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     android:background="#0D0D0D">
 
-    <!-- ══════════════════════════════════════════
-         TOP BAR — Back + "Trailer"
-    ══════════════════════════════════════════ -->
+    <!-- TOP BAR — Back + "Trailer" -->
     <RelativeLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -40,192 +38,200 @@
 
     </RelativeLayout>
 
-    <!-- ══════════════════════════════════════════
-         VIDEO THUMBNAIL AREA
-         (Grey placeholder — Figma ke match)
-    ══════════════════════════════════════════ -->
-    <FrameLayout
-        android:id="@+id/videoContainer"
+    <!-- ScrollView to handle all content properly -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="60dp"
-        android:background="#1A1A1A">
+        android:fillViewport="true">
 
-        <!-- Movie thumbnail / backdrop image -->
-        <ImageView
-            android:id="@+id/ivThumbnail"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:alpha="0.5"
-            android:contentDescription="Trailer thumbnail" />
-
-        <!-- Loading spinner -->
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:indeterminateTint="#E53935"
-            android:visibility="gone" />
-
-        <!-- Play button in the center -->
         <LinearLayout
-            android:id="@+id/btnPlayYouTube"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="16dp"
-            android:clickable="true"
-            android:focusable="true">
+            android:orientation="vertical">
 
-            <!-- Red play circle -->
+            <!-- Video Container for WebView (starts hidden) -->
             <FrameLayout
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@drawable/circle_red_bg">
+                android:id="@+id/videoContainer"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                android:background="@android:color/black" />
+
+            <!-- Thumbnail Container (visible initially) -->
+            <FrameLayout
+                android:id="@+id/thumbnailContainer"
+                android:layout_width="match_parent"
+                android:layout_height="220dp">
 
                 <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:id="@+id/ivThumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:alpha="0.5"
+                    android:contentDescription="Trailer thumbnail" />
+
+                <!-- Loading spinner -->
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_play"
-                    android:tint="#FFFFFF"
-                    android:contentDescription="Play" />
+                    android:indeterminateTint="#E53935"
+                    android:visibility="gone" />
+
+                <!-- Play button in the center -->
+                <LinearLayout
+                    android:id="@+id/btnPlayYouTube"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <!-- Red play circle -->
+                    <FrameLayout
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/circle_red_bg">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_play"
+                            android:tint="#FFFFFF"
+                            android:contentDescription="Play" />
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Watch Trailer"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/poppins_semibold" />
+
+                </LinearLayout>
 
             </FrameLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- BOTTOM PANEL — Movie info (no fixed margin) -->
+            <LinearLayout
+                android:id="@+id/bottomPanel"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Watch on YouTube"
-                android:textColor="#FFFFFF"
-                android:textSize="13sp"
-                android:fontFamily="@font/poppins_semibold" />
+                android:orientation="vertical"
+                android:background="#0D0D0D"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="24dp">
+
+                <TextView
+                    android:id="@+id/tvMeta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NEW · PG-13 · 1h 56m"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:letterSpacing="0.02" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp">
+
+                    <TextView
+                        android:id="@+id/badgeNew"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="New"
+                        android:textColor="#FFFFFF"
+                        android:textSize="9sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:background="@drawable/badge_red_bg"
+                        android:paddingStart="7dp"
+                        android:paddingEnd="7dp"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp" />
+
+                    <TextView
+                        android:id="@+id/tvSeeMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="See more ›"
+                        android:textColor="#AAAAAA"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppins_regular" />
+
+                    <TextView
+                        android:id="@+id/tvMovieTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/badgeNew"
+                        android:layout_toStartOf="@id/tvSeeMore"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="8dp"
+                        android:text="Movie Title"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/badgeAge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:gravity="center"
+                        android:text="+17"
+                        android:textColor="#FFFFFF"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:background="@drawable/badge_green_bg"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp" />
+
+                    <TextView
+                        android:id="@+id/badgeLang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:gravity="center"
+                        android:layout_marginStart="6dp"
+                        android:text="EN"
+                        android:textColor="#FFFFFF"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:background="@drawable/chip_inactive_bg"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </FrameLayout>
-
-    <!-- ══════════════════════════════════════════
-         BOTTOM PANEL — Movie info (Figma exact)
-    ══════════════════════════════════════════ -->
-    <LinearLayout
-        android:id="@+id/bottomPanel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
-        android:orientation="vertical"
-        android:background="#0D0D0D"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="24dp">
-
-        <!-- "NEW · PG-13 · 1h 56m" -->
-        <TextView
-            android:id="@+id/tvMeta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NEW · PG-13 · 1h 56m"
-            android:textColor="#888888"
-            android:textSize="12sp"
-            android:fontFamily="@font/poppins_regular"
-            android:letterSpacing="0.02" />
-
-        <!-- [New badge]  Movie Title       See more › -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
-
-            <TextView
-                android:id="@+id/badgeNew"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:text="New"
-                android:textColor="#FFFFFF"
-                android:textSize="9sp"
-                android:fontFamily="@font/poppins_bold"
-                android:background="@drawable/badge_red_bg"
-                android:paddingStart="7dp"
-                android:paddingEnd="7dp"
-                android:paddingTop="3dp"
-                android:paddingBottom="3dp" />
-
-            <TextView
-                android:id="@+id/tvSeeMore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:text="See more ›"
-                android:textColor="#AAAAAA"
-                android:textSize="12sp"
-                android:fontFamily="@font/poppins_regular" />
-
-            <TextView
-                android:id="@+id/tvMovieTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/badgeNew"
-                android:layout_toStartOf="@id/tvSeeMore"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="8dp"
-                android:text="Movie Title"
-                android:textColor="#FFFFFF"
-                android:textSize="22sp"
-                android:fontFamily="@font/poppins_bold"
-                android:maxLines="1"
-                android:ellipsize="end" />
-
-        </RelativeLayout>
-
-        <!-- +17  EN  badges -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:id="@+id/badgeAge"
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:gravity="center"
-                android:text="+17"
-                android:textColor="#FFFFFF"
-                android:textSize="11sp"
-                android:fontFamily="@font/poppins_semibold"
-                android:background="@drawable/badge_green_bg"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp" />
-
-            <TextView
-                android:id="@+id/badgeLang"
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:gravity="center"
-                android:layout_marginStart="6dp"
-                android:text="EN"
-                android:textColor="#FFFFFF"
-                android:textSize="11sp"
-                android:fontFamily="@font/poppins_semibold"
-                android:background="@drawable/chip_inactive_bg"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp" />
-
-        </LinearLayout>
-
-        <!-- 00:39 / 02:15   [vol] [fullscreen] -->
-
-        <!-- Progress bar -->
-
-    </LinearLayout>
+    </ScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
