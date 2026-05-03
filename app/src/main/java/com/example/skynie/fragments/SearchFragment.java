@@ -1,6 +1,7 @@
 package com.example.skynie.fragments;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -12,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.skynie.R;
 import com.example.skynie.models.Cinema;
+import com.example.skynie.views.CinemaDetailActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.firebase.database.DataSnapshot;
@@ -45,7 +46,7 @@ public class SearchFragment extends Fragment {
 
     private RecyclerView rvCinemas;
     private EditText etSearch;
-    ProgressBar progressBar;
+    private ProgressBar progressBar;
 
     private CinemaAdapter adapter;
     private final List<Cinema> allCinemas   = new ArrayList<>();
@@ -54,13 +55,11 @@ public class SearchFragment extends Fragment {
     private double userLat = 0, userLng = 0;
     private String activeChip = "Nearby";
 
-    // ─────────────────────────────────────────────────────────────
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        // fragment_search.xml use karo (activity_search.xml NAHI)
         return inflater.inflate(R.layout.fragment_search, container, false);
     }
 
@@ -68,279 +67,194 @@ public class SearchFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        progressBar=view.findViewById(R.id.progressBar);
-        cinemasRef = FirebaseDatabase.getInstance().getReference("cinemas");
+        progressBar = view.findViewById(R.id.progressBar);
+        cinemasRef  = FirebaseDatabase.getInstance().getReference("cinemas");
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity());
 
-        // Views
         rvCinemas = view.findViewById(R.id.rvCinemas);
-        etSearch = view.findViewById(R.id.etSearch);
+        etSearch  = view.findViewById(R.id.etSearch);
         rvCinemas.setLayoutManager(new LinearLayoutManager(requireContext()));
 
         adapter = new CinemaAdapter(shownCinemas);
         rvCinemas.setAdapter(adapter);
 
-        // Filter button
-        view.findViewById(R.id.btnFilter).setOnClickListener(v ->
-                Toast.makeText(requireContext(), "Filter coming soon", Toast.LENGTH_SHORT).show());
+        view.findViewById(R.id.btnFilter).setOnClickListener(v -> {});
 
         setupChips(view);
         setupSearchBar();
         seedCinemasIfNeeded();
         requestLocationAndLoad();
-
     }
 
-        // ─────────────────────────────────────────────────────────────
-        //  CHIPS
-        // ─────────────────────────────────────────────────────────────
-        private void setupChips(View root) {
-            int[] chipIds = {
-                    R.id.chipNearby, R.id.chipImax, R.id.chipGold,
-                    R.id.chipScreenX, R.id.chip4DMax
-            };
-            String[] labels = {"Nearby", "IMAX", "GOLD", "ScreenX", "4DMAX"}; // Changed "4D MAX" to "4DMAX"
-
-            for (int i = 0; i < labels.length; i++) {
-                final String label = labels[i];
-                TextView chip = root.findViewById(chipIds[i]);
-                if (chip == null) continue;
-                chip.setOnClickListener(v -> {
-                    activeChip = label;
-                    highlightChip(label);
-                    applyFilters();
-                });
-            }
+    private void setupChips(View root) {
+        int[] chipIds   = { R.id.chipNearby, R.id.chipImax, R.id.chipGold, R.id.chipScreenX, R.id.chip4DMax };
+        String[] labels = { "Nearby", "IMAX", "GOLD", "ScreenX", "4DMAX" };
+        for (int i = 0; i < labels.length; i++) {
+            final String label = labels[i];
+            TextView chip = root.findViewById(chipIds[i]);
+            if (chip == null) continue;
+            chip.setOnClickListener(v -> { activeChip = label; highlightChip(label); applyFilters(); });
         }
+    }
 
     private void highlightChip(String selected) {
         if (getView() == null) return;
-        int[] ids = {R.id.chipNearby, R.id.chipImax, R.id.chipGold, R.id.chipScreenX, R.id.chip4DMax};
-        String[] lbls = {"Nearby", "IMAX", "GOLD", "ScreenX", "4DMAX"}; // Changed here too
-
+        int[] ids    = { R.id.chipNearby, R.id.chipImax, R.id.chipGold, R.id.chipScreenX, R.id.chip4DMax };
+        String[] lbs = { "Nearby", "IMAX", "GOLD", "ScreenX", "4DMAX" };
         for (int i = 0; i < ids.length; i++) {
             TextView chip = getView().findViewById(ids[i]);
             if (chip == null) continue;
-            boolean active = lbls[i].equals(selected);
+            boolean active = lbs[i].equals(selected);
             chip.setBackgroundResource(active ? R.drawable.badge_red_bg : R.drawable.chip_inactive_bg);
             chip.setTextColor(active ? 0xFFFFFFFF : 0xFFCCCCCC);
         }
     }
-        // ─────────────────────────────────────────────────────────────
-        //  SEARCH BAR
-        // ─────────────────────────────────────────────────────────────
-        private void setupSearchBar () {
-            etSearch.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence s, int a, int b, int c) {
-                }
 
-                @Override
-                public void onTextChanged(CharSequence s, int a, int b, int c) {
-                    applyFilters();
-                }
+    private void setupSearchBar() {
+        etSearch.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int a, int b, int c) {}
+            @Override public void onTextChanged(CharSequence s, int a, int b, int c) { applyFilters(); }
+            @Override public void afterTextChanged(Editable s) {}
+        });
+    }
 
-                @Override
-                public void afterTextChanged(Editable s) {
-                }
-            });
+    private void applyFilters() {
+        String query = etSearch.getText().toString().trim().toLowerCase(Locale.ROOT);
+        shownCinemas.clear();
+        for (Cinema c : allCinemas) {
+            boolean matchesSearch = query.isEmpty()
+                    || c.name.toLowerCase(Locale.ROOT).contains(query)
+                    || c.address.toLowerCase(Locale.ROOT).contains(query);
+            if (!matchesSearch) continue;
+            if (!activeChip.equals("Nearby")) {
+                if (c.screenTypes == null || !c.screenTypes.contains(activeChip)) continue;
+            }
+            shownCinemas.add(c);
         }
+        if (activeChip.equals("Nearby") && (userLat != 0 || userLng != 0))
+            Collections.sort(shownCinemas, (a, b) -> Double.compare(distanceTo(a), distanceTo(b)));
+        adapter.notifyDataSetChanged();
+    }
 
-        // ─────────────────────────────────────────────────────────────
-        //  APPLY FILTER
-        // ─────────────────────────────────────────────────────────────
-        private void applyFilters() {
-            String query = etSearch.getText().toString().trim().toLowerCase(Locale.ROOT);
-            shownCinemas.clear();
+    private void requestLocationAndLoad() {
+        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{ Manifest.permission.ACCESS_FINE_LOCATION }, LOCATION_PERMISSION_REQUEST);
+        } else { fetchLocationAndLoad(); }
+    }
 
-            for (Cinema c : allCinemas) {
-                boolean matchesSearch = query.isEmpty()
-                        || c.name.toLowerCase(Locale.ROOT).contains(query)
-                        || c.address.toLowerCase(Locale.ROOT).contains(query);
-                if (!matchesSearch) continue;
+    private void fetchLocationAndLoad() {
+        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) { loadCinemas(); return; }
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener(location -> {
+                    if (location != null) { userLat = location.getLatitude(); userLng = location.getLongitude(); }
+                    loadCinemas();
+                })
+                .addOnFailureListener(e -> loadCinemas());
+    }
 
-                if (!activeChip.equals("Nearby")) {
-                    if (c.screenTypes == null || !c.screenTypes.contains(activeChip)) {
-                        continue;
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == LOCATION_PERMISSION_REQUEST && grantResults.length > 0
+                && grantResults[0] == PackageManager.PERMISSION_GRANTED) fetchLocationAndLoad();
+        else loadCinemas();
+    }
+
+    private void loadCinemas() {
+        if (progressBar != null) progressBar.setVisibility(View.VISIBLE);
+        if (rvCinemas   != null) rvCinemas.setVisibility(View.GONE);
+        cinemasRef.orderByChild("is_active").equalTo(true)
+                .addValueEventListener(new ValueEventListener() {
+                    @Override public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        allCinemas.clear();
+                        for (DataSnapshot data : snapshot.getChildren()) {
+                            Cinema c = data.getValue(Cinema.class);
+                            if (c != null) allCinemas.add(c);
+                        }
+                        applyFilters();
+                        if (progressBar != null) progressBar.setVisibility(View.GONE);
+                        if (rvCinemas   != null) rvCinemas.setVisibility(View.VISIBLE);
                     }
-                }
-                shownCinemas.add(c);
-            }
+                    @Override public void onCancelled(@NonNull DatabaseError error) {}
+                });
+    }
 
-            if (activeChip.equals("Nearby") && (userLat != 0 || userLng != 0)) {
-                Collections.sort(shownCinemas, (a, b) ->
-                        Double.compare(distanceTo(a), distanceTo(b)));
-            }
-
-            adapter.notifyDataSetChanged();
-        }
-        // ─────────────────────────────────────────────────────────────
-        //  LOCATION
-        // ─────────────────────────────────────────────────────────────
-        private void requestLocationAndLoad () {
-            if (ActivityCompat.checkSelfPermission(requireContext(),
-                    Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(
-                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                        LOCATION_PERMISSION_REQUEST);
-            } else {
-                fetchLocationAndLoad();
-            }
-        }
-
-        private void fetchLocationAndLoad () {
-            if (ActivityCompat.checkSelfPermission(requireContext(),
-                    Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                loadCinemas();
-                return;
-            }
-            fusedLocationClient.getLastLocation()
-                    .addOnSuccessListener(location -> {
-                        if (location != null) {
-                            userLat = location.getLatitude();
-                            userLng = location.getLongitude();
-                        }
-                        loadCinemas();
-                    })
-                    .addOnFailureListener(e -> loadCinemas());
-        }
-
-        @Override
-        public void onRequestPermissionsResult ( int requestCode,
-        @NonNull String[] permissions,
-        @NonNull int[] grantResults){
-            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-            if (requestCode == LOCATION_PERMISSION_REQUEST
-                    && grantResults.length > 0
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                fetchLocationAndLoad();
-            } else {
-                loadCinemas();
-            }
-        }
-
-        // ─────────────────────────────────────────────────────────────
-        //  FIREBASE
-        // ─────────────────────────────────────────────────────────────
-        private void loadCinemas () {
-
-            progressBar.setVisibility(View.VISIBLE);
-            rvCinemas.setVisibility(View.GONE);
-
-            cinemasRef.orderByChild("is_active").equalTo(true)
-                    .addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            allCinemas.clear();
-                            for (DataSnapshot data : snapshot.getChildren()) {
-                                Cinema c = data.getValue(Cinema.class);
-                                if (c != null) allCinemas.add(c);
-                            }
-                            applyFilters();
-
-                            progressBar.setVisibility(View.GONE);
-                            rvCinemas.setVisibility(View.VISIBLE);
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-                        }
-                    });
-        }
-
-        private void seedCinemasIfNeeded () {
-            cinemasRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if (!snapshot.exists()) addSampleCinemas();
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                }
-            });
-        }
+    private void seedCinemasIfNeeded() {
+        cinemasRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override public void onDataChange(@NonNull DataSnapshot snapshot) { if (!snapshot.exists()) addSampleCinemas(); }
+            @Override public void onCancelled(@NonNull DatabaseError error) {}
+        });
+    }
 
     private void addSampleCinemas() {
         List<Cinema> cinemas = Arrays.asList(
-                new Cinema("c1", "Stars (90°Mall)", "23 Sunny Boulevard, Sunshine City", 24.8607, 67.0011, Arrays.asList("IMAX", "GOLD", "ScreenX", "4DMAX"), true),
-                new Cinema("c2", "FilmHouse (Galaxy Plaza)", "456 Starry Lane, Galaxy Town", 24.87, 67.01, Arrays.asList("IMAX", "GOLD"), true),
-                new Cinema("c3", "ReelMagic (Dreamland Center)", "101 Paradise Parkway, Paradise City", 24.88, 67.02, Arrays.asList("ScreenX", "4DMAX"), true),
-                new Cinema("c4", "StarVista (Cosmo City Mall)", "303 Ocean Drive, OceanView", 24.89, 67.03, Arrays.asList("IMAX"), true),
-                new Cinema("c5", "FlickPalace (Emerald Plaza)", "505 Skyway Avenue, Skyline District", 24.9, 67.04, Arrays.asList("GOLD", "4DMAX"), true),
-                new Cinema("c6", "CineMax (Metro Hub)", "12 Main Boulevard, Downtown", 24.91, 67.05, Arrays.asList("IMAX", "ScreenX"), true),
-                new Cinema("c7", "Reel Cinema (Clifton)", "88 Sea View Road, Clifton", 24.82, 67.025, Arrays.asList("GOLD", "ScreenX"), true)
+                new Cinema("c1","Stars (90°Mall)","23 Sunny Boulevard, Sunshine City",24.8607,67.0011,Arrays.asList("IMAX","GOLD","ScreenX","4DMAX"),true),
+                new Cinema("c2","FilmHouse (Galaxy Plaza)","456 Starry Lane, Galaxy Town",24.87,67.01,Arrays.asList("IMAX","GOLD"),true),
+                new Cinema("c3","ReelMagic (Dreamland Center)","101 Paradise Parkway, Paradise City",24.88,67.02,Arrays.asList("ScreenX","4DMAX"),true),
+                new Cinema("c4","StarVista (Cosmo City Mall)","303 Ocean Drive, OceanView",24.89,67.03,Arrays.asList("IMAX"),true),
+                new Cinema("c5","FlickPalace (Emerald Plaza)","505 Skyway Avenue, Skyline District",24.9,67.04,Arrays.asList("GOLD","4DMAX"),true),
+                new Cinema("c6","CineMax (Metro Hub)","12 Main Boulevard, Downtown",24.91,67.05,Arrays.asList("IMAX","ScreenX"),true),
+                new Cinema("c7","Reel Cinema (Clifton)","88 Sea View Road, Clifton",24.82,67.025,Arrays.asList("GOLD","ScreenX"),true)
         );
-
-        for (Cinema c : cinemas) {
-            c.hallIds = new ArrayList<>();
-            c.hallShowtimeIds = new ArrayList<>();
-            cinemasRef.child(c.id).setValue(c);
-        }
+        for (Cinema c : cinemas) { c.hallIds = new ArrayList<>(); c.hallShowtimeIds = new ArrayList<>(); cinemasRef.child(c.id).setValue(c); }
     }
-        // ─────────────────────────────────────────────────────────────
-        //  DISTANCE
-        // ─────────────────────────────────────────────────────────────
-        private double distanceTo (Cinema c){
-            if (userLat == 0 && userLng == 0) return 0;
-            float[] result = new float[1];
-            Location.distanceBetween(userLat, userLng, c.latitude, c.longitude, result);
-            return result[0];
+
+    private double distanceTo(Cinema c) {
+        if (userLat == 0 && userLng == 0) return 0;
+        float[] r = new float[1];
+        Location.distanceBetween(userLat, userLng, c.latitude, c.longitude, r);
+        return r[0];
+    }
+
+    private String formatDistance(Cinema c) {
+        double m = distanceTo(c);
+        if (m == 0) return "";
+        return String.format(Locale.ROOT, "%.1fkm", m / 1000.0);
+    }
+
+    private class CinemaAdapter extends RecyclerView.Adapter<CinemaAdapter.VH> {
+        private final List<Cinema> list;
+        CinemaAdapter(List<Cinema> list) { this.list = list; }
+
+        @NonNull @Override
+        public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cinema_row, parent, false);
+            return new VH(v);
         }
 
-        private String formatDistance (Cinema c){
-            double metres = distanceTo(c);
-            if (metres == 0) return "";
-            return String.format(Locale.ROOT, "%.1fkm", metres / 1000.0);
+        @Override
+        public void onBindViewHolder(@NonNull VH holder, int position) {
+            Cinema c = list.get(position);
+            holder.tvName.setText(c.name);
+            holder.tvAddress.setText(c.address);
+            String dist = formatDistance(c);
+            holder.tvDistance.setText(dist);
+            holder.tvDistance.setVisibility(dist.isEmpty() ? View.GONE : View.VISIBLE);
+
+            // ✅ Click → CinemaDetailActivity
+            holder.itemView.setOnClickListener(v -> {
+                Intent intent = new Intent(requireContext(), CinemaDetailActivity.class);
+                intent.putExtra("cinema_id",      c.id);
+                intent.putExtra("cinema_name",    c.name);
+                intent.putExtra("cinema_address", c.address);
+                if (c.screenTypes != null)
+                    intent.putExtra("screen_types", String.join(",", c.screenTypes));
+                requireContext().startActivity(intent);
+            });
         }
 
-        // ─────────────────────────────────────────────────────────────
-        //  ADAPTER
-        // ─────────────────────────────────────────────────────────────
-        private class CinemaAdapter extends RecyclerView.Adapter<CinemaAdapter.VH> {
+        @Override public int getItemCount() { return list.size(); }
 
-            private final List<Cinema> list;
-
-            CinemaAdapter(List<Cinema> list) {
-                this.list = list;
-            }
-
-            @NonNull
-            @Override
-            public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View v = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.item_cinema_row, parent, false);
-                return new VH(v);
-            }
-
-            @Override
-            public void onBindViewHolder(@NonNull VH holder, int position) {
-                Cinema c = list.get(position);
-                holder.tvName.setText(c.name);
-                holder.tvAddress.setText(c.address);
-
-                String dist = formatDistance(c);
-                holder.tvDistance.setText(dist);
-                holder.tvDistance.setVisibility(dist.isEmpty() ? View.GONE : View.VISIBLE);
-
-                holder.itemView.setOnClickListener(v ->
-                        Toast.makeText(requireContext(), c.name, Toast.LENGTH_SHORT).show());
-            }
-
-            @Override
-            public int getItemCount() {
-                return list.size();
-            }
-
-            class VH extends RecyclerView.ViewHolder {
-                TextView tvName, tvAddress, tvDistance;
-
-                VH(@NonNull View v) {
-                    super(v);
-                    tvName = v.findViewById(R.id.tvCinemaName);
-                    tvAddress = v.findViewById(R.id.tvCinemaAddress);
-                    tvDistance = v.findViewById(R.id.tvDistance);
-                }
+        class VH extends RecyclerView.ViewHolder {
+            TextView tvName, tvAddress, tvDistance;
+            VH(@NonNull View v) {
+                super(v);
+                tvName     = v.findViewById(R.id.tvCinemaName);
+                tvAddress  = v.findViewById(R.id.tvCinemaAddress);
+                tvDistance = v.findViewById(R.id.tvDistance);
             }
         }
     }
+}

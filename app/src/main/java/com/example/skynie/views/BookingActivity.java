@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,13 +48,18 @@ public class BookingActivity extends AppCompatActivity {
     HallShowTimeAdapter adapter;
     DateAdapter dateAdapter;
     FormatAdapter formatAdapter;
-    ImageView ivMoviePoster;
-    TextView tvMovieTitle, tvDuration;
+    ImageView ivMoviePoster, ivLocationArrow;
+    TextView tvMovieTitle, tvDuration, tvCinemaName;
     AppCompatButton btnTrailer;
-
+    LinearLayout llCinemaLocation;
     ProgressBar progressBar;
-    String movieId, movieTitle, moviePoster, movieBackdrop,movieRating, movieDuration, movieDescription;
-    String cinemaName = "";
+
+    String movieId, movieTitle, moviePoster, movieBackdrop, movieRating, movieDuration, movieDescription;
+    String trailerUrl, pgRating, language;
+
+    // ✅ Selected cinema variables (default c1)
+    private String selectedCinemaId = "c1";
+    private String selectedCinemaName = "";
 
     List<HallShowTime> hallShowTimes = new ArrayList<>();
     List<Hall>         halls         = new ArrayList<>();
@@ -78,16 +84,21 @@ public class BookingActivity extends AppCompatActivity {
     }
 
     private void init() {
-        main= findViewById(R.id.main);
-        btnBack= findViewById(R.id.btn_back);
-        rvDays= findViewById(R.id.rv_days);
-        rvFormats= findViewById(R.id.rv_formats);
+        main = findViewById(R.id.main);
+        btnBack = findViewById(R.id.btn_back);
+        rvDays = findViewById(R.id.rv_days);
+        rvFormats = findViewById(R.id.rv_formats);
         rvShowTimes = findViewById(R.id.rv_show_times);
         ivMoviePoster = findViewById(R.id.iv_movie_poster);
         tvMovieTitle = findViewById(R.id.tv_movie_title);
         tvDuration = findViewById(R.id.tv_duration);
         btnTrailer = findViewById(R.id.btn_trailer);
-        progressBar=findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.progressBar);
+
+        // ✅ Cinema views
+        ivLocationArrow = findViewById(R.id.iv_location_arrow);
+        tvCinemaName = findViewById(R.id.tv_cinema_name);
+        llCinemaLocation = findViewById(R.id.llCinemaLocation);
 
         // Showtimes RecyclerView
         rvShowTimes.setLayoutManager(new GridLayoutManager(this, 3));
@@ -109,6 +120,7 @@ public class BookingActivity extends AppCompatActivity {
         rvFormats.setAdapter(formatAdapter);
     }
 
+    // ✅ Updated getIntentData with selected cinema
     private void getIntentData() {
         Intent intent = getIntent();
         movieId          = intent.getStringExtra("movie_id");
@@ -118,6 +130,15 @@ public class BookingActivity extends AppCompatActivity {
         movieRating      = intent.getStringExtra("movie_rating");
         movieDuration    = String.valueOf(intent.getIntExtra("movie_duration", 0));
         movieDescription = intent.getStringExtra("movie_description");
+        trailerUrl       = intent.getStringExtra("trailer_url");
+        pgRating         = intent.getStringExtra("pg_rating");
+        language         = intent.getStringExtra("language");
+
+        // ✅ Selected cinema (CinemaListActivity se wapas aaya)
+        String selId   = intent.getStringExtra("selected_cinema_id");
+        String selName = intent.getStringExtra("selected_cinema_name");
+        if (selId != null && !selId.isEmpty())   selectedCinemaId = selId;
+        if (selName != null && !selName.isEmpty()) selectedCinemaName = selName;
     }
 
     private void setupMovieInfo() {
@@ -138,13 +159,15 @@ public class BookingActivity extends AppCompatActivity {
         }
     }
 
+    // ✅ Updated loadDataFromFirebase — using selectedCinemaId instead of hardcoded "c1"
     private void loadDataFromFirebase() {
         progressBar.setVisibility(View.VISIBLE);
         rvShowTimes.setVisibility(View.GONE);
 
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
 
-        databaseRef.child("cinemas").child("c1")
+        // ✅ Hardcoded "c1" ki jagah selectedCinemaId use karo
+        databaseRef.child("cinemas").child(selectedCinemaId)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot cinemaSnapshot) {
@@ -155,7 +178,11 @@ public class BookingActivity extends AppCompatActivity {
                         }
 
                         cinemaName = cinemaSnapshot.child("name").getValue(String.class);
+                        selectedCinemaName = cinemaName;
                         if (cinemaName == null) cinemaName = "";
+
+                        // ✅ Update cinema name in UI
+                        if (tvCinemaName != null) tvCinemaName.setText(cinemaName);
 
                         if (movieTitle != null && !cinemaName.isEmpty())
                             adapter.setMovieAndCinema(movieTitle, cinemaName);
@@ -183,7 +210,6 @@ public class BookingActivity extends AppCompatActivity {
                                 "Failed: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
-
     }
 
     private void fetchHallShowtimes(List<String> ids) {
@@ -246,7 +272,6 @@ public class BookingActivity extends AppCompatActivity {
                                 List<Hall> hallList) {
         if (ids.isEmpty()) { updateAdapter(hstList, hallList, new ArrayList<>()); return; }
 
-
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
         List<Showtime> list = new ArrayList<>();
         int[] done = {0};
@@ -303,7 +328,6 @@ public class BookingActivity extends AppCompatActivity {
                     hallList,
                     filtered.isEmpty() ? new ArrayList<>() : valid);
 
-            // Hide progress bar here too
             progressBar.setVisibility(View.GONE);
             rvShowTimes.setVisibility(View.VISIBLE);
         });
@@ -343,21 +367,50 @@ public class BookingActivity extends AppCompatActivity {
         runOnUiThread(() -> adapter.updateItems(filtHst, halls, filtSt));
     }
 
+    // ✅ Setup Click Listeners with cinema arrow click
     private void setupClickListeners() {
-        btnBack.setOnClickListener(v ->{
+        btnBack.setOnClickListener(v -> {
             startActivity(new Intent(BookingActivity.this, FilmDetailsActivity.class));
             finish();
         });
-
 
         btnTrailer.setOnClickListener(v -> {
             Intent intent = new Intent(this, TrailerActivity.class);
             intent.putExtra("movie_id",       movieId);
             intent.putExtra("movie_title",    movieTitle);
-            intent.putExtra("movie_duration", movieDuration != null? Integer.parseInt(movieDuration) : 0);
-
-            // trailer_url blank — TrailerActivity Firebase se fetch karega
+            intent.putExtra("movie_duration", movieDuration != null ? Integer.parseInt(movieDuration) : 0);
             startActivity(intent);
         });
+
+        // ✅ Cinema arrow click
+        if (ivLocationArrow != null) {
+            ivLocationArrow.setOnClickListener(v -> openCinemaList());
+        }
+
+        // ✅ Cinema location LinearLayout click
+        if (llCinemaLocation != null) {
+            llCinemaLocation.setOnClickListener(v -> openCinemaList());
+        }
+
+        // ✅ Cinema name TextView click bhi (optional but good)
+        if (tvCinemaName != null) {
+            tvCinemaName.setOnClickListener(v -> openCinemaList());
+        }
+    }
+
+    // ✅ Method to open CinemaListActivity
+    private void openCinemaList() {
+        Intent intent = new Intent(this, CinemaListActivity.class);
+        intent.putExtra("movie_id",          movieId);
+        intent.putExtra("movie_title",       movieTitle);
+        intent.putExtra("movie_poster",      moviePoster);
+        intent.putExtra("movie_backdrop",    movieBackdrop);
+        intent.putExtra("movie_rating",      movieRating);
+        intent.putExtra("movie_duration",    movieDuration != null ? Integer.parseInt(movieDuration) : 0);
+        intent.putExtra("movie_description", movieDescription);
+        intent.putExtra("trailer_url",       trailerUrl);
+        intent.putExtra("pg_rating",         pgRating);
+        intent.putExtra("language",          language);
+        startActivity(intent);
     }
 }

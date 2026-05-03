@@ -221,12 +221,17 @@
                 </LinearLayout>
             </LinearLayout>
 
+            <!-- ✅ Cinema Location Section - Clickable -->
             <LinearLayout
+                android:id="@+id/llCinemaLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -235,6 +240,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tv_cinema_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/stars_90_mall"

@@ -41,6 +41,12 @@
         android:testOnly="true"
         android:theme="@style/Theme.Skynie" >
         <activity
+            android:name="com.example.skynie.views.CinemaDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.skynie.views.MovieSearchActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.skynie.views.MainActivity"
             android:exported="false" />
         <activity
@@ -89,19 +95,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Facebook App ID -->
+        </activity> <!-- Facebook App ID -->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
-
-        <!-- Facebook Client Token -->
+            android:value="@string/facebook_app_id" /> <!-- Facebook Client Token -->
         <meta-data
             android:name="com.facebook.sdk.ClientToken"
-            android:value="2d2634232a19691f7c1014e851e5b1f0" />
-
-        <!-- Facebook Login Activity -->
+            android:value="2d2634232a19691f7c1014e851e5b1f0" /> <!-- Facebook Login Activity -->
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
@@ -128,9 +128,7 @@
                     android:host="cct.com.example.skynie"
                     android:scheme="fbconnect" />
             </intent-filter>
-        </activity>
-
-        <!-- Google Services -->
+        </activity> <!-- Google Services -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

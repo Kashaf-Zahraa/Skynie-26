@@ -9,19 +9,29 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:hardwareAccelerated="true"
         android:theme="@style/Theme.Skynie">
+        <activity
+            android:name=".CinemaListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.CinemaDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.MovieSearchActivity"
+            android:exported="false" />
+        <activity android:name=".views.CinemaListActivity" android:exported="false" />
         <activity
             android:name=".views.MainActivity"
             android:exported="false" />
         <activity
             android:name=".views.TrailerActivity"
             android:exported="false"
-            android:hardwareAccelerated="true"/>
+            android:hardwareAccelerated="true" />
         <activity android:name=".views.AllMoviesActivity" />
         <activity
             android:name=".views.TicketDetailsActivity"
@@ -64,42 +74,32 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Facebook App ID -->
+        </activity> <!-- Facebook App ID -->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
-
-        <!-- Facebook Client Token -->
+            android:value="@string/facebook_app_id" /> <!-- Facebook Client Token -->
         <meta-data
             android:name="com.facebook.sdk.ClientToken"
-            android:value="2d2634232a19691f7c1014e851e5b1f0"/>
-
-        <!-- Facebook Login Activity -->
+            android:value="2d2634232a19691f7c1014e851e5b1f0" /> <!-- Facebook Login Activity -->
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:label="@string/app_name"/>
-
+            android:label="@string/app_name" />
         <activity
             android:name="com.facebook.CustomTabActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
-        </activity>
-
-        <!-- Google Services -->
+        </activity> <!-- Google Services -->
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
-
-
-
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>
