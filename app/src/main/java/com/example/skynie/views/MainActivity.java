@@ -485,8 +485,8 @@ public class MainActivity extends AppCompatActivity {
     private void navigateToFilmDetails(Movie movie) {
         Intent intent = new Intent(this, FilmDetailsActivity.class);
 
-
         intent.putExtra("movie_id", movie.id);
+        intent.putExtra("movie_url", movie.trailer_url);
         intent.putExtra("movie_title", movie.title);
         intent.putExtra("movie_poster", movie.poster_drawable);
         intent.putExtra("movie_backdrop", movie.backdrop_drawable);

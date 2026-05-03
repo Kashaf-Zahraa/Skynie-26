@@ -63,7 +63,6 @@ public class FilmDetailsActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_film_details);
 
-        addMoviesToFirebase();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -141,7 +140,6 @@ public class FilmDetailsActivity extends AppCompatActivity {
             intent.putExtra("movie_duration", finalMovieDuration);
             intent.putExtra("trailer_url", finalTrailerUrl);
             intent.putExtra("pg_rating", finalPgRating);
-           // intent.putExtra("trailer_url", "https://youtu.be/iV46TJKL8cU");
             intent.putExtra("language", finalLanguage);
             startActivity(intent);
         });
@@ -305,61 +303,4 @@ public class FilmDetailsActivity extends AppCompatActivity {
         rvRecommendations.setAdapter(adapter);
     }
 
-    private void addMoviesToFirebase() {
-        // Cast data - movie_details node
-        DatabaseReference detailsRef = FirebaseDatabase.getInstance()
-                .getReference("movie_details");
-
-        // Trailer URLs - movies node (BILKUL ALAG reference)
-        DatabaseReference moviesRef = FirebaseDatabase.getInstance()
-                .getReference("movies");
-
-        // Cast objects banao (same as before)
-        ArrayList<String> d3 = new ArrayList<>(); d3.add("Kelsey Mann");
-        ArrayList<String> w3 = new ArrayList<>(); w3.add("Meg LeFauve"); w3.add("Dave Holstein");
-        ArrayList<String> a3 = new ArrayList<>(); a3.add("Amy Poehler"); a3.add("Maya Hawke");
-        detailsRef.child("movie3").setValue(new Cast(a3, "movie3", d3, w3));
-
-        ArrayList<String> d4 = new ArrayList<>(); d4.add("Shawn Levy");
-        ArrayList<String> w4 = new ArrayList<>(); w4.add("Ryan Reynolds"); w4.add("Rhett Reese");
-        ArrayList<String> a4 = new ArrayList<>(); a4.add("Ryan Reynolds"); a4.add("Hugh Jackman");
-        detailsRef.child("movie4").setValue(new Cast(a4, "movie4", d4, w4));
-
-        ArrayList<String> d5 = new ArrayList<>(); d5.add("Ridley Scott");
-        ArrayList<String> w5 = new ArrayList<>(); w5.add("David Scarpa");
-        ArrayList<String> a5 = new ArrayList<>(); a5.add("Paul Mescal"); a5.add("Denzel Washington");
-        detailsRef.child("movie5").setValue(new Cast(a5, "movie5", d5, w5));
-
-        ArrayList<String> d6 = new ArrayList<>(); d6.add("Todd Phillips");
-        ArrayList<String> w6 = new ArrayList<>(); w6.add("Todd Phillips"); w6.add("Scott Silver");
-        ArrayList<String> a6 = new ArrayList<>(); a6.add("Joaquin Phoenix"); a6.add("Lady Gaga");
-        detailsRef.child("movie6").setValue(new Cast(a6, "movie6", d6, w6));
-
-        ArrayList<String> d7 = new ArrayList<>(); d7.add("J.C. Chandor");
-        ArrayList<String> w7 = new ArrayList<>(); w7.add("Richard Wenk");
-        ArrayList<String> a7 = new ArrayList<>(); a7.add("Aaron Taylor-Johnson"); a7.add("Russell Crowe");
-        detailsRef.child("movie7").setValue(new Cast(a7, "movie7", d7, w7));
-
-        ArrayList<String> d8 = new ArrayList<>(); d8.add("Bong Joon-ho");
-        ArrayList<String> w8 = new ArrayList<>(); w8.add("Bong Joon-ho");
-        ArrayList<String> a8 = new ArrayList<>(); a8.add("Robert Pattinson"); a8.add("Naomi Ackie");
-        detailsRef.child("movie8").setValue(new Cast(a8, "movie8", d8, w8));
-
-        ArrayList<String> d9 = new ArrayList<>(); d9.add("Marc Webb");
-        ArrayList<String> w9 = new ArrayList<>(); w9.add("Greta Gerwig");
-        ArrayList<String> a9 = new ArrayList<>(); a9.add("Rachel Zegler"); a9.add("Gal Gadot");
-        detailsRef.child("movie9").setValue(new Cast(a9, "movie9", d9, w9));
-
-        // ✅ Trailer URLs → movies node mein SEEDHA
-        moviesRef.child("movie1").child("trailer_url")
-                .setValue("https://youtu.be/iV46TJKL8cU");
-        moviesRef.child("movie2").child("trailer_url")
-                .setValue("https://youtu.be/Way9Dexny3w");
-        moviesRef.child("movie5").child("trailer_url")
-                .setValue("https://youtu.be/P5ieIbInFpg");
-        moviesRef.child("movie6").child("trailer_url")
-                .setValue("https://youtu.be/zAGVQLHvwOY");
-        moviesRef.child("movie9").child("trailer_url")
-                .setValue("https://youtu.be/iV46TJKL8cU");
-    }
 }

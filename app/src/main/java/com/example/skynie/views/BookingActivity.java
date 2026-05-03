@@ -354,8 +354,8 @@ public class BookingActivity extends AppCompatActivity {
             Intent intent = new Intent(this, TrailerActivity.class);
             intent.putExtra("movie_id",       movieId);
             intent.putExtra("movie_title",    movieTitle);
-            intent.putExtra("movie_duration", movieDuration != null
-                    ? Integer.parseInt(movieDuration) : 0);
+            intent.putExtra("movie_duration", movieDuration != null? Integer.parseInt(movieDuration) : 0);
+
             // trailer_url blank — TrailerActivity Firebase se fetch karega
             startActivity(intent);
         });

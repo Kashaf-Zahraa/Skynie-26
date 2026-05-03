@@ -42,6 +42,8 @@ public class TrailerActivity extends AppCompatActivity {
     private FrameLayout videoContainer;
     private WebView webView;
     private boolean isVideoPlaying = false;
+    private boolean isLoading = false;
+    private boolean hasAutoPlayed = false;  // To prevent multiple auto-play attempts
 
     private String movieId, movieTitle, trailerUrl, pgRating, language, moviePoster;
     private int duration;
@@ -63,29 +65,32 @@ public class TrailerActivity extends AppCompatActivity {
         populateUI();
 
         btnBack.setOnClickListener(v -> finish());
+
+        // ✅ AUTO-PLAY: Start playing trailer as soon as activity opens
+        autoPlayTrailer();
     }
 
     private void initViews() {
-        progressBar    = findViewById(R.id.progressBar);
-        btnBack        = findViewById(R.id.btnBack);
-        tvMovieTitle   = findViewById(R.id.tvMovieTitle);
-        tvMeta         = findViewById(R.id.tvMeta);
-        badgeAge       = findViewById(R.id.badgeAge);
-        badgeLang      = findViewById(R.id.badgeLang);
-        ivThumbnail    = findViewById(R.id.ivThumbnail);
+        progressBar = findViewById(R.id.progressBar);
+        btnBack = findViewById(R.id.btnBack);
+        tvMovieTitle = findViewById(R.id.tvMovieTitle);
+        tvMeta = findViewById(R.id.tvMeta);
+        badgeAge = findViewById(R.id.badgeAge);
+        badgeLang = findViewById(R.id.badgeLang);
+        ivThumbnail = findViewById(R.id.ivThumbnail);
         btnPlayYouTube = findViewById(R.id.btnPlayYouTube);
         videoContainer = findViewById(R.id.videoContainer);
         thumbnailContainer = findViewById(R.id.thumbnailContainer);
     }
 
     private void getIntentData() {
-        movieId     = getIntent().getStringExtra("movie_id");
-        movieTitle  = getIntent().getStringExtra("movie_title");
-        trailerUrl  = getIntent().getStringExtra("trailer_url");
-        pgRating    = getIntent().getStringExtra("pg_rating");
-        language    = getIntent().getStringExtra("language");
+        movieId = getIntent().getStringExtra("movie_id");
+        movieTitle = getIntent().getStringExtra("movie_title");
+        trailerUrl = getIntent().getStringExtra("trailer_url");
+        pgRating = getIntent().getStringExtra("pg_rating");
+        language = getIntent().getStringExtra("language");
         moviePoster = getIntent().getStringExtra("movie_poster");
-        duration    = getIntent().getIntExtra("movie_duration", 0);
+        duration = getIntent().getIntExtra("movie_duration", 0);
     }
 
     private void populateUI() {
@@ -119,20 +124,33 @@ public class TrailerActivity extends AppCompatActivity {
             if (resId != 0) ivThumbnail.setImageResource(resId);
         }
 
-        // Play button click → Show embedded YouTube player
+        // Play button click - Manual play (as backup)
         if (btnPlayYouTube != null) {
             btnPlayYouTube.setOnClickListener(v -> {
-                if (trailerUrl != null && !trailerUrl.isEmpty()) {
-                    showEmbeddedYouTubePlayer(trailerUrl);
-                } else if (movieId != null) {
-                    fetchUrlThenShowPlayer(movieId);
-                } else {
-                    Toast.makeText(this, "Trailer not available", Toast.LENGTH_SHORT).show();
+                if (!isLoading && !hasAutoPlayed) {
+                    if (trailerUrl != null && !trailerUrl.isEmpty()) {
+                        showEmbeddedYouTubePlayer(trailerUrl);
+                    } else if (movieId != null) {
+                        fetchUrlThenShowPlayer(movieId);
+                    } else {
+                        Toast.makeText(this, "Trailer not available", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
         }
+    }
 
-        if (progressBar != null) progressBar.setVisibility(View.GONE);
+    /**
+     * Auto-play trailer when activity starts
+     */
+    private void autoPlayTrailer() {
+        if (trailerUrl != null && !trailerUrl.isEmpty()) {
+            showEmbeddedYouTubePlayer(trailerUrl);
+        } else if (movieId != null) {
+            fetchUrlThenShowPlayer(movieId);
+        } else {
+            Toast.makeText(this, "Trailer not available", Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**
@@ -143,8 +161,19 @@ public class TrailerActivity extends AppCompatActivity {
 
         if (videoId == null) {
             Toast.makeText(this, "Invalid YouTube URL", Toast.LENGTH_SHORT).show();
+            hideLoading();
             return;
         }
+
+        hasAutoPlayed = true;
+
+        // Hide the play button layout completely since video will auto-play
+        if (btnPlayYouTube != null) {
+            btnPlayYouTube.setVisibility(View.GONE);
+        }
+
+        // Show loading
+        showLoading();
 
         // Hide thumbnail container and show video container
         if (thumbnailContainer != null) thumbnailContainer.setVisibility(View.GONE);
@@ -155,10 +184,13 @@ public class TrailerActivity extends AppCompatActivity {
             webView = new WebView(this);
             setupWebView();
             videoContainer.addView(webView);
+        } else {
+            webView.setVisibility(View.VISIBLE);
         }
 
-        // Load video with CORS proxy
-        String proxyUrl = "https://corsproxy.io/?url=https://www.youtube.com/embed/" + videoId + "?autoplay=1&playsinline=1";
+        // Load video with CORS proxy - autoplay is enabled
+        String embedUrl = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&playsinline=1";
+        String proxyUrl = "https://corsproxy.io/?url=" + Uri.encode(embedUrl);
         webView.loadUrl(proxyUrl);
 
         isVideoPlaying = true;
@@ -168,7 +200,7 @@ public class TrailerActivity extends AppCompatActivity {
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
-        webSettings.setMediaPlaybackRequiresUserGesture(false); // Auto-play
+        webSettings.setMediaPlaybackRequiresUserGesture(false); // Auto-play without user gesture
         webSettings.setLoadWithOverviewMode(true);
         webSettings.setUseWideViewPort(true);
         webSettings.setBuiltInZoomControls(false);
@@ -180,12 +212,30 @@ public class TrailerActivity extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                // Keep all navigation inside WebView
                 return false;
+            }
+
+            @Override
+            public void onPageStarted(WebView view, String url, android.graphics.Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                hideLoading();
             }
         });
 
-        webView.setWebChromeClient(new WebChromeClient());
+        webView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                super.onProgressChanged(view, newProgress);
+                if (newProgress == 100) {
+                    hideLoading();
+                }
+            }
+        });
 
         // Set layout parameters
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
@@ -196,21 +246,20 @@ public class TrailerActivity extends AppCompatActivity {
     }
 
     private void fetchUrlThenShowPlayer(String movieId) {
-        if (progressBar != null) progressBar.setVisibility(View.VISIBLE);
-        if (btnPlayYouTube != null) btnPlayYouTube.setEnabled(false);
+        showLoading();
+        isLoading = true;
 
         FirebaseDatabase.getInstance().getReference("movies").child(movieId)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snap) {
-                        if (progressBar != null) progressBar.setVisibility(View.GONE);
-                        if (btnPlayYouTube != null) btnPlayYouTube.setEnabled(true);
-
                         String url = snap.child("trailer_url").getValue(String.class);
                         if (url != null && !url.isEmpty()) {
                             trailerUrl = url;
                             showEmbeddedYouTubePlayer(url);
                         } else {
+                            hideLoading();
+                            isLoading = false;
                             Toast.makeText(TrailerActivity.this,
                                     "Trailer not available", Toast.LENGTH_SHORT).show();
                         }
@@ -218,12 +267,26 @@ public class TrailerActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError e) {
-                        if (progressBar != null) progressBar.setVisibility(View.GONE);
-                        if (btnPlayYouTube != null) btnPlayYouTube.setEnabled(true);
+                        hideLoading();
+                        isLoading = false;
                         Toast.makeText(TrailerActivity.this,
                                 "Failed to load trailer", Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    private void showLoading() {
+        isLoading = true;
+        if (progressBar != null) {
+            progressBar.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void hideLoading() {
+        isLoading = false;
+        if (progressBar != null) {
+            progressBar.setVisibility(View.GONE);
+        }
     }
 
     private String extractYouTubeId(String url) {
@@ -254,7 +317,6 @@ public class TrailerActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        // Pause video when activity is not visible
         if (webView != null && isVideoPlaying) {
             webView.onPause();
             webView.pauseTimers();
@@ -264,7 +326,6 @@ public class TrailerActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // Resume video when activity is visible
         if (webView != null && isVideoPlaying) {
             webView.onResume();
             webView.resumeTimers();
@@ -274,7 +335,6 @@ public class TrailerActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Clean up WebView to prevent memory leaks
         if (webView != null) {
             webView.destroy();
             webView = null;

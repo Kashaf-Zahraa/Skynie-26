@@ -332,10 +332,6 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_google.xml"
     },
     {
-        "merged": "com.example.skynie.app-debug-55:/layout_activity_booking.xml.flat",
-        "source": "com.example.skynie.app-main-57:/layout/activity_booking.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_dot_active.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\dot_active.xml"
     },
@@ -562,6 +558,10 @@
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.skynie.app-debug-55:/layout_activity_trailer.xml.flat",
+        "source": "com.example.skynie.app-main-57:/layout/activity_trailer.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_badge_blue_bg.xml.flat",

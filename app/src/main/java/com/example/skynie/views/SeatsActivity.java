@@ -36,7 +36,7 @@ public class SeatsActivity extends AppCompatActivity {
     TextView tvFilmTitle, tvscreenType, tvCinema, tvHall, tvDate, tvTime;
     RecyclerView rvSeats;
     SeatAdapter adapter;
-    String showtimeId, showtimeTime, movieId, cinemaId, hallId, hallNumber,
+    String showtimeId, showtimeTime,showtimeDate, movieId, cinemaId, hallId, hallNumber,
             screenType, audioFormat, movieTitle, cinemaName;
     int availableSeats, totalSeats;
     double price;
@@ -89,6 +89,7 @@ public class SeatsActivity extends AppCompatActivity {
         hallShowTimeId = intent.getStringExtra("hallShowTime_id");
         showtimeId     = intent.getStringExtra("showtime_id");
         showtimeTime   = intent.getStringExtra("showtime_time");
+        showtimeDate   = intent.getStringExtra("showtime_date");
         availableSeats = intent.getIntExtra("available_seats", 0);
         price          = intent.getDoubleExtra("price", 0.0);
         movieId        = intent.getStringExtra("movie_id");
@@ -106,6 +107,7 @@ public class SeatsActivity extends AppCompatActivity {
         if (tvscreenType != null && screenType != null) tvscreenType.setText(screenType);
         if (tvHall       != null && hallNumber != null) tvHall.setText(hallNumber);
         if (tvTime       != null && showtimeTime != null) tvTime.setText(showtimeTime);
+        if (tvDate       != null && showtimeDate != null) tvDate.setText(showtimeDate);
         if (tvFilmTitle  != null && movieTitle != null)  tvFilmTitle.setText(movieTitle);
         if (tvCinema     != null && cinemaName != null)  tvCinema.setText(cinemaName);
     }

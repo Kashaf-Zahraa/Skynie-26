@@ -110,7 +110,7 @@ public class HallShowTimeAdapter extends RecyclerView.Adapter<HallShowTimeAdapte
 
             intent.putExtra("showtime_id", showtime.id);
             intent.putExtra("showtime_time", showtime.time);
-            intent.putExtra("showtime_time", showtime.time);
+            intent.putExtra("showtime_date", showtime.date);
             intent.putExtra("available_seats", showtime.availableSeats);
             intent.putExtra("price", showtime.price);
             intent.putExtra("movie_id", showtime.movieId);
