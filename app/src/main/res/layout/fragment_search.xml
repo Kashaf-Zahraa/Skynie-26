@@ -165,6 +165,14 @@
         </LinearLayout>
     </HorizontalScrollView>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="250dp"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/skynie_red"/>
+
     <!-- ── CINEMAS LIST ───────────────────────────────────────── -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCinemas"

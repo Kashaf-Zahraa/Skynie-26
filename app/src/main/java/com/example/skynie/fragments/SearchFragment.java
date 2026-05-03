@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +45,7 @@ public class SearchFragment extends Fragment {
 
     private RecyclerView rvCinemas;
     private EditText etSearch;
+    ProgressBar progressBar;
 
     private CinemaAdapter adapter;
     private final List<Cinema> allCinemas   = new ArrayList<>();
@@ -66,6 +68,7 @@ public class SearchFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        progressBar=view.findViewById(R.id.progressBar);
         cinemasRef = FirebaseDatabase.getInstance().getReference("cinemas");
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity());
 
@@ -220,6 +223,10 @@ public class SearchFragment extends Fragment {
         //  FIREBASE
         // ─────────────────────────────────────────────────────────────
         private void loadCinemas () {
+
+            progressBar.setVisibility(View.VISIBLE);
+            rvCinemas.setVisibility(View.GONE);
+
             cinemasRef.orderByChild("is_active").equalTo(true)
                     .addValueEventListener(new ValueEventListener() {
                         @Override
@@ -230,6 +237,9 @@ public class SearchFragment extends Fragment {
                                 if (c != null) allCinemas.add(c);
                             }
                             applyFilters();
+
+                            progressBar.setVisibility(View.GONE);
+                            rvCinemas.setVisibility(View.VISIBLE);
                         }
 
                         @Override

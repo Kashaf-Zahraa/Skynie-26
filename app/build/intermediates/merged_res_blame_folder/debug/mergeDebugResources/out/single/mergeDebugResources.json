@@ -24,12 +24,12 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\font\\poppins_bold.ttf"
     },
     {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_badge_dark_outline_bg.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\badge_dark_outline_bg.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_badge_dark_outline_bg.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\badge_dark_outline_bg.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\layout_activity_signup.xml.flat",
@@ -80,12 +80,12 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-xxxhdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_empty_tickets.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\drawable\\ic_empty_tickets.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_ic_menu.xml.flat",
@@ -560,8 +560,8 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-main-57:\\mipmap-hdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.skynie.app-debug-55:/layout_activity_trailer.xml.flat",
-        "source": "com.example.skynie.app-main-57:/layout/activity_trailer.xml"
+        "merged": "com.example.skynie.app-debug-55:/layout_fragment_my_tickets.xml.flat",
+        "source": "com.example.skynie.app-main-57:/layout/fragment_my_tickets.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\9.1.0\\com.example.skynie.app-debug-55:\\drawable_badge_blue_bg.xml.flat",

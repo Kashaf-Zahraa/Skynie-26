@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,12 +35,15 @@ public class MyTicketsFragment extends Fragment {
     private TicketAdapter ticketAdapter;
     private List<Booking> bookingsList = new ArrayList<>();
     private DatabaseReference bookingsRef;
+    ProgressBar progressBar;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_my_tickets, container, false);
 
+
+        progressBar=view.findViewById(R.id.progressBar);
         rvTickets = view.findViewById(R.id.rvTickets);
         llEmptyState = view.findViewById(R.id.llEmptyState);
 
@@ -73,6 +77,10 @@ public class MyTicketsFragment extends Fragment {
 
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+
+        progressBar.setVisibility(View.VISIBLE);
+        rvTickets.setVisibility(View.GONE);
+
         bookingsRef.orderByChild("user_id").equalTo(userId)
                 .addValueEventListener(new ValueEventListener() {
                     @Override
@@ -94,6 +102,8 @@ public class MyTicketsFragment extends Fragment {
                         }
 
                         ticketAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        rvTickets.setVisibility(View.VISIBLE);
                     }
 
                     @Override
