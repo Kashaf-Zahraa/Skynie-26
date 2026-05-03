@@ -56,7 +56,7 @@ public class BookingActivity extends AppCompatActivity {
     ProgressBar progressBar;
 
     // Empty state views
-    LinearLayout emptyStateLayout;
+    LinearLayout emptyStateLayout,ll_choose_cinema_layout;
     AppCompatButton btnTryDifferentCinema;
 
     String movieId, movieTitle, moviePoster, movieBackdrop, movieRating, movieDuration, movieDescription;
@@ -119,7 +119,7 @@ public class BookingActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         ivChooseCinemaArrow = findViewById(R.id.iv_choose_cinema_arrow);
         tvSelectedCinema = findViewById(R.id.tv_selected_cinema);
-
+        ll_choose_cinema_layout=findViewById(R.id.ll_choose_cinema_layout);
         // Empty state views
         emptyStateLayout = findViewById(R.id.emptyStateLayout);
         btnTryDifferentCinema = findViewById(R.id.btnTryDifferentCinema);
@@ -138,7 +138,7 @@ public class BookingActivity extends AppCompatActivity {
         });
 
         // Cinema selector click
-        ivChooseCinemaArrow.setOnClickListener(v -> {
+        ll_choose_cinema_layout.setOnClickListener(v -> {
             Intent intent = new Intent(BookingActivity.this, SelectCinemaActivity.class);
             intent.putExtra("movie_id", movieId);
             intent.putExtra("movie_title", movieTitle);
