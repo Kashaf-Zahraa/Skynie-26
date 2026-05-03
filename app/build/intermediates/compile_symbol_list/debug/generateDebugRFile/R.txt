@@ -79,6 +79,7 @@ int drawable ic_arrow_right 0x0
 int drawable ic_back 0x0
 int drawable ic_calendar 0x0
 int drawable ic_chevron_right 0x0
+int drawable ic_cinema_projector 0x0
 int drawable ic_clock 0x0
 int drawable ic_date 0x0
 int drawable ic_empty_tickets 0x0
@@ -143,6 +144,7 @@ int id btnPlayYouTube 0x0
 int id btnSearch 0x0
 int id btnSendTicket 0x0
 int id btnTrailer 0x0
+int id btnTryDifferentCinema 0x0
 int id btn_back 0x0
 int id btn_buy_ticket 0x0
 int id btn_close 0x0
@@ -169,12 +171,14 @@ int id day_card 0x0
 int id details 0x0
 int id dotsContainer 0x0
 int id emailInput 0x0
+int id emptyStateLayout 0x0
 int id etSearch 0x0
 int id facebookButton 0x0
 int id forgotPasswordLink 0x0
 int id fragment_container 0x0
 int id googleButton 0x0
 int id imgOurPickBanner 0x0
+int id ivEmptyState 0x0
 int id ivGridPoster 0x0
 int id ivMoviePoster 0x0
 int id ivPin 0x0
@@ -184,7 +188,7 @@ int id ivQRCode 0x0
 int id ivThumbnail 0x0
 int id iv_bg_grid 0x0
 int id iv_cast_photo 0x0
-int id iv_location_arrow 0x0
+int id iv_choose_cinema_arrow 0x0
 int id iv_logo 0x0
 int id iv_movie_poster 0x0
 int id llComingSoonCards 0x0
@@ -197,6 +201,7 @@ int id llRightBlock 0x0
 int id llSmaksContainer 0x0
 int id llTicketsContainer 0x0
 int id ll_bottom_content 0x0
+int id ll_choose_cinema_layout 0x0
 int id loginButton 0x0
 int id main 0x0
 int id movie_bg 0x0
@@ -293,6 +298,8 @@ int id tv_heading_1 0x0
 int id tv_heading_2 0x0
 int id tv_movie_title 0x0
 int id tv_seats_available 0x0
+int id tv_selected_cinema 0x0
+int id tv_selected_cinema_address 0x0
 int id tv_showtime 0x0
 int id tv_slash 0x0
 int id tv_time 0x0
@@ -310,6 +317,7 @@ int layout activity_main 0x0
 int layout activity_onboarding 0x0
 int layout activity_order_details 0x0
 int layout activity_seats 0x0
+int layout activity_select_cinema 0x0
 int layout activity_signup 0x0
 int layout activity_splash 0x0
 int layout activity_ticket_details 0x0

@@ -81,6 +81,7 @@ drawable ic_arrow_right
 drawable ic_back
 drawable ic_calendar
 drawable ic_chevron_right
+drawable ic_cinema_projector
 drawable ic_clock
 drawable ic_date
 drawable ic_empty_tickets
@@ -145,6 +146,7 @@ id btnPlayYouTube
 id btnSearch
 id btnSendTicket
 id btnTrailer
+id btnTryDifferentCinema
 id btn_back
 id btn_buy_ticket
 id btn_close
@@ -171,12 +173,14 @@ id day_card
 id details
 id dotsContainer
 id emailInput
+id emptyStateLayout
 id etSearch
 id facebookButton
 id forgotPasswordLink
 id fragment_container
 id googleButton
 id imgOurPickBanner
+id ivEmptyState
 id ivGridPoster
 id ivMoviePoster
 id ivPin
@@ -186,7 +190,7 @@ id ivQRCode
 id ivThumbnail
 id iv_bg_grid
 id iv_cast_photo
-id iv_location_arrow
+id iv_choose_cinema_arrow
 id iv_logo
 id iv_movie_poster
 id llComingSoonCards
@@ -199,6 +203,7 @@ id llRightBlock
 id llSmaksContainer
 id llTicketsContainer
 id ll_bottom_content
+id ll_choose_cinema_layout
 id loginButton
 id main
 id movie_bg
@@ -295,6 +300,8 @@ id tv_heading_1
 id tv_heading_2
 id tv_movie_title
 id tv_seats_available
+id tv_selected_cinema
+id tv_selected_cinema_address
 id tv_showtime
 id tv_slash
 id tv_time
@@ -312,6 +319,7 @@ layout activity_main
 layout activity_onboarding
 layout activity_order_details
 layout activity_seats
+layout activity_select_cinema
 layout activity_signup
 layout activity_splash
 layout activity_ticket_details

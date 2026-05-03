@@ -1,5 +1,6 @@
 package com.example.skynie.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,7 @@ public class VerifyOTP_Activity extends AppCompatActivity {
     EditText[] otpFields = new EditText[4];
     AppCompatButton confirmButton;
     ImageButton backButton;
+    String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,9 @@ public class VerifyOTP_Activity extends AppCompatActivity {
         });
 
         init();
+        getIntentValues();
     }
+
     private void init() {
 
         otpFields[0] = findViewById(R.id.otpField1);
@@ -41,5 +45,12 @@ public class VerifyOTP_Activity extends AppCompatActivity {
 
         confirmButton = findViewById(R.id.confirmButton);
         backButton = findViewById(R.id.backButton);
+
+        backButton.setOnClickListener((v)->finish());
+    }
+
+    private void getIntentValues() {
+        Intent i=getIntent();
+        email=i.getStringExtra("email");
     }
 }

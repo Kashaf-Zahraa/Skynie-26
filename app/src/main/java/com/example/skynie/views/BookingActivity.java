@@ -6,11 +6,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -47,17 +50,43 @@ public class BookingActivity extends AppCompatActivity {
     HallShowTimeAdapter adapter;
     DateAdapter dateAdapter;
     FormatAdapter formatAdapter;
-    ImageView ivMoviePoster;
-    TextView tvMovieTitle, tvDuration;
+    ImageView ivMoviePoster, ivChooseCinemaArrow;
+    TextView tvMovieTitle, tvDuration, tvSelectedCinema;
     AppCompatButton btnTrailer;
-
     ProgressBar progressBar;
-    String movieId, movieTitle, moviePoster, movieBackdrop,movieRating, movieDuration, movieDescription;
-    String cinemaName = "";
+
+    // Empty state views
+    LinearLayout emptyStateLayout;
+    AppCompatButton btnTryDifferentCinema;
+
+    String movieId, movieTitle, moviePoster, movieBackdrop, movieRating, movieDuration, movieDescription;
+    String selectedCinemaId = "c1";
+    String selectedCinemaName = "Stars (90°Mall)";
+    String selectedCinemaAddress = "";
 
     List<HallShowTime> hallShowTimes = new ArrayList<>();
-    List<Hall>         halls         = new ArrayList<>();
-    List<Showtime>     showtimes     = new ArrayList<>();
+    List<Hall> halls = new ArrayList<>();
+    List<Showtime> showtimes = new ArrayList<>();
+
+    private final ActivityResultLauncher<Intent> cinemaSelectionLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    Intent data = result.getData();
+                    selectedCinemaId = data.getStringExtra("selected_cinema_id");
+                    selectedCinemaName = data.getStringExtra("selected_cinema_name");
+                    selectedCinemaAddress = data.getStringExtra("selected_cinema_address");
+
+                    if (selectedCinemaName != null) {
+                        tvSelectedCinema.setText(selectedCinemaName);
+                        loadDataFromFirebase();
+                    }
+                } else if (result.getResultCode() == RESULT_CANCELED) {
+                    selectedCinemaId = "c1";
+                    selectedCinemaName = "Stars (90°Mall)";
+                    tvSelectedCinema.setText(selectedCinemaName);
+                }
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,21 +102,53 @@ public class BookingActivity extends AppCompatActivity {
         init();
         getIntentData();
         setupMovieInfo();
-        loadDataFromFirebase();
         setupClickListeners();
+        loadDataFromFirebase();
     }
 
     private void init() {
-        main= findViewById(R.id.main);
-        btnBack= findViewById(R.id.btn_back);
-        rvDays= findViewById(R.id.rv_days);
-        rvFormats= findViewById(R.id.rv_formats);
+        main = findViewById(R.id.main);
+        btnBack = findViewById(R.id.btn_back);
+        rvDays = findViewById(R.id.rv_days);
+        rvFormats = findViewById(R.id.rv_formats);
         rvShowTimes = findViewById(R.id.rv_show_times);
         ivMoviePoster = findViewById(R.id.iv_movie_poster);
         tvMovieTitle = findViewById(R.id.tv_movie_title);
         tvDuration = findViewById(R.id.tv_duration);
         btnTrailer = findViewById(R.id.btn_trailer);
-        progressBar=findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.progressBar);
+        ivChooseCinemaArrow = findViewById(R.id.iv_choose_cinema_arrow);
+        tvSelectedCinema = findViewById(R.id.tv_selected_cinema);
+
+        // Empty state views
+        emptyStateLayout = findViewById(R.id.emptyStateLayout);
+        btnTryDifferentCinema = findViewById(R.id.btnTryDifferentCinema);
+
+        // Try different cinema button
+        btnTryDifferentCinema.setOnClickListener(v -> {
+            Intent intent = new Intent(BookingActivity.this, SelectCinemaActivity.class);
+            intent.putExtra("movie_id", movieId);
+            intent.putExtra("movie_title", movieTitle);
+            intent.putExtra("movie_poster", moviePoster);
+            intent.putExtra("movie_backdrop", movieBackdrop);
+            intent.putExtra("movie_rating", movieRating);
+            intent.putExtra("movie_duration", movieDuration != null ? Integer.parseInt(movieDuration) : 0);
+            intent.putExtra("movie_description", movieDescription);
+            cinemaSelectionLauncher.launch(intent);
+        });
+
+        // Cinema selector click
+        ivChooseCinemaArrow.setOnClickListener(v -> {
+            Intent intent = new Intent(BookingActivity.this, SelectCinemaActivity.class);
+            intent.putExtra("movie_id", movieId);
+            intent.putExtra("movie_title", movieTitle);
+            intent.putExtra("movie_poster", moviePoster);
+            intent.putExtra("movie_backdrop", movieBackdrop);
+            intent.putExtra("movie_rating", movieRating);
+            intent.putExtra("movie_duration", movieDuration != null ? Integer.parseInt(movieDuration) : 0);
+            intent.putExtra("movie_description", movieDescription);
+            cinemaSelectionLauncher.launch(intent);
+        });
 
         // Showtimes RecyclerView
         rvShowTimes.setLayoutManager(new GridLayoutManager(this, 3));
@@ -95,39 +156,37 @@ public class BookingActivity extends AppCompatActivity {
         rvShowTimes.setAdapter(adapter);
 
         // Date Adapter
-        rvDays.setLayoutManager(
-                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        rvDays.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         dateAdapter = new DateAdapter(this);
         dateAdapter.setOnDateChangeListener(this::filterShowtimesByDateAndFormat);
         rvDays.setAdapter(dateAdapter);
 
         // Format Adapter
-        rvFormats.setLayoutManager(
-                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        formatAdapter = new FormatAdapter(this, (format, position) ->
-                filterShowtimesByDateAndFormat());
+        rvFormats.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        formatAdapter = new FormatAdapter(this, (format, position) -> filterShowtimesByDateAndFormat());
         rvFormats.setAdapter(formatAdapter);
+
+        tvSelectedCinema.setText(selectedCinemaName);
     }
 
     private void getIntentData() {
         Intent intent = getIntent();
-        movieId          = intent.getStringExtra("movie_id");
-        movieTitle       = intent.getStringExtra("movie_title");
-        moviePoster      = intent.getStringExtra("movie_poster");
-        movieBackdrop    = intent.getStringExtra("movie_backdrop");
-        movieRating      = intent.getStringExtra("movie_rating");
-        movieDuration    = String.valueOf(intent.getIntExtra("movie_duration", 0));
+        movieId = intent.getStringExtra("movie_id");
+        movieTitle = intent.getStringExtra("movie_title");
+        moviePoster = intent.getStringExtra("movie_poster");
+        movieBackdrop = intent.getStringExtra("movie_backdrop");
+        movieRating = intent.getStringExtra("movie_rating");
+        movieDuration = String.valueOf(intent.getIntExtra("movie_duration", 0));
         movieDescription = intent.getStringExtra("movie_description");
     }
 
     private void setupMovieInfo() {
-        if (movieTitle != null)   tvMovieTitle.setText(movieTitle);
+        if (movieTitle != null) tvMovieTitle.setText(movieTitle);
         if (movieDuration != null && !movieDuration.isEmpty())
             tvDuration.setText(movieDuration + " min");
 
         if (moviePoster != null && !moviePoster.isEmpty()) {
-            int resourceId = getResources().getIdentifier(
-                    moviePoster, "drawable", getPackageName());
+            int resourceId = getResources().getIdentifier(moviePoster, "drawable", getPackageName());
             if (resourceId != 0) {
                 Glide.with(this).load(resourceId)
                         .placeholder(R.drawable.ic_movie_placeholder)
@@ -138,38 +197,68 @@ public class BookingActivity extends AppCompatActivity {
         }
     }
 
+    private void showContent() {
+        runOnUiThread(() -> {
+            progressBar.setVisibility(View.GONE);
+            rvShowTimes.setVisibility(View.VISIBLE);
+            rvDays.setVisibility(View.VISIBLE);
+            rvFormats.setVisibility(View.VISIBLE);
+            emptyStateLayout.setVisibility(View.GONE);
+        });
+    }
+
+    private void showEmptyState(String title, String message) {
+        runOnUiThread(() -> {
+            progressBar.setVisibility(View.GONE);
+            rvShowTimes.setVisibility(View.GONE);
+            emptyStateLayout.setVisibility(View.VISIBLE);
+
+            ImageView ivEmptyState = findViewById(R.id.ivEmptyState);
+
+        });
+    }
+
     private void loadDataFromFirebase() {
         progressBar.setVisibility(View.VISIBLE);
         rvShowTimes.setVisibility(View.GONE);
+        rvDays.setVisibility(View.GONE);
+        rvFormats.setVisibility(View.GONE);
+        emptyStateLayout.setVisibility(View.GONE);
+
+        hallShowTimes.clear();
+        halls.clear();
+        showtimes.clear();
 
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
 
-        databaseRef.child("cinemas").child("c1")
+        databaseRef.child("cinemas").child(selectedCinemaId)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot cinemaSnapshot) {
                         if (!cinemaSnapshot.exists()) {
-                            Toast.makeText(BookingActivity.this,
-                                    "Cinema not found", Toast.LENGTH_SHORT).show();
+                            showEmptyState("Cinema Not Found",
+                                    "The selected cinema could not be found. Please try a different cinema.");
                             return;
                         }
 
-                        cinemaName = cinemaSnapshot.child("name").getValue(String.class);
-                        if (cinemaName == null) cinemaName = "";
+                        String name = cinemaSnapshot.child("name").getValue(String.class);
+                        if (name != null) {
+                            selectedCinemaName = name;
+                            tvSelectedCinema.setText(selectedCinemaName);
+                        }
 
-                        if (movieTitle != null && !cinemaName.isEmpty())
-                            adapter.setMovieAndCinema(movieTitle, cinemaName);
+                        if (movieTitle != null && !selectedCinemaName.isEmpty())
+                            adapter.setMovieAndCinema(movieTitle, selectedCinemaName);
 
                         List<String> hallShowtimeIds = new ArrayList<>();
-                        for (DataSnapshot idSnap :
-                                cinemaSnapshot.child("hallShowtimeIds").getChildren()) {
+                        for (DataSnapshot idSnap : cinemaSnapshot.child("hallShowtimeIds").getChildren()) {
                             String val = idSnap.getValue(String.class);
                             if (val != null) hallShowtimeIds.add(val);
                         }
 
                         if (hallShowtimeIds.isEmpty()) {
-                            Toast.makeText(BookingActivity.this,
-                                    "No showtimes available", Toast.LENGTH_SHORT).show();
+                            showEmptyState("No Showtimes Available",
+                                    "No showtimes are currently available at " + selectedCinemaName + " for this movie.");
                             return;
                         }
 
@@ -178,18 +267,22 @@ public class BookingActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        progressBar.setVisibility(View.GONE);
-                        Toast.makeText(BookingActivity.this,
-                                "Failed: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                        showEmptyState("Loading Failed",
+                                "Failed to load cinema data. Please check your connection and try again.");
                     }
                 });
-
     }
 
     private void fetchHallShowtimes(List<String> ids) {
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
         List<HallShowTime> list = new ArrayList<>();
         int[] done = {0};
+
+        if (ids.isEmpty()) {
+            showEmptyState("No Showtimes Available",
+                    "No showtimes are currently available at " + selectedCinemaName);
+            return;
+        }
 
         for (String id : ids) {
             db.child("hallShowtimes").child(id)
@@ -200,6 +293,7 @@ public class BookingActivity extends AppCompatActivity {
                             if (h != null) list.add(h);
                             if (++done[0] == ids.size()) fetchRelatedData(list);
                         }
+
                         @Override
                         public void onCancelled(@NonNull DatabaseError e) {
                             if (++done[0] == ids.size()) fetchRelatedData(list);
@@ -209,21 +303,29 @@ public class BookingActivity extends AppCompatActivity {
     }
 
     private void fetchRelatedData(List<HallShowTime> hstList) {
-        if (hstList.isEmpty()) return;
+        if (hstList.isEmpty()) {
+            showEmptyState("No Showtimes Available",
+                    "No showtimes are currently available at " + selectedCinemaName);
+            return;
+        }
 
         List<String> hallIds = new ArrayList<>(), stIds = new ArrayList<>();
         for (HallShowTime h : hstList) {
-            if (!hallIds.contains(h.getHallId()))       hallIds.add(h.getHallId());
-            if (!stIds.contains(h.getShowtimeId()))     stIds.add(h.getShowtimeId());
+            if (!hallIds.contains(h.getHallId())) hallIds.add(h.getHallId());
+            if (!stIds.contains(h.getShowtimeId())) stIds.add(h.getShowtimeId());
         }
         fetchHalls(hallIds, hstList, stIds);
     }
 
-    private void fetchHalls(List<String> ids, List<HallShowTime> hstList,
-                            List<String> stIds) {
+    private void fetchHalls(List<String> ids, List<HallShowTime> hstList, List<String> stIds) {
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
         List<Hall> list = new ArrayList<>();
         int[] done = {0};
+
+        if (ids.isEmpty()) {
+            fetchShowtimes(stIds, hstList, list);
+            return;
+        }
 
         for (String id : ids) {
             db.child("halls").child(id)
@@ -231,9 +333,13 @@ public class BookingActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snap) {
                             Hall h = snap.getValue(Hall.class);
-                            if (h != null) list.add(h);
+                            if (h != null) {
+                                h.id = id;
+                                list.add(h);
+                            }
                             if (++done[0] == ids.size()) fetchShowtimes(stIds, hstList, list);
                         }
+
                         @Override
                         public void onCancelled(@NonNull DatabaseError e) {
                             if (++done[0] == ids.size()) fetchShowtimes(stIds, hstList, list);
@@ -242,10 +348,11 @@ public class BookingActivity extends AppCompatActivity {
         }
     }
 
-    private void fetchShowtimes(List<String> ids, List<HallShowTime> hstList,
-                                List<Hall> hallList) {
-        if (ids.isEmpty()) { updateAdapter(hstList, hallList, new ArrayList<>()); return; }
-
+    private void fetchShowtimes(List<String> ids, List<HallShowTime> hstList, List<Hall> hallList) {
+        if (ids.isEmpty()) {
+            updateAdapter(hstList, hallList, new ArrayList<>());
+            return;
+        }
 
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
         List<Showtime> list = new ArrayList<>();
@@ -258,13 +365,16 @@ public class BookingActivity extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snap) {
                             try {
                                 Showtime st = snap.getValue(Showtime.class);
-                                if (st != null && movieId != null
-                                        && movieId.equals(st.movieId)) list.add(st);
+                                if (st != null && movieId != null && movieId.equals(st.movieId)) {
+                                    st.id = id;
+                                    list.add(st);
+                                }
                             } catch (Exception e) {
-                                Log.e("BookingActivity", e.getMessage());
+                                Log.e("BookingActivity", "Error parsing showtime: " + e.getMessage());
                             }
                             if (++done[0] == ids.size()) updateAdapter(hstList, hallList, list);
                         }
+
                         @Override
                         public void onCancelled(@NonNull DatabaseError e) {
                             if (++done[0] == ids.size()) updateAdapter(hstList, hallList, list);
@@ -273,90 +383,79 @@ public class BookingActivity extends AppCompatActivity {
         }
     }
 
-    private void updateAdapter(List<HallShowTime> hstList, List<Hall> hallList,
-                               List<Showtime> stList) {
+    private void updateAdapter(List<HallShowTime> hstList, List<Hall> hallList, List<Showtime> stList) {
         this.hallShowTimes = hstList;
-        this.halls         = hallList;
-        this.showtimes     = stList;
-
-        List<HallShowTime> filtered = new ArrayList<>();
-        List<Showtime>     valid    = new ArrayList<>();
-
-        for (HallShowTime hst : hstList) {
-            for (Showtime st : stList) {
-                if (st.id.equals(hst.getShowtimeId())) {
-                    filtered.add(hst);
-                    valid.add(st);
-                    break;
-                }
-            }
-        }
+        this.halls = hallList;
+        this.showtimes = stList;
 
         runOnUiThread(() -> {
-            if (filtered.isEmpty()) {
-                Toast.makeText(BookingActivity.this,
-                        "Sorry, No showtimes available", Toast.LENGTH_SHORT).show();
+            if (showtimes.isEmpty()) {
+                showEmptyState("No Showtimes Available",
+                        "No showtimes are currently available for this movie at " + selectedCinemaName);
+                return;
             }
 
-            adapter.updateItems(
-                    filtered.isEmpty() ? new ArrayList<>() : filtered,
-                    hallList,
-                    filtered.isEmpty() ? new ArrayList<>() : valid);
-
-            // Hide progress bar here too
-            progressBar.setVisibility(View.GONE);
-            rvShowTimes.setVisibility(View.VISIBLE);
+            showContent();
+            filterShowtimesByDateAndFormat();
         });
-
-        filterShowtimesByDateAndFormat();
     }
 
     private void filterShowtimesByDateAndFormat() {
-        if (dateAdapter == null || formatAdapter == null) return;
+        if (dateAdapter == null || formatAdapter == null || showtimes.isEmpty()) return;
 
-        String selDate   = dateAdapter.getSelectedDateString();
+        String selDate = dateAdapter.getSelectedDateString();
         String selFormat = formatAdapter.getSelectedFormat();
 
         List<HallShowTime> filtHst = new ArrayList<>();
-        List<Showtime>     filtSt  = new ArrayList<>();
+        List<Showtime> filtSt = new ArrayList<>();
+
+        java.util.Map<String, Hall> hallMap = new java.util.HashMap<>();
+        for (Hall h : halls) {
+            hallMap.put(h.id, h);
+        }
+
+        java.util.Map<String, HallShowTime> hstMap = new java.util.HashMap<>();
+        for (HallShowTime hst : hallShowTimes) {
+            hstMap.put(hst.getShowtimeId(), hst);
+        }
 
         for (Showtime st : showtimes) {
             if (st.date == null || !st.date.equals(selDate)) continue;
 
-            Hall hall = null;
-            for (Hall h : halls) {
-                if (h.id.equals(st.hallId)) { hall = h; break; }
-            }
-
-            if (hall != null && (selFormat.equals("ALL")
-                    || hall.screenType.equals(selFormat))) {
-                filtSt.add(st);
-                for (HallShowTime hst : hallShowTimes) {
-                    if (hst.getShowtimeId().equals(st.id)) {
+            Hall hall = hallMap.get(st.hallId);
+            if (hall != null) {
+                boolean formatMatches = selFormat.equals("ALL") ||
+                        (hall.screenType != null && hall.screenType.equals(selFormat));
+                if (formatMatches) {
+                    filtSt.add(st);
+                    HallShowTime hst = hstMap.get(st.id);
+                    if (hst != null) {
                         filtHst.add(hst);
-                        break;
                     }
                 }
             }
         }
 
-        runOnUiThread(() -> adapter.updateItems(filtHst, halls, filtSt));
+        if (filtSt.isEmpty()) {
+            showEmptyState("No Showtimes",
+                    "No showtimes available for " + selDate + " at " + selectedCinemaName);
+        } else {
+            showContent();
+            runOnUiThread(() -> adapter.updateItems(filtHst, halls, filtSt));
+        }
     }
 
     private void setupClickListeners() {
-        btnBack.setOnClickListener(v ->{
+        btnBack.setOnClickListener(v -> {
             startActivity(new Intent(BookingActivity.this, FilmDetailsActivity.class));
             finish();
         });
 
-
         btnTrailer.setOnClickListener(v -> {
             Intent intent = new Intent(this, TrailerActivity.class);
-            intent.putExtra("movie_id",       movieId);
-            intent.putExtra("movie_title",    movieTitle);
-            intent.putExtra("movie_duration", movieDuration != null? Integer.parseInt(movieDuration) : 0);
-
-            // trailer_url blank — TrailerActivity Firebase se fetch karega
+            intent.putExtra("movie_id", movieId);
+            intent.putExtra("movie_title", movieTitle);
+            intent.putExtra("movie_duration", movieDuration != null ? Integer.parseInt(movieDuration) : 0);
             startActivity(intent);
         });
     }

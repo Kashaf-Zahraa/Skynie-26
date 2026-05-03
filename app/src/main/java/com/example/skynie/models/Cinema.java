@@ -1,10 +1,11 @@
 // Cinema.java
 package com.example.skynie.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cinema {
+public class Cinema implements Serializable {
     public String id;
     public String name;
     public String address;

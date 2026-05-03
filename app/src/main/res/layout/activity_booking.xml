@@ -232,12 +232,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:id="@+id/ll_choose_cinema_layout"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/stars_90_mall"
+                        android:id="@+id/tv_selected_cinema"
                         android:textColor="@color/text_primary"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -245,14 +247,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/tv_selected_cinema_address"
                         android:layout_marginTop="4dp"
-                        android:text="@string/theater_location"
+                        android:text="23 Sunny Boulevard, Sunshine City"
                         android:textColor="@color/text_secondary"
                         android:textSize="12sp" />
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/iv_location_arrow"
+                    android:id="@+id/iv_choose_cinema_arrow"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="@string/location_arrow"
@@ -283,6 +286,61 @@
                     android:nestedScrollingEnabled="false"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:spanCount="3" />
+
+                <!-- Add this below your rvShowTimes RecyclerView -->
+                <LinearLayout
+                    android:id="@+id/emptyStateLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/placeholder"
+                    android:visibility="gone"
+                    android:padding="32dp">
+
+                    <ImageView
+                        android:id="@+id/ivEmptyState"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/ic_cinema_projector"
+                        android:contentDescription="No showtimes available"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="No Showtimes Currently Available"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_regular" />
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:text="No showtimes are currently available at this cinema for this movie."-->
+<!--                        android:textColor="#888888"-->
+<!--                        android:textSize="14sp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:fontFamily="@font/poppins_regular" />-->
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnTryDifferentCinema"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Try Different Cinema"
+                        android:background="@drawable/badge_red_bg"
+                        android:paddingStart="24dp"
+                        android:paddingEnd="24dp"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/poppins_semibold" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>

@@ -44,9 +44,9 @@
     <string name="back">Back</string>
     <string name="log_in">Log In</string>
     <string name="email">Email</string>
-    <string name="test_your_email">Test your email</string>
+    <string name="test_your_email">Enter your email</string>
     <string name="password">Password</string>
-    <string name="test_your_password">Test your password</string>
+    <string name="test_your_password">Enter your password</string>
     <string name="forget_password">Forget password?</string>
     <string name="or">Or</string>
     <string name="google">Google</string>
